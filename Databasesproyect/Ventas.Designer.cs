@@ -28,25 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.LaClave = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.LaImporte = new System.Windows.Forms.Label();
+            this.LaDescripción = new System.Windows.Forms.Label();
+            this.LaPrecio = new System.Windows.Forms.Label();
+            this.LaUnidad = new System.Windows.Forms.Label();
+            this.LaCantidad = new System.Windows.Forms.Label();
+            this.butAgregar = new System.Windows.Forms.Button();
+            this.butBorrar = new System.Windows.Forms.Button();
+            this.butEditar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // LaClave
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Clave ";
+            this.LaClave.AutoSize = true;
+            this.LaClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LaClave.Location = new System.Drawing.Point(3, 0);
+            this.LaClave.Name = "LaClave";
+            this.LaClave.Size = new System.Drawing.Size(80, 29);
+            this.LaClave.TabIndex = 0;
+            this.LaClave.Text = "Clave ";
             // 
             // tableLayoutPanel1
             // 
@@ -56,13 +59,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
-            this.tableLayoutPanel1.Controls.Add(this.label6, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
+            this.tableLayoutPanel1.Controls.Add(this.LaImporte, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LaDescripción, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LaPrecio, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LaUnidad, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LaCantidad, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LaClave, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 130);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -71,63 +74,93 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(719, 102);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // label2
+            // LaImporte
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(99, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 29);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Cantidad";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LaImporte.AutoSize = true;
+            this.LaImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LaImporte.Location = new System.Drawing.Point(610, 0);
+            this.LaImporte.Name = "LaImporte";
+            this.LaImporte.Size = new System.Drawing.Size(95, 29);
+            this.LaImporte.TabIndex = 3;
+            this.LaImporte.Text = "Importe";
             // 
-            // label3
+            // LaDescripción
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(223, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Unidad";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.LaDescripción.AutoSize = true;
+            this.LaDescripción.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LaDescripción.Location = new System.Drawing.Point(321, 0);
+            this.LaDescripción.Name = "LaDescripción";
+            this.LaDescripción.Size = new System.Drawing.Size(141, 29);
+            this.LaDescripción.TabIndex = 2;
+            this.LaDescripción.Text = "Descripción";
             // 
-            // label4
+            // LaPrecio
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(322, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 29);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Descripción";
+            this.LaPrecio.AutoSize = true;
+            this.LaPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LaPrecio.Location = new System.Drawing.Point(491, 0);
+            this.LaPrecio.Name = "LaPrecio";
+            this.LaPrecio.Size = new System.Drawing.Size(83, 29);
+            this.LaPrecio.TabIndex = 2;
+            this.LaPrecio.Text = "Precio";
             // 
-            // label5
+            // LaUnidad
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(492, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 29);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Precio";
+            this.LaUnidad.AutoSize = true;
+            this.LaUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LaUnidad.Location = new System.Drawing.Point(222, 0);
+            this.LaUnidad.Name = "LaUnidad";
+            this.LaUnidad.Size = new System.Drawing.Size(90, 29);
+            this.LaUnidad.TabIndex = 2;
+            this.LaUnidad.Text = "Unidad";
+            this.LaUnidad.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label6
+            // LaCantidad
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(611, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 29);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Importe";
+            this.LaCantidad.AutoSize = true;
+            this.LaCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LaCantidad.Location = new System.Drawing.Point(99, 0);
+            this.LaCantidad.Name = "LaCantidad";
+            this.LaCantidad.Size = new System.Drawing.Size(109, 29);
+            this.LaCantidad.TabIndex = 2;
+            this.LaCantidad.Text = "Cantidad";
+            this.LaCantidad.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // butAgregar
+            // 
+            this.butAgregar.Location = new System.Drawing.Point(20, 335);
+            this.butAgregar.Name = "butAgregar";
+            this.butAgregar.Size = new System.Drawing.Size(75, 23);
+            this.butAgregar.TabIndex = 2;
+            this.butAgregar.Text = "Agregar";
+            this.butAgregar.UseVisualStyleBackColor = true;
+            // 
+            // butBorrar
+            // 
+            this.butBorrar.Location = new System.Drawing.Point(116, 335);
+            this.butBorrar.Name = "butBorrar";
+            this.butBorrar.Size = new System.Drawing.Size(75, 23);
+            this.butBorrar.TabIndex = 3;
+            this.butBorrar.Text = "Borrar";
+            this.butBorrar.UseVisualStyleBackColor = true;
+            // 
+            // butEditar
+            // 
+            this.butEditar.Location = new System.Drawing.Point(227, 335);
+            this.butEditar.Name = "butEditar";
+            this.butEditar.Size = new System.Drawing.Size(75, 23);
+            this.butEditar.TabIndex = 4;
+            this.butEditar.Text = "Editar";
+            this.butEditar.UseVisualStyleBackColor = true;
             // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.butEditar);
+            this.Controls.Add(this.butBorrar);
+            this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Ventas";
             this.Text = "Ventas";
@@ -139,12 +172,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LaClave;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label LaCantidad;
+        private System.Windows.Forms.Label LaUnidad;
+        private System.Windows.Forms.Label LaDescripción;
+        private System.Windows.Forms.Label LaImporte;
+        private System.Windows.Forms.Label LaPrecio;
+        private System.Windows.Forms.Button butAgregar;
+        private System.Windows.Forms.Button butBorrar;
+        private System.Windows.Forms.Button butEditar;
     }
 }
