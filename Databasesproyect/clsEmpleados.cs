@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoDeBaseDeDatos
 {
-    internal class Empleados
+    internal class clsEmpleados
     {
     }
 }

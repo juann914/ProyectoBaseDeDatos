@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DaoEmpleados.cs" />
-    <Compile Include="Empleados.cs" />
+    <Compile Include="clsEmpleados.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
