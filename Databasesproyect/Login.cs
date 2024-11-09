@@ -49,5 +49,10 @@ namespace Databasesproyect
         {
 
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
