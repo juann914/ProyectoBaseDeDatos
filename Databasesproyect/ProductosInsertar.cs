@@ -36,5 +36,26 @@ namespace Databasesproyect
         {
 
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Equals("") || txtMarca.Text.Equals("") || txtNombre.Text.Equals("") ||
+                txtPrecio.Text.Equals(""))
+            {
+                MessageBox.Show("Faltan campos por rellenar");
+
+            }
+            
+                
+            
+             clsProductos product= new clsProductos();
+             product.nombre=txtNombre.Text;
+            product.codigoBarra=txtCodigo.Text;
+            product.precio=double.Parse(txtPrecio.Text);
+            product.marca=txtMarca.Text;
+
+
+
+        }
     }
 }

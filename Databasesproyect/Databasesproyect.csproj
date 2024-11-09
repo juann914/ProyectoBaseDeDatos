@@ -53,6 +53,7 @@
     <Compile Include="clsProductos.cs" />
     <Compile Include="DaoEmpleados.cs" />
     <Compile Include="clsEmpleados.cs" />
+    <Compile Include="daoProductos.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
