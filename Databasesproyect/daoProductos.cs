@@ -12,7 +12,7 @@ namespace Databasesproyect
 
         public void insertarProductos(clsProductos producto)
         {
-            string strConexion = "server=localhost; User ID=root; password=root; Database=formulario; port=3306;";
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
 
 
             MySqlConnection conexion = new MySqlConnection(strConexion);

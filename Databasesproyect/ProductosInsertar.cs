@@ -45,15 +45,25 @@ namespace Databasesproyect
                 MessageBox.Show("Faltan campos por rellenar");
 
             }
-            
-                
-            
-             clsProductos product= new clsProductos();
-             product.nombre=txtNombre.Text;
-            product.codigoBarra=txtCodigo.Text;
-            product.precio=double.Parse(txtPrecio.Text);
-            product.marca=txtMarca.Text;
+            else
+            {
 
+                clsProductos product = new clsProductos();
+                product.nombre = txtNombre.Text;
+                product.codigoBarra = txtCodigo.Text;
+                product.precio = double.Parse(txtPrecio.Text);
+                product.marca = txtMarca.Text;
+
+                daoProductos daoProductos = new daoProductos();
+                daoProductos.insertarProductos(product);
+
+                txtCodigo.Text = "";
+                txtNombre.Text = "";
+                txtMarca.Text = "";
+                txtPrecio.Text = "";
+
+                MessageBox.Show("Producto insertado correctamente");
+            }
 
 
         }
