@@ -22,7 +22,21 @@ namespace Databasesproyect
         {
             DaoEmpleados daoEmpleados = new DaoEmpleados();
 
+            string user=txtUserame.Text;
+            string password = txtPassword.Text;
 
+            bool bandera=daoEmpleados.verificar(user, password);
+
+            if (bandera == true)
+            {
+                //llamar otro forms
+                MessageBox.Show("Usuario correcto");
+
+            }
+            else
+            {
+                MessageBox.Show("Usuario incorrecto");
+            }
 
         }
 
