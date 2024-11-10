@@ -16,5 +16,25 @@ namespace Databasesproyect
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Ventas ventas= new Ventas();
+            ventas.Show();
+
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Productos productos= new Productos();
+            productos.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
