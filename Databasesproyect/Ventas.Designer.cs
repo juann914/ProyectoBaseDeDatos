@@ -81,6 +81,7 @@
             this.butBorrar.TabIndex = 3;
             this.butBorrar.Text = "Borrar";
             this.butBorrar.UseVisualStyleBackColor = true;
+            this.butBorrar.Click += new System.EventHandler(this.butBorrar_Click);
             // 
             // butEditar
             // 

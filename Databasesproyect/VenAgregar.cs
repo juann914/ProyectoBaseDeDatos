@@ -12,9 +12,20 @@ namespace Databasesproyect
 {
     public partial class VenAgregar : Form
     {
+        
         public VenAgregar()
         {
             InitializeComponent();
+            
+        }
+        public String Clave()
+        {
+            String clave = textClave.Text;
+            return clave;
+        }
+        private void VenAgregar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

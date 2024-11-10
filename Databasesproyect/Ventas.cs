@@ -47,10 +47,13 @@ namespace Databasesproyect
 
         }
         string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
-        string query = "SELECT Nombre, Cantidad, Precio FROM Productos";
+        string query = "SELECT Clave,Marca,Descripción,Precio FROM productos";
         private void butAgregar_Click(object sender, EventArgs e)
         {
-
+            VenAgregar venAgregar = new VenAgregar();
+            venAgregar.ShowDialog();
+            String clave = venAgregar.Clave();
+            BuscarProductoPorCodigo(clave);
            
         }
         private void BuscarProductoPorCodigo(string codigoBarras)
@@ -80,6 +83,22 @@ namespace Databasesproyect
 
         }
 
+        private void butBorrar_Click(object sender, EventArgs e)
+        {
+            if (dataVentas.SelectedRows.Count > 0) 
+            {
+                foreach (DataGridViewRow row in dataVentas.SelectedRows)
+                {
+                    dataVentas.Rows.Remove(row);
+                }
+
+                MessageBox.Show("Producto eliminado de la tabla (solo visualización).");
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un producto para eliminar de la tabla.");
+            }
+        }
        
     }
 }
