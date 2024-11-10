@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Databasesproyect;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -39,6 +40,32 @@ namespace ProyectoDeBaseDeDatos
                 conexion.Close();
                 return false;
             }
+
+        }
+
+        public void insertarEmpleado (clsEmpleados empleado) {
+
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+            conexion.Open();
+
+            string strInsert = "insert into empleados values (null,@clave,@username,@nombre,@apellido,@telefono,@curp,@edad)";
+
+            MySqlCommand comando = conexion.CreateCommand();
+
+            comando.Parameters.AddWithValue("@clave", empleado.clave);
+            comando.Parameters.AddWithValue("@username", empleado.username);
+            comando.Parameters.AddWithValue("@nombre", empleado.nombre);
+            comando.Parameters.AddWithValue("@apellido", empleado.apellido);
+            comando.Parameters.AddWithValue("@telefono", empleado.telefono);
+            comando.Parameters.AddWithValue("@curp", empleado.curp);
+            comando.Parameters.AddWithValue("@edad", empleado.edad);
+
+            comando.CommandText = strInsert;
+
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            conexion.Close();
 
         }
 
