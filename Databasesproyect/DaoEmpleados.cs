@@ -43,7 +43,8 @@ namespace ProyectoDeBaseDeDatos
 
         }
 
-        public void insertarEmpleado (clsEmpleados empleado) {
+        public void insertarEmpleado(clsEmpleados empleado)
+        {
 
             string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
             MySqlConnection conexion = new MySqlConnection(strConexion);
@@ -69,5 +70,5 @@ namespace ProyectoDeBaseDeDatos
 
         }
 
-        }
+    }
     }
