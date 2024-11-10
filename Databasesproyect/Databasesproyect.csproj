@@ -123,6 +123,7 @@
     <Compile Include="DaoEmpleados.cs" />
     <Compile Include="clsEmpleados.cs" />
     <Compile Include="daoProductos.cs" />
+    <Compile Include="DaoVenta.cs" />
     <Compile Include="ProductoEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +174,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="VenAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VenAgregar.Designer.cs">
+      <DependentUpon>VenAgregar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +227,9 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VenAgregar.resx">
+      <DependentUpon>VenAgregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
