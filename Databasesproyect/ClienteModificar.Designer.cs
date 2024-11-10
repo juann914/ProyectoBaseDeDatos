@@ -55,7 +55,7 @@
             this.gpId.Controls.Add(this.label1);
             this.gpId.Location = new System.Drawing.Point(41, 28);
             this.gpId.Name = "gpId";
-            this.gpId.Size = new System.Drawing.Size(700, 205);
+            this.gpId.Size = new System.Drawing.Size(594, 205);
             this.gpId.TabIndex = 0;
             this.gpId.TabStop = false;
             // 
@@ -197,6 +197,7 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "Cancelar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // ClienteModificar
             // 

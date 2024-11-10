@@ -71,13 +71,23 @@ namespace Databasesproyect
 
             daoClientes.editarCliente(cliente);
             MessageBox.Show("Cliente editado");
+            gpCliente.Visible=false;
+            gpId.Visible=true;
+            txtId.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             Clientes clientes   = new Clientes();
             clientes.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            gpCliente.Visible = false;
+            gpId.Visible = true;
+            txtId.Text = "";
         }
     }
 }
