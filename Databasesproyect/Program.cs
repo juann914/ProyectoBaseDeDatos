@@ -16,7 +16,7 @@ namespace Databasesproyect
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ClienteModificar());
+            Application.Run(new Menu());
         }
     }
 }
