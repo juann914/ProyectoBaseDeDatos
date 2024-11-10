@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Databasesproyect
 {
-    public partial class ConfirmarEliminar : Form
+    public partial class ConfirmarEliminarP : Form
     {
 
         public string PrCode { get; set; }
 
-        public ConfirmarEliminar(string PrCode)
+        public ConfirmarEliminarP(string PrCode)
         {
 
 
@@ -31,7 +31,7 @@ namespace Databasesproyect
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            EliminarProducto producto = new EliminarProducto();
+            ProductoEliminar producto = new ProductoEliminar();
             producto.Show();
         }
 
@@ -41,7 +41,7 @@ namespace Databasesproyect
             productos.borrarProducto(this.PrCode);
             MessageBox.Show("El producto se ha eliminado correctamente");
              this.Close();
-            EliminarProducto producto = new EliminarProducto();
+            ProductoEliminar producto = new ProductoEliminar();
             producto.Show();
         }
     }

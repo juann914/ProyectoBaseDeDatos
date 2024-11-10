@@ -1,6 +1,6 @@
 ﻿namespace Databasesproyect
 {
-    partial class EliminarProducto
+    partial class ProductoEliminar
     {
         /// <summary>
         /// Required designer variable.

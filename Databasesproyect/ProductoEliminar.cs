@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Databasesproyect
 {
-    public partial class EliminarProducto : Form
+    public partial class ProductoEliminar : Form
     {
-        public EliminarProducto()
+        public ProductoEliminar()
         {
             InitializeComponent();
         }
@@ -40,7 +40,7 @@ namespace Databasesproyect
             }
             else
             {
-                ConfirmarEliminar c=new ConfirmarEliminar(p.codigoBarra);
+                ConfirmarEliminarP c=new ConfirmarEliminarP(p.codigoBarra);
                 c.Show();
                 this.Hide();
                 c.lnbPro.Text = "Esta a punto de eliminar el producto " + p.nombre + "\n                ¿Estas seguro?";

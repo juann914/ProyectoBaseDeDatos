@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using ProyectoDeBaseDeDatos;
 
 namespace Databasesproyect
@@ -30,7 +31,9 @@ namespace Databasesproyect
             if (bandera == true)
             {
                 //llamar otro forms
-                MessageBox.Show("Usuario correcto");
+                Menu menu = new Menu();
+                menu.Show();
+                this.Close();
 
             }
             else

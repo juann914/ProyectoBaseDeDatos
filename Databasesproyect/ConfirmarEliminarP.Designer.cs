@@ -1,6 +1,6 @@
 ﻿namespace Databasesproyect
 {
-    partial class ConfirmarEliminar
+    partial class ConfirmarEliminarP
     {
         /// <summary>
         /// Required designer variable.

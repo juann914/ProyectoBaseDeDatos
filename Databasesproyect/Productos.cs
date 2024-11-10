@@ -27,7 +27,7 @@ namespace Databasesproyect
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
-            EliminarProducto producto = new EliminarProducto();
+            ProductoEliminar producto = new ProductoEliminar();
             producto.Show();
         }
 
