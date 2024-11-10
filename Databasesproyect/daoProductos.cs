@@ -18,7 +18,7 @@ namespace Databasesproyect
             MySqlConnection conexion = new MySqlConnection(strConexion);
 
             conexion.Open();
-
+         
             string strInsert = "insert into productos values (null,@codigoBarra,@nombre,@precio,@marca)";
 
 
