@@ -32,13 +32,13 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpEliminar = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.lblEliminar = new System.Windows.Forms.Label();
+            this.gpCliente = new System.Windows.Forms.GroupBox();
+            this.gpEliminar.SuspendLayout();
+            this.gpCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -79,18 +79,19 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // gpEliminar
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 238);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(588, 229);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            this.groupBox1.Visible = false;
+            this.gpEliminar.Controls.Add(this.button4);
+            this.gpEliminar.Controls.Add(this.button3);
+            this.gpEliminar.Controls.Add(this.lblEliminar);
+            this.gpEliminar.Location = new System.Drawing.Point(12, 238);
+            this.gpEliminar.Name = "gpEliminar";
+            this.gpEliminar.Size = new System.Drawing.Size(611, 229);
+            this.gpEliminar.TabIndex = 4;
+            this.gpEliminar.TabStop = false;
+            this.gpEliminar.Text = "groupBox1";
+            this.gpEliminar.Visible = false;
+            this.gpEliminar.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // button4
             // 
@@ -110,42 +111,41 @@
             this.button3.Text = "Aceptar";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblEliminar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(139, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(280, 50);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "¿Estas seguro de eliminar a\r\n\r\n";
+            this.lblEliminar.AutoSize = true;
+            this.lblEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEliminar.Location = new System.Drawing.Point(35, 28);
+            this.lblEliminar.Name = "lblEliminar";
+            this.lblEliminar.Size = new System.Drawing.Size(0, 25);
+            this.lblEliminar.TabIndex = 1;
             // 
-            // groupBox2
+            // gpCliente
             // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtId);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(582, 190);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.gpCliente.Controls.Add(this.label1);
+            this.gpCliente.Controls.Add(this.txtId);
+            this.gpCliente.Controls.Add(this.button2);
+            this.gpCliente.Controls.Add(this.button1);
+            this.gpCliente.Location = new System.Drawing.Point(12, 12);
+            this.gpCliente.Name = "gpCliente";
+            this.gpCliente.Size = new System.Drawing.Size(611, 190);
+            this.gpCliente.TabIndex = 5;
+            this.gpCliente.TabStop = false;
+            this.gpCliente.Text = "groupBox2";
             // 
             // ClienteEliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 465);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(635, 465);
+            this.Controls.Add(this.gpCliente);
+            this.Controls.Add(this.gpEliminar);
             this.Name = "ClienteEliminar";
             this.Text = "ClienteEliminar";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gpEliminar.ResumeLayout(false);
+            this.gpEliminar.PerformLayout();
+            this.gpCliente.ResumeLayout(false);
+            this.gpCliente.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -156,9 +156,9 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gpEliminar;
+        private System.Windows.Forms.Label lblEliminar;
+        private System.Windows.Forms.GroupBox gpCliente;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
     }
