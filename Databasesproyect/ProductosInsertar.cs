@@ -53,6 +53,7 @@ namespace Databasesproyect
                 product.codigoBarra = txtCodigo.Text;
                 product.precio = double.Parse(txtPrecio.Text);
                 product.marca = txtMarca.Text;
+                product.descripcion = txtDes.Text;
 
                 daoProductos daoProductos = new daoProductos();
                 daoProductos.insertarProductos(product);
@@ -61,6 +62,7 @@ namespace Databasesproyect
                 txtNombre.Text = "";
                 txtMarca.Text = "";
                 txtPrecio.Text = "";
+                txtDes.Text = "";
 
                 MessageBox.Show("Producto insertado correctamente");
             }
@@ -73,6 +75,16 @@ namespace Databasesproyect
             this.Close();
             Productos productos = new Productos();
             productos.Show();
+        }
+
+        private void ProductosInsertar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

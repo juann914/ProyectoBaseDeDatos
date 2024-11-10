@@ -19,7 +19,7 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string strInsert = "insert into productos values (null,@codigoBarra,@nombre,@precio,@marca)";
+            string strInsert = "insert into productos values (null,@codigoBarra,@nombre,@precio,@marca,@descripcion)";
 
 
             MySqlCommand comando = conexion.CreateCommand();
@@ -33,6 +33,8 @@ namespace Databasesproyect
             comando.Parameters.AddWithValue("@precio", producto.precio);
 
             comando.Parameters.AddWithValue("@marca", producto.marca);
+
+            comando.Parameters.AddWithValue("@descripcion", producto.descripcion);
 
             comando.CommandText = strInsert;
 
@@ -56,7 +58,7 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string str = "select idProducto,codigoBarra,nombre,precio,marca from productos where codigoBarra=@code";
+            string str = "select idProducto,codigoBarra,nombre,precio,marca,descripcion from productos where codigoBarra=@code";
 
 
             MySqlCommand comando = new MySqlCommand(str,conexion);
@@ -74,6 +76,7 @@ namespace Databasesproyect
                 pro.nombre = read["nombre"].ToString();
                 pro.precio = double.Parse(read["precio"].ToString());
                 pro.marca = read["marca"].ToString();
+                pro.descripcion = read["descripcion"].ToString();
               conexion.Close() ;
                comando.Connection.Close();
 
