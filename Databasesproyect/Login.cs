@@ -31,9 +31,10 @@ namespace Databasesproyect
             if (bandera == true)
             {
                 //llamar otro forms
+                this.Hide();
                 Menu menu = new Menu();
                 menu.Show();
-                this.Close();
+              
 
             }
             else

@@ -33,7 +33,9 @@ namespace Databasesproyect
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            ProductoEditar producto = new ProductoEditar(); 
+            producto.Show();
+            this.Close();
         }
     }
 }

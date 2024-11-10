@@ -53,28 +53,29 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataVentas = new System.Windows.Forms.DataGridView();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(20, 360);
+            this.butAgregar.Location = new System.Drawing.Point(20, 370);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(75, 23);
             this.butAgregar.TabIndex = 2;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
+            this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
             // 
             // butBorrar
             // 
-            this.butBorrar.Location = new System.Drawing.Point(116, 360);
+            this.butBorrar.Location = new System.Drawing.Point(129, 370);
             this.butBorrar.Name = "butBorrar";
             this.butBorrar.Size = new System.Drawing.Size(75, 23);
             this.butBorrar.TabIndex = 3;
@@ -83,7 +84,7 @@
             // 
             // butEditar
             // 
-            this.butEditar.Location = new System.Drawing.Point(226, 360);
+            this.butEditar.Location = new System.Drawing.Point(228, 370);
             this.butEditar.Name = "butEditar";
             this.butEditar.Size = new System.Drawing.Size(75, 23);
             this.butEditar.TabIndex = 4;
@@ -92,7 +93,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(20, 405);
+            this.button1.Location = new System.Drawing.Point(20, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -101,7 +102,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(116, 405);
+            this.button2.Location = new System.Drawing.Point(129, 415);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -291,30 +292,30 @@
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 17;
             // 
-            // dataGridView1
+            // dataVentas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Clave,
-            this.Cantidad,
+            this.DataVenta,
             this.Marca,
             this.Descripción,
             this.Precio});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 111);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(546, 208);
-            this.dataGridView1.TabIndex = 18;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataVentas.Location = new System.Drawing.Point(12, 111);
+            this.dataVentas.Name = "dataVentas";
+            this.dataVentas.Size = new System.Drawing.Size(546, 208);
+            this.dataVentas.TabIndex = 18;
+            this.dataVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Clave
             // 
             this.Clave.HeaderText = "Clave";
             this.Clave.Name = "Clave";
             // 
-            // Cantidad
+            // DataVenta
             // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
+            this.DataVenta.HeaderText = "Cantidad";
+            this.DataVenta.Name = "DataVenta";
             // 
             // Marca
             // 
@@ -337,7 +338,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataVentas);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -356,9 +357,10 @@
             this.Controls.Add(this.butAgregar);
             this.Name = "Ventas";
             this.Text = "Ventas";
+            this.Load += new System.EventHandler(this.Ventas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,9 +392,9 @@
         private System.Windows.Forms.Label laIVA;
         private System.Windows.Forms.Label laSubtotal;
         private System.Windows.Forms.Label laDesc;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataVentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
