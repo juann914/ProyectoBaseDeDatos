@@ -45,5 +45,22 @@ namespace Databasesproyect
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            daoClientes clientes    = new daoClientes();
+            clientes.borrarCliente(txtId.Text);
+            MessageBox.Show("El cliente se ha eliminado");
+            gpEliminar.Visible=false;
+            gpCliente.Visible=true;
+            txtId.Text = ";";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            gpEliminar.Visible=false;
+            gpCliente.Visible=true;
+            txtId.Text = "";
+        }
     }
 }

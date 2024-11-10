@@ -51,6 +51,38 @@ namespace Databasesproyect
             return cli;
 
         }
+
+        public void borrarCliente(String id)
+        {
+
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+
+
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+
+            conexion.Open();
+
+            string strInsert = "delete from clientes where idCliente=@id";
+
+
+            MySqlCommand comando = conexion.CreateCommand();
+
+
+            comando.Parameters.AddWithValue("@id", id);
+
+
+
+            comando.CommandText = strInsert;
+
+
+            comando.ExecuteNonQuery();
+
+
+            conexion.Close();
+
+
+        }
+
     }
 
     }
