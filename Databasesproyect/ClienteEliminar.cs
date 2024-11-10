@@ -62,5 +62,12 @@ namespace Databasesproyect
             gpCliente.Visible=true;
             txtId.Text = "";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Clientes clientes = new Clientes();
+            clientes.Show();
+        }
     }
 }

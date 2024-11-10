@@ -53,9 +53,9 @@
             this.gpId.Controls.Add(this.button1);
             this.gpId.Controls.Add(this.txtId);
             this.gpId.Controls.Add(this.label1);
-            this.gpId.Location = new System.Drawing.Point(41, 28);
+            this.gpId.Location = new System.Drawing.Point(12, 28);
             this.gpId.Name = "gpId";
-            this.gpId.Size = new System.Drawing.Size(594, 205);
+            this.gpId.Size = new System.Drawing.Size(623, 205);
             this.gpId.TabIndex = 0;
             this.gpId.TabStop = false;
             // 
