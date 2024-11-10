@@ -16,5 +16,19 @@ namespace Databasesproyect
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ProductosInsertar productos = new ProductosInsertar();
+            productos.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            EliminarProducto producto = new EliminarProducto();
+            producto.Show();
+        }
     }
 }

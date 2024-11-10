@@ -100,9 +100,21 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="clsProductos.cs" />
+    <Compile Include="ConfirmarEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmarEliminar.Designer.cs">
+      <DependentUpon>ConfirmarEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="DaoEmpleados.cs" />
     <Compile Include="clsEmpleados.cs" />
     <Compile Include="daoProductos.cs" />
+    <Compile Include="EliminarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarProducto.Designer.cs">
+      <DependentUpon>EliminarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +153,12 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConfirmarEliminar.resx">
+      <DependentUpon>ConfirmarEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarProducto.resx">
+      <DependentUpon>EliminarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

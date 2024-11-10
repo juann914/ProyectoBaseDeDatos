@@ -67,5 +67,12 @@ namespace Databasesproyect
 
 
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Productos productos = new Productos();
+            productos.Show();
+        }
     }
 }
