@@ -30,5 +30,10 @@ namespace Databasesproyect
             EliminarProducto producto = new EliminarProducto();
             producto.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

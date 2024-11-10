@@ -119,7 +119,37 @@ namespace Databasesproyect
 
 
         }
-    
+
+        public void editarProducto(clsProductos product)
+        {
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+
+
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+
+            conexion.Open();
+
+            string strInsert = "update productos set marca=@marca,precio=@precio,nombre=@nombre where codigoBarra=@code";
+
+
+            MySqlCommand comando = conexion.CreateCommand();
+
+
+            comando.Parameters.AddWithValue("@marca",product.marca);
+            comando.Parameters.AddWithValue("@precio", product.precio);
+            comando.Parameters.AddWithValue("@nombre", product.nombre);
+            comando.Parameters.AddWithValue("@code", product.codigoBarra);
+
+            comando.CommandText = strInsert;
+
+
+            comando.ExecuteNonQuery();
+
+
+            conexion.Close();
+
+        }
+
     } 
 
 
