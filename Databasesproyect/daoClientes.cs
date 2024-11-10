@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 
 
 namespace Databasesproyect
@@ -83,6 +85,30 @@ namespace Databasesproyect
 
         }
 
+        public void editarCliente(clsCliente cliente)
+        {
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+
+
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+            conexion.Open();
+            string strInsert = "update clientes set nombre =@nombre,apellido = @apellido,correo = @correo where idCliente = @id";
+
+
+            MySqlCommand comando = conexion.CreateCommand();
+            comando.Parameters.AddWithValue("@nombre",cliente.nombre);
+            comando.Parameters.AddWithValue("@apellido", cliente.apellidos);
+            comando.Parameters.AddWithValue("@correo", cliente.correo);
+            comando.Parameters.AddWithValue("@id", cliente.idCliente);
+            comando.CommandText = strInsert;
+
+
+            comando.ExecuteNonQuery();
+
+
+            conexion.Close();
+
+        }
     }
 
     }
