@@ -32,12 +32,14 @@ namespace Databasesproyect
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

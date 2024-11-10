@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LaClave = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.LaImporte = new System.Windows.Forms.Label();
-            this.LaDescripción = new System.Windows.Forms.Label();
-            this.LaPrecio = new System.Windows.Forms.Label();
-            this.LaUnidad = new System.Windows.Forms.Label();
-            this.LaCantidad = new System.Windows.Forms.Label();
             this.butAgregar = new System.Windows.Forms.Button();
             this.butBorrar = new System.Windows.Forms.Button();
             this.butEditar = new System.Windows.Forms.Button();
@@ -43,6 +36,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.laTotal = new System.Windows.Forms.Label();
+            this.laIVA = new System.Windows.Forms.Label();
+            this.laSubtotal = new System.Windows.Forms.Label();
+            this.laDesc = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,103 +53,19 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.laDesc = new System.Windows.Forms.Label();
-            this.laSubtotal = new System.Windows.Forms.Label();
-            this.laIVA = new System.Windows.Forms.Label();
-            this.laTotal = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LaClave
-            // 
-            this.LaClave.AutoSize = true;
-            this.LaClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LaClave.Location = new System.Drawing.Point(3, 0);
-            this.LaClave.Name = "LaClave";
-            this.LaClave.Size = new System.Drawing.Size(80, 29);
-            this.LaClave.TabIndex = 0;
-            this.LaClave.Text = "Clave ";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.68932F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.31068F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
-            this.tableLayoutPanel1.Controls.Add(this.LaImporte, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.LaDescripción, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.LaPrecio, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.LaUnidad, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.LaCantidad, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.LaClave, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 130);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(719, 102);
-            this.tableLayoutPanel1.TabIndex = 1;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // LaImporte
-            // 
-            this.LaImporte.AutoSize = true;
-            this.LaImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LaImporte.Location = new System.Drawing.Point(609, 0);
-            this.LaImporte.Name = "LaImporte";
-            this.LaImporte.Size = new System.Drawing.Size(95, 29);
-            this.LaImporte.TabIndex = 3;
-            this.LaImporte.Text = "Importe";
-            // 
-            // LaDescripción
-            // 
-            this.LaDescripción.AutoSize = true;
-            this.LaDescripción.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LaDescripción.Location = new System.Drawing.Point(320, 0);
-            this.LaDescripción.Name = "LaDescripción";
-            this.LaDescripción.Size = new System.Drawing.Size(141, 29);
-            this.LaDescripción.TabIndex = 2;
-            this.LaDescripción.Text = "Descripción";
-            // 
-            // LaPrecio
-            // 
-            this.LaPrecio.AutoSize = true;
-            this.LaPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LaPrecio.Location = new System.Drawing.Point(490, 0);
-            this.LaPrecio.Name = "LaPrecio";
-            this.LaPrecio.Size = new System.Drawing.Size(83, 29);
-            this.LaPrecio.TabIndex = 2;
-            this.LaPrecio.Text = "Precio";
-            // 
-            // LaUnidad
-            // 
-            this.LaUnidad.AutoSize = true;
-            this.LaUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LaUnidad.Location = new System.Drawing.Point(221, 0);
-            this.LaUnidad.Name = "LaUnidad";
-            this.LaUnidad.Size = new System.Drawing.Size(90, 29);
-            this.LaUnidad.TabIndex = 2;
-            this.LaUnidad.Text = "Unidad";
-            this.LaUnidad.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // LaCantidad
-            // 
-            this.LaCantidad.AutoSize = true;
-            this.LaCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LaCantidad.Location = new System.Drawing.Point(98, 0);
-            this.LaCantidad.Name = "LaCantidad";
-            this.LaCantidad.Size = new System.Drawing.Size(109, 29);
-            this.LaCantidad.TabIndex = 2;
-            this.LaCantidad.Text = "Cantidad";
-            this.LaCantidad.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(20, 335);
+            this.butAgregar.Location = new System.Drawing.Point(20, 360);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(75, 23);
             this.butAgregar.TabIndex = 2;
@@ -161,7 +74,7 @@
             // 
             // butBorrar
             // 
-            this.butBorrar.Location = new System.Drawing.Point(116, 335);
+            this.butBorrar.Location = new System.Drawing.Point(116, 360);
             this.butBorrar.Name = "butBorrar";
             this.butBorrar.Size = new System.Drawing.Size(75, 23);
             this.butBorrar.TabIndex = 3;
@@ -170,7 +83,7 @@
             // 
             // butEditar
             // 
-            this.butEditar.Location = new System.Drawing.Point(227, 335);
+            this.butEditar.Location = new System.Drawing.Point(226, 360);
             this.butEditar.Name = "butEditar";
             this.butEditar.Size = new System.Drawing.Size(75, 23);
             this.butEditar.TabIndex = 4;
@@ -232,6 +145,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Totales";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // laTotal
+            // 
+            this.laTotal.AutoSize = true;
+            this.laTotal.Location = new System.Drawing.Point(144, 93);
+            this.laTotal.Name = "laTotal";
+            this.laTotal.Size = new System.Drawing.Size(41, 13);
+            this.laTotal.TabIndex = 15;
+            this.laTotal.Text = "label12";
+            // 
+            // laIVA
+            // 
+            this.laIVA.AutoSize = true;
+            this.laIVA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.laIVA.Location = new System.Drawing.Point(144, 71);
+            this.laIVA.Name = "laIVA";
+            this.laIVA.Size = new System.Drawing.Size(41, 13);
+            this.laIVA.TabIndex = 14;
+            this.laIVA.Text = "label11";
+            // 
+            // laSubtotal
+            // 
+            this.laSubtotal.AutoSize = true;
+            this.laSubtotal.Location = new System.Drawing.Point(144, 48);
+            this.laSubtotal.Name = "laSubtotal";
+            this.laSubtotal.Size = new System.Drawing.Size(41, 13);
+            this.laSubtotal.TabIndex = 13;
+            this.laSubtotal.Text = "label10";
+            // 
+            // laDesc
+            // 
+            this.laDesc.AutoSize = true;
+            this.laDesc.Location = new System.Drawing.Point(144, 23);
+            this.laDesc.Name = "laDesc";
+            this.laDesc.Size = new System.Drawing.Size(35, 13);
+            this.laDesc.TabIndex = 12;
+            this.laDesc.Text = "label9";
             // 
             // textBox1
             // 
@@ -341,42 +291,45 @@
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 17;
             // 
-            // laDesc
+            // dataGridView1
             // 
-            this.laDesc.AutoSize = true;
-            this.laDesc.Location = new System.Drawing.Point(144, 23);
-            this.laDesc.Name = "laDesc";
-            this.laDesc.Size = new System.Drawing.Size(35, 13);
-            this.laDesc.TabIndex = 12;
-            this.laDesc.Text = "label9";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Clave,
+            this.Cantidad,
+            this.Marca,
+            this.Descripción,
+            this.Precio});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 111);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(546, 208);
+            this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // laSubtotal
+            // Clave
             // 
-            this.laSubtotal.AutoSize = true;
-            this.laSubtotal.Location = new System.Drawing.Point(144, 48);
-            this.laSubtotal.Name = "laSubtotal";
-            this.laSubtotal.Size = new System.Drawing.Size(41, 13);
-            this.laSubtotal.TabIndex = 13;
-            this.laSubtotal.Text = "label10";
+            this.Clave.HeaderText = "Clave";
+            this.Clave.Name = "Clave";
             // 
-            // laIVA
+            // Cantidad
             // 
-            this.laIVA.AutoSize = true;
-            this.laIVA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.laIVA.Location = new System.Drawing.Point(144, 71);
-            this.laIVA.Name = "laIVA";
-            this.laIVA.Size = new System.Drawing.Size(41, 13);
-            this.laIVA.TabIndex = 14;
-            this.laIVA.Text = "label11";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
             // 
-            // laTotal
+            // Marca
             // 
-            this.laTotal.AutoSize = true;
-            this.laTotal.Location = new System.Drawing.Point(144, 93);
-            this.laTotal.Name = "laTotal";
-            this.laTotal.Size = new System.Drawing.Size(41, 13);
-            this.laTotal.TabIndex = 15;
-            this.laTotal.Text = "label12";
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
             // 
             // Ventas
             // 
@@ -384,6 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -400,27 +354,17 @@
             this.Controls.Add(this.butEditar);
             this.Controls.Add(this.butBorrar);
             this.Controls.Add(this.butAgregar);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Ventas";
             this.Text = "Ventas";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label LaClave;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label LaCantidad;
-        private System.Windows.Forms.Label LaUnidad;
-        private System.Windows.Forms.Label LaDescripción;
-        private System.Windows.Forms.Label LaImporte;
-        private System.Windows.Forms.Label LaPrecio;
         private System.Windows.Forms.Button butAgregar;
         private System.Windows.Forms.Button butBorrar;
         private System.Windows.Forms.Button butEditar;
@@ -446,5 +390,11 @@
         private System.Windows.Forms.Label laIVA;
         private System.Windows.Forms.Label laSubtotal;
         private System.Windows.Forms.Label laDesc;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }
