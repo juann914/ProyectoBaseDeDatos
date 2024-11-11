@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Databasesproyect;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 
 
 namespace ProyectoDeBaseDeDatos
@@ -71,28 +72,32 @@ namespace ProyectoDeBaseDeDatos
 
         }
 
-        public DataTable cargarEmpleados()
+        public void modificarEmpleado(clsEmpleados empleado)
         {
 
             string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
             MySqlConnection conexion = new MySqlConnection(strConexion);
             conexion.Open();
+            string strInsert = "update empleados set clave =@clave, username = @username, nombre = @nombre, apellido=@apellido, telefono=@telefono, curp=@curp, edad=@edad where idEmpleado = @id";
 
-            DataTable tablaEmpleados = new DataTable();
-            string query = "SELECT * FROM empleados";
+            MySqlCommand comando = conexion.CreateCommand();
+            comando.Parameters.AddWithValue("@clave", empleado.clave);
+            comando.Parameters.AddWithValue("@username", empleado.username);
+            comando.Parameters.AddWithValue("@nombre", empleado.nombre);
+            comando.Parameters.AddWithValue("@apellido", empleado.apellido);
+            comando.Parameters.AddWithValue("@telefono", empleado.telefono);
+            comando.Parameters.AddWithValue("@curp", empleado.curp);
+            comando.Parameters.AddWithValue("@edad", empleado.edad);
+            comando.Parameters.AddWithValue("@id", empleado.idEmpleado);
+            comando.CommandText = strInsert;
 
-            MySqlCommand comando = new MySqlCommand(query, conexion);
-
-            
-            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
-            adaptador.Fill(tablaEmpleados);
-
-            
-            return tablaEmpleados;
+            comando.ExecuteNonQuery();
 
             conexion.Close();
 
         }
+
+
 
     }
     }

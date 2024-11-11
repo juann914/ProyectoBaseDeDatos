@@ -8,7 +8,7 @@ namespace ProyectoDeBaseDeDatos
 {
     internal class clsEmpleados
     {
-        public int idProducto { get; set; }
+        public int idEmpleado { get; set; }
         public string clave { get; set; }
         public string username { get; set; }
         public string nombre { get; set; }
