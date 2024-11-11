@@ -61,6 +61,7 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.butAgregarC = new System.Windows.Forms.Button();
+            this.butAgreC = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVentas)).BeginInit();
             this.SuspendLayout();
@@ -364,12 +365,22 @@
             this.butAgregarC.Text = "Agregar";
             this.butAgregarC.UseVisualStyleBackColor = true;
             // 
+            // butAgreC
+            // 
+            this.butAgreC.Location = new System.Drawing.Point(279, 33);
+            this.butAgreC.Name = "butAgreC";
+            this.butAgreC.Size = new System.Drawing.Size(75, 23);
+            this.butAgreC.TabIndex = 19;
+            this.butAgreC.Text = "Agregar";
+            this.butAgreC.UseVisualStyleBackColor = true;
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.butAgreC);
             this.Controls.Add(this.dataVentas);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -432,5 +443,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.Button butAgregarC;
+        private System.Windows.Forms.Button butAgreC;
     }
 }
