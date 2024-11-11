@@ -15,7 +15,7 @@ namespace Databasesproyect
     {
 
 
-        public double obenterCliente(string codigoBarra)
+        public double obenterPrecio(string codigoBarra)
         {
             string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
 
@@ -37,23 +37,16 @@ namespace Databasesproyect
 ;            if (read.Read())
             {
                 
-                cli.idCliente = int.Parse(read["idCliente"].ToString());
-                cli.nombre = read["precio"].ToString();
-                cli.apellidos = read["apellido"].ToString();
-                cli.correo = read["correo"].ToString();
-                cli.rfc = read["rfc"].ToString();
-
-
-
+                subtotal = double.Parse(read["preci"].ToString());
                 conexion.Close();
                 comando.Connection.Close();
 
-                return cli;
+                return subtotal;
 
             }
             conexion.Close();
             comando.Connection.Close();
-            return cli;
+            return subtotal;
 
         }
     }
