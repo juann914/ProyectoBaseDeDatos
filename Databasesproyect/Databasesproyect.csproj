@@ -222,6 +222,9 @@
     <EmbeddedResource Include="ConfirmarEliminarP.resx">
       <DependentUpon>ConfirmarEliminarP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EliminarEpleado.resx">
+      <DependentUpon>EliminarEpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuEmpleados.resx">
       <DependentUpon>MenuEmpleados.cs</DependentUpon>
     </EmbeddedResource>

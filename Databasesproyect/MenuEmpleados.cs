@@ -40,5 +40,12 @@ namespace Databasesproyect
             menu.Show();
             this.Hide();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            EliminarEpleado menu = new EliminarEpleado();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

@@ -97,6 +97,27 @@ namespace ProyectoDeBaseDeDatos
 
         }
 
+        public void eliminarEmpleado(clsEmpleados empleado)
+        {
+
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+            conexion.Open();
+
+            string strDelete = "delete from empleados where idEmpleado=@id";
+
+            MySqlCommand comando = conexion.CreateCommand();
+
+            comando.Parameters.AddWithValue("@id", empleado.idEmpleado);
+
+            comando.CommandText = strDelete;
+
+            comando.ExecuteNonQuery();
+
+            conexion.Close();
+
+        }
+
 
 
     }
