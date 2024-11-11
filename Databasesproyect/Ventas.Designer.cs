@@ -59,6 +59,7 @@
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVentas)).BeginInit();
             this.SuspendLayout();
@@ -301,10 +302,11 @@
             this.DataVenta,
             this.Marca,
             this.Descripción,
-            this.Precio});
+            this.Precio,
+            this.Importe});
             this.dataVentas.Location = new System.Drawing.Point(12, 111);
             this.dataVentas.Name = "dataVentas";
-            this.dataVentas.Size = new System.Drawing.Size(546, 208);
+            this.dataVentas.Size = new System.Drawing.Size(645, 208);
             this.dataVentas.TabIndex = 18;
             this.dataVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -332,6 +334,11 @@
             // 
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
+            // 
+            // Importe
+            // 
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
             // 
             // Ventas
             // 
@@ -399,5 +406,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
     }
 }
