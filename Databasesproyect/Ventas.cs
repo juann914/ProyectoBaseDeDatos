@@ -99,6 +99,19 @@ namespace Databasesproyect
                 MessageBox.Show("Selecciona un producto para eliminar de la tabla.");
             }
         }
-       
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataVentas.DataSource != null)
+            {
+                
+                dataVentas.DataSource = null;
+            }
+            else
+            {
+                
+                dataVentas.Rows.Clear();
+            }
+        }
     }
 }
