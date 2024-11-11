@@ -60,6 +60,7 @@
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.butAgregarC = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVentas)).BeginInit();
             this.SuspendLayout();
@@ -380,6 +381,15 @@
             this.Importe.Name = "Importe";
             this.Importe.Width = 125;
             // 
+            // butAgregarC
+            // 
+            this.butAgregarC.Location = new System.Drawing.Point(288, 35);
+            this.butAgregarC.Name = "butAgregarC";
+            this.butAgregarC.Size = new System.Drawing.Size(75, 23);
+            this.butAgregarC.TabIndex = 19;
+            this.butAgregarC.Text = "Agregar";
+            this.butAgregarC.UseVisualStyleBackColor = true;
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -448,5 +458,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.Button butAgregarC;
     }
 }

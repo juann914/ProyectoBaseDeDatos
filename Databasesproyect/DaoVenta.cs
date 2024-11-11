@@ -32,12 +32,12 @@ namespace Databasesproyect
 
             MySqlDataReader read = comando.ExecuteReader();
 
-            clsCliente cli = null;
+            
             double subtotal = 0;
 ;            if (read.Read())
             {
                 
-                subtotal = double.Parse(read["preci"].ToString());
+                subtotal = double.Parse(read["precio"].ToString());
                 conexion.Close();
                 comando.Connection.Close();
 
