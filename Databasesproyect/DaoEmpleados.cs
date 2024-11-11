@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,29 @@ namespace ProyectoDeBaseDeDatos
             comando.CommandText = strInsert;
 
             MySqlDataReader reader = comando.ExecuteReader();
+
+            conexion.Close();
+
+        }
+
+        public DataTable cargarEmpleados()
+        {
+
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+            conexion.Open();
+
+            DataTable tablaEmpleados = new DataTable();
+            string query = "SELECT * FROM empleados";
+
+            MySqlCommand comando = new MySqlCommand(query, conexion);
+
+            
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+            adaptador.Fill(tablaEmpleados);
+
+            
+            return tablaEmpleados;
 
             conexion.Close();
 

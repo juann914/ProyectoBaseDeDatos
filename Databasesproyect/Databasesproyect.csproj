@@ -119,16 +119,34 @@
     <Compile Include="ConfirmarEliminarP.Designer.cs">
       <DependentUpon>ConfirmarEliminarP.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarEmpleados.Designer.cs">
+      <DependentUpon>ConsultarEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="daoClientes.cs" />
     <Compile Include="DaoEmpleados.cs" />
     <Compile Include="clsEmpleados.cs" />
     <Compile Include="daoProductos.cs" />
     <Compile Include="DaoVenta.cs" />
+    <Compile Include="EliminarEpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarEpleado.Designer.cs">
+      <DependentUpon>EliminarEpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuEmpleados.Designer.cs">
       <DependentUpon>MenuEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarEmpleado.Designer.cs">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductoEliminar.cs">
       <SubType>Form</SubType>
@@ -206,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuEmpleados.resx">
       <DependentUpon>MenuEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarEmpleado.resx">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductoEliminar.resx">
       <DependentUpon>ProductoEliminar.cs</DependentUpon>
