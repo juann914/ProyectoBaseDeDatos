@@ -54,14 +54,16 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dataVentas = new System.Windows.Forms.DataGridView();
+            this.butAgregarC = new System.Windows.Forms.Button();
+            this.butAgreC = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.butAgregarC = new System.Windows.Forms.Button();
-            this.butAgreC = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVentas)).BeginInit();
             this.SuspendLayout();
@@ -302,6 +304,7 @@
             this.dataVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Clave,
+            this.Nombre,
             this.DataVenta,
             this.Marca,
             this.Descripción,
@@ -314,12 +317,39 @@
             this.dataVentas.TabIndex = 18;
             this.dataVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // butAgregarC
+            // 
+            this.butAgregarC.Location = new System.Drawing.Point(288, 35);
+            this.butAgregarC.Name = "butAgregarC";
+            this.butAgregarC.Size = new System.Drawing.Size(75, 23);
+            this.butAgregarC.TabIndex = 19;
+            this.butAgregarC.Text = "Agregar";
+            this.butAgregarC.UseVisualStyleBackColor = true;
+            // 
+            // butAgreC
+            // 
+            this.butAgreC.Location = new System.Drawing.Point(279, 33);
+            this.butAgreC.Name = "butAgreC";
+            this.butAgreC.Size = new System.Drawing.Size(75, 23);
+            this.butAgreC.TabIndex = 19;
+            this.butAgreC.Text = "Agregar";
+            this.butAgreC.UseVisualStyleBackColor = true;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // Clave
             // 
             this.Clave.HeaderText = "Clave";
             this.Clave.MinimumWidth = 6;
             this.Clave.Name = "Clave";
             this.Clave.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
             // 
             // DataVenta
             // 
@@ -355,24 +385,6 @@
             this.Importe.MinimumWidth = 6;
             this.Importe.Name = "Importe";
             this.Importe.Width = 125;
-            // 
-            // butAgregarC
-            // 
-            this.butAgregarC.Location = new System.Drawing.Point(288, 35);
-            this.butAgregarC.Name = "butAgregarC";
-            this.butAgregarC.Size = new System.Drawing.Size(75, 23);
-            this.butAgregarC.TabIndex = 19;
-            this.butAgregarC.Text = "Agregar";
-            this.butAgregarC.UseVisualStyleBackColor = true;
-            // 
-            // butAgreC
-            // 
-            this.butAgreC.Location = new System.Drawing.Point(279, 33);
-            this.butAgreC.Name = "butAgreC";
-            this.butAgreC.Size = new System.Drawing.Size(75, 23);
-            this.butAgreC.TabIndex = 19;
-            this.butAgreC.Text = "Agregar";
-            this.butAgreC.UseVisualStyleBackColor = true;
             // 
             // Ventas
             // 
@@ -436,13 +448,15 @@
         private System.Windows.Forms.Label laSubtotal;
         private System.Windows.Forms.Label laDesc;
         private System.Windows.Forms.DataGridView dataVentas;
+        private System.Windows.Forms.Button butAgregarC;
+        private System.Windows.Forms.Button butAgreC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.Button butAgregarC;
-        private System.Windows.Forms.Button butAgreC;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

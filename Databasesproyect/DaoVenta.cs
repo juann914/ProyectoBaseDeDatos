@@ -11,44 +11,13 @@ using MySql.Data.MySqlClient;
 
 namespace Databasesproyect
 {
+   
     internal class DaoVenta
     {
+        private List<clsProductos> productosEnVenta;
 
+      
 
-        public double obenterPrecio(string codigoBarra)
-        {
-            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
-
-
-            MySqlConnection conexion = new MySqlConnection(strConexion);
-
-            conexion.Open();
-
-            string str = "select precio from productos  where codigoBarra=@codigoBarra;";
-
-
-            MySqlCommand comando = new MySqlCommand(str, conexion);
-            comando.Parameters.AddWithValue("@codigoBarra", codigoBarra);
-
-            MySqlDataReader read = comando.ExecuteReader();
-
-            
-            double subtotal = 0;
-;            if (read.Read())
-            {
-                
-                subtotal = double.Parse(read["precio"].ToString());
-                conexion.Close();
-                comando.Connection.Close();
-
-                return subtotal;
-
-            }
-            conexion.Close();
-            comando.Connection.Close();
-            return subtotal;
-
-        }
         public clsProductos obenterProducto(string codigoBarra)
         {
             string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
@@ -58,7 +27,7 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string str = "select precio from productos  where codigoBarra=@codigoBarra;";
+            string str = "select codigoBarra,nombre,precio ,marca,descripcion from productos where codigoBarra=@codigoBarra;";
 
 
             MySqlCommand comando = new MySqlCommand(str, conexion);
@@ -75,13 +44,49 @@ namespace Databasesproyect
                 DataRow row = dataTable.Rows[0];
                 return new clsProductos
                 {
-                    codigoBarra = row["CodigoBarras"].ToString(),
-                    nombre = row["Nombre"].ToString(),
+                    codigoBarra = row["codigoBarra"].ToString(),
+                    nombre = row["nombre"].ToString(),
+                    marca = row["marca"].ToString(),
                     precio = (double)Convert.ToDecimal(row["Precio"]),
+                    descripcion = row["descripcion"].ToString(),
                     cantidad = 1
                 };
             }
             return null;
         }
+        public void AgregarProducto(string codigoBarras)
+        {
+            clsProductos productoExistente = null;
+
+            foreach (var producto in productosEnVenta)
+            {
+                if (producto.codigoBarra == codigoBarras)
+                {
+                    productoExistente = producto;
+                    break;
+                }
+            }
+
+            if (productoExistente != null)
+            {
+                
+                productoExistente.cantidad++;
+            }
+            else
+            {
+                
+                clsProductos nuevoProducto = obenterProducto(codigoBarras);
+                if (nuevoProducto != null)
+                {
+                    productosEnVenta.Add(nuevoProducto);
+                }
+                else
+                {
+                    throw new Exception("Producto no encontrado");
+                }
+            }
+        }
+
+    }
     }
 }
