@@ -52,7 +52,7 @@ namespace Databasesproyect
             VenAgregar venAgregar = new VenAgregar();
             venAgregar.ShowDialog();
             String clave = venAgregar.Clave();
-            dataVentas.RowsAdded
+            
            
         }
        
