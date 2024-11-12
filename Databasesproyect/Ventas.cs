@@ -46,37 +46,16 @@ namespace Databasesproyect
         {
 
         }
-        string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
-        string query = "SELECT Clave,Marca,Descripción,Precio FROM productos";
+       
         private void butAgregar_Click(object sender, EventArgs e)
         {
             VenAgregar venAgregar = new VenAgregar();
             venAgregar.ShowDialog();
             String clave = venAgregar.Clave();
-            BuscarProductoPorCodigo(clave);
+            dataVentas.RowsAdded
            
         }
-        private void BuscarProductoPorCodigo(string codigoBarras)
-        {
-            using (SqlConnection connection = new SqlConnection(strConexion))
-            {
-                try
-                {
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@codigoBarras", codigoBarras);
-
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
-                    DataTable dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
-
-                    dataVentas.DataSource = dataTable;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar el producto: " + ex.Message);
-                }
-            }
-        }
+       
 
         private void Ventas_Load(object sender, EventArgs e)
         {
