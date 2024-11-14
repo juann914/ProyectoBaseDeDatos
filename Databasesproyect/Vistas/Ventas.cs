@@ -49,17 +49,23 @@ namespace Databasesproyect
        
         private void butAgregar_Click(object sender, EventArgs e)
         {
-            VenAgregar venAgregar = new VenAgregar();
-            venAgregar.ShowDialog();
-            String clave = venAgregar.Clave();
-            
-           
+            String codigoBarras =textCodigo.Text;
+            DaoVenta daoVenta = new DaoVenta();
+            daoVenta.AgregarProducto(codigoBarras);
+            textCodigo.Clear();
+
+
         }
        
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-
+            dataVentas.Columns.Add("codigoBarra", "Código de Barra");
+            dataVentas.Columns.Add("nombre", "Nombre");
+            dataVentas.Columns.Add("marca", "Marca");
+            dataVentas.Columns.Add("precio", "Precio Unitario");
+            dataVentas.Columns.Add("cantidad", "Cantidad");
+            
         }
 
         private void butBorrar_Click(object sender, EventArgs e)
