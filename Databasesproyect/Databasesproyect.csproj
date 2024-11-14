@@ -98,164 +98,163 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="ClienteEliminar.cs">
+    <Compile Include="Vistas\ClienteEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClienteEliminar.Designer.cs">
+    <Compile Include="Vistas\ClienteEliminar.Designer.cs">
       <DependentUpon>ClienteEliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClienteModificar.cs">
+    <Compile Include="Vistas\ClienteModificar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClienteModificar.Designer.cs">
+    <Compile Include="Vistas\ClienteModificar.Designer.cs">
       <DependentUpon>ClienteModificar.cs</DependentUpon>
     </Compile>
-    <Compile Include="clsCliente.cs" />
-    <Compile Include="clsProductos.cs" />
-    <Compile Include="ConfirmarEliminarP.cs">
+    <Compile Include="Clases\clsCliente.cs" />
+    <Compile Include="Clases\clsProductos.cs" />
+    <Compile Include="Vistas\ConfirmarEliminarP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfirmarEliminarP.Designer.cs">
+    <Compile Include="Vistas\ConfirmarEliminarP.Designer.cs">
       <DependentUpon>ConfirmarEliminarP.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarEmpleados.cs">
+    <Compile Include="Vistas\ConsultarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarEmpleados.Designer.cs">
+    <Compile Include="Vistas\ConsultarEmpleados.Designer.cs">
       <DependentUpon>ConsultarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="daoClientes.cs" />
-    <Compile Include="DaoEmpleados.cs" />
-    <Compile Include="clsEmpleados.cs" />
-    <Compile Include="daoProductos.cs" />
-    <Compile Include="DaoVenta.cs" />
-    <Compile Include="EliminarEpleado.cs">
+    <Compile Include="Daos\daoClientes.cs" />
+    <Compile Include="Daos\DaoEmpleados.cs" />
+    <Compile Include="Clases\clsEmpleados.cs" />
+    <Compile Include="Daos\daoProductos.cs" />
+    <Compile Include="Daos\DaoVenta.cs" />
+    <Compile Include="Vistas\EliminarEpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarEpleado.Designer.cs">
+    <Compile Include="Vistas\EliminarEpleado.Designer.cs">
       <DependentUpon>EliminarEpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuEmpleados.cs">
+    <Compile Include="Vistas\MenuEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuEmpleados.Designer.cs">
+    <Compile Include="Vistas\MenuEmpleados.Designer.cs">
       <DependentUpon>MenuEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarEmpleado.cs">
+    <Compile Include="Vistas\ModificarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificarEmpleado.Designer.cs">
+    <Compile Include="Vistas\ModificarEmpleado.Designer.cs">
       <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductoEliminar.cs">
+    <Compile Include="Vistas\ProductoEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductoEliminar.Designer.cs">
+    <Compile Include="Vistas\ProductoEliminar.Designer.cs">
       <DependentUpon>ProductoEliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes.cs">
+    <Compile Include="Vistas\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes.Designer.cs">
+    <Compile Include="Vistas\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Vistas\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Vistas\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Vistas\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Vistas\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductoEditar.cs">
+    <Compile Include="Vistas\ProductoEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductoEditar.Designer.cs">
+    <Compile Include="Vistas\ProductoEditar.Designer.cs">
       <DependentUpon>ProductoEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos.cs">
+    <Compile Include="Vistas\Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos.Designer.cs">
+    <Compile Include="Vistas\Productos.Designer.cs">
       <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductosInsertar.cs">
+    <Compile Include="Vistas\ProductosInsertar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductosInsertar.Designer.cs">
+    <Compile Include="Vistas\ProductosInsertar.Designer.cs">
       <DependentUpon>ProductosInsertar.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductosSolictarDatos.cs">
+    <Compile Include="Vistas\ProductosSolictarDatos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductosSolictarDatos.Designer.cs">
+    <Compile Include="Vistas\ProductosSolictarDatos.Designer.cs">
       <DependentUpon>ProductosSolictarDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register.cs">
+    <Compile Include="Vistas\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
+    <Compile Include="Vistas\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="VenAgregar.cs">
+    <Compile Include="Vistas\VenAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VenAgregar.Designer.cs">
+    <Compile Include="Vistas\VenAgregar.Designer.cs">
       <DependentUpon>VenAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas.cs">
+    <Compile Include="Vistas\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas.Designer.cs">
+    <Compile Include="Vistas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ClienteEliminar.resx">
+    <EmbeddedResource Include="Vistas\ClienteEliminar.resx">
       <DependentUpon>ClienteEliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClienteModificar.resx">
+    <EmbeddedResource Include="Vistas\ClienteModificar.resx">
       <DependentUpon>ClienteModificar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes.resx">
+    <EmbeddedResource Include="Vistas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfirmarEliminarP.resx">
+    <EmbeddedResource Include="Vistas\ConfirmarEliminarP.resx">
       <DependentUpon>ConfirmarEliminarP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarEpleado.resx">
+    <EmbeddedResource Include="Vistas\EliminarEpleado.resx">
       <DependentUpon>EliminarEpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuEmpleados.resx">
+    <EmbeddedResource Include="Vistas\MenuEmpleados.resx">
       <DependentUpon>MenuEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificarEmpleado.resx">
+    <EmbeddedResource Include="Vistas\ModificarEmpleado.resx">
       <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductoEliminar.resx">
+    <EmbeddedResource Include="Vistas\ProductoEliminar.resx">
       <DependentUpon>ProductoEliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Vistas\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Vistas\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductoEditar.resx">
+    <EmbeddedResource Include="Vistas\ProductoEditar.resx">
       <DependentUpon>ProductoEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos.resx">
+    <EmbeddedResource Include="Vistas\Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductosInsertar.resx">
+    <EmbeddedResource Include="Vistas\ProductosInsertar.resx">
       <DependentUpon>ProductosInsertar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductosSolictarDatos.resx">
+    <EmbeddedResource Include="Vistas\ProductosSolictarDatos.resx">
       <DependentUpon>ProductosSolictarDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -267,13 +266,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Register.resx">
+    <EmbeddedResource Include="Vistas\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VenAgregar.resx">
+    <EmbeddedResource Include="Vistas\VenAgregar.resx">
       <DependentUpon>VenAgregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas.resx">
+    <EmbeddedResource Include="Vistas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
