@@ -19,7 +19,7 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string strInsert = "insert into productos values (null,@codigoBarra,@nombre,@precio,@marca,@descripcion)";
+            string strInsert = "insert into productos values (null,@codigoBarra,@nombre,@precio,@marca,@descripcion,@cantidad)";
 
 
             MySqlCommand comando = conexion.CreateCommand();
@@ -35,6 +35,8 @@ namespace Databasesproyect
             comando.Parameters.AddWithValue("@marca", producto.marca);
 
             comando.Parameters.AddWithValue("@descripcion", producto.descripcion);
+
+            comando.Parameters.AddWithValue("@cantidad",producto.cantidad);
 
             comando.CommandText = strInsert;
 
