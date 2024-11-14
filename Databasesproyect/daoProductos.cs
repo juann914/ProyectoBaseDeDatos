@@ -60,7 +60,7 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string str = "select idProducto,codigoBarra,nombre,precio,marca,descripcion from productos where codigoBarra=@code";
+            string str = "select idProducto,codigoBarra,nombre,precio,marca,descripcion,cantidad from productos where codigoBarra=@code";
 
 
             MySqlCommand comando = new MySqlCommand(str,conexion);
@@ -79,6 +79,7 @@ namespace Databasesproyect
                 pro.precio = double.Parse(read["precio"].ToString());
                 pro.marca = read["marca"].ToString();
                 pro.descripcion = read["descripcion"].ToString();
+                pro.cantidad = int.Parse(read["cantidad"].ToString());
               conexion.Close() ;
                comando.Connection.Close();
 
