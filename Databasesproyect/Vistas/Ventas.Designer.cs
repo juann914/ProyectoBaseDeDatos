@@ -53,17 +53,12 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dataVentas = new System.Windows.Forms.DataGridView();
             this.butAgregarC = new System.Windows.Forms.Button();
             this.butAgreC = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataVentas = new System.Windows.Forms.DataGridView();
+            this.textCodigo = new System.Windows.Forms.TextBox();
+            this.Código = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVentas)).BeginInit();
             this.SuspendLayout();
@@ -299,24 +294,6 @@
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 17;
             // 
-            // dataVentas
-            // 
-            this.dataVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Clave,
-            this.Nombre,
-            this.DataVenta,
-            this.Marca,
-            this.Descripción,
-            this.Precio,
-            this.Importe});
-            this.dataVentas.Location = new System.Drawing.Point(12, 111);
-            this.dataVentas.Name = "dataVentas";
-            this.dataVentas.RowHeadersWidth = 51;
-            this.dataVentas.Size = new System.Drawing.Size(645, 208);
-            this.dataVentas.TabIndex = 18;
-            this.dataVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // butAgregarC
             // 
             this.butAgregarC.Location = new System.Drawing.Point(288, 35);
@@ -339,52 +316,31 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
-            // Clave
+            // dataVentas
             // 
-            this.Clave.HeaderText = "Clave";
-            this.Clave.MinimumWidth = 6;
-            this.Clave.Name = "Clave";
-            this.Clave.Width = 125;
+            this.dataVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataVentas.Location = new System.Drawing.Point(12, 111);
+            this.dataVentas.Name = "dataVentas";
+            this.dataVentas.RowHeadersWidth = 51;
+            this.dataVentas.Size = new System.Drawing.Size(645, 208);
+            this.dataVentas.TabIndex = 18;
+            this.dataVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Nombre
+            // textCodigo
             // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
+            this.textCodigo.Location = new System.Drawing.Point(20, 345);
+            this.textCodigo.Name = "textCodigo";
+            this.textCodigo.Size = new System.Drawing.Size(100, 20);
+            this.textCodigo.TabIndex = 20;
             // 
-            // DataVenta
+            // Código
             // 
-            this.DataVenta.HeaderText = "Cantidad";
-            this.DataVenta.MinimumWidth = 6;
-            this.DataVenta.Name = "DataVenta";
-            this.DataVenta.Width = 125;
-            // 
-            // Marca
-            // 
-            this.Marca.HeaderText = "Marca";
-            this.Marca.MinimumWidth = 6;
-            this.Marca.Name = "Marca";
-            this.Marca.Width = 125;
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.MinimumWidth = 6;
-            this.Descripción.Name = "Descripción";
-            this.Descripción.Width = 125;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 125;
-            // 
-            // Importe
-            // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.MinimumWidth = 6;
-            this.Importe.Name = "Importe";
-            this.Importe.Width = 125;
+            this.Código.AutoSize = true;
+            this.Código.Location = new System.Drawing.Point(17, 329);
+            this.Código.Name = "Código";
+            this.Código.Size = new System.Drawing.Size(40, 13);
+            this.Código.TabIndex = 21;
+            this.Código.Text = "Código";
             // 
             // Ventas
             // 
@@ -392,6 +348,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Código);
+            this.Controls.Add(this.textCodigo);
             this.Controls.Add(this.butAgreC);
             this.Controls.Add(this.dataVentas);
             this.Controls.Add(this.textBox5);
@@ -447,16 +405,11 @@
         private System.Windows.Forms.Label laIVA;
         private System.Windows.Forms.Label laSubtotal;
         private System.Windows.Forms.Label laDesc;
-        private System.Windows.Forms.DataGridView dataVentas;
         private System.Windows.Forms.Button butAgregarC;
         private System.Windows.Forms.Button butAgreC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridView dataVentas;
+        private System.Windows.Forms.TextBox textCodigo;
+        private System.Windows.Forms.Label Código;
     }
 }

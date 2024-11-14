@@ -36,6 +36,7 @@ namespace Databasesproyect
                 txtNombre.Text = product.nombre;
                 txtCode.Text = product.codigoBarra.ToString();
                 txtMarca.Text = product.marca;
+                txtCantidad.Text=product.cantidad.ToString();
             }
         }
 
@@ -44,6 +45,11 @@ namespace Databasesproyect
             gpProducto.Visible = false;
             gpCode.Visible = true;
             txtCodigo.Text = "";
+        }
+
+        private void txtMarca_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

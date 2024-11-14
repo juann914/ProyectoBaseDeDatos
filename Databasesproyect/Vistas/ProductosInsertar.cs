@@ -40,7 +40,7 @@ namespace Databasesproyect
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (txtCodigo.Text.Equals("") || txtMarca.Text.Equals("") || txtNombre.Text.Equals("") ||
-                txtPrecio.Text.Equals(""))
+                txtPrecio.Text.Equals("") || txtCantidad.Text.Equals(""))
             {
                 MessageBox.Show("Faltan campos por rellenar");
 
@@ -54,6 +54,7 @@ namespace Databasesproyect
                 product.precio = double.Parse(txtPrecio.Text);
                 product.marca = txtMarca.Text;
                 product.descripcion = txtDes.Text;
+                product.cantidad=int.Parse(txtCantidad.Text);
 
                 daoProductos daoProductos = new daoProductos();
                 daoProductos.insertarProductos(product);
@@ -63,7 +64,7 @@ namespace Databasesproyect
                 txtMarca.Text = "";
                 txtPrecio.Text = "";
                 txtDes.Text = "";
-
+                txtCantidad.Text = "";
                 MessageBox.Show("Producto insertado correctamente");
             }
 
@@ -88,6 +89,11 @@ namespace Databasesproyect
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }
