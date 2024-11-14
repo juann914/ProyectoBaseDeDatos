@@ -13,6 +13,7 @@ namespace Databasesproyect
 {
     public partial class Register : Form
     {
+        public Form FormAnterior { get; set; }
         public Register()
         {
             InitializeComponent();
@@ -57,9 +58,15 @@ namespace Databasesproyect
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Login FormReg = new Login();
-            FormReg.Show();
-            this.Hide();
+            if (FormAnterior != null)
+            {
+                FormAnterior.Show(); // Muestra el formulario desde el cual se llegó
+                this.Close(); // Cierra el formulario actual
+            }
+            else
+            {
+                MessageBox.Show("No hay formulario anterior.");
+            }
         }
     }
 }

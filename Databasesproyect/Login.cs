@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using Microsoft.Win32;
 using ProyectoDeBaseDeDatos;
 
 namespace Databasesproyect
@@ -56,9 +57,10 @@ namespace Databasesproyect
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Register FormReg = new Register();
-            FormReg.Show();
-            this.Hide();
+            Register registroForm = new Register();
+            registroForm.FormAnterior = this; // Guarda la referencia al formulario actual (Ventas)
+            registroForm.Show(); // Muestra el formulario Registro
+            this.Hide(); // Oculta el formulario Ventas
         }
     }
 }
