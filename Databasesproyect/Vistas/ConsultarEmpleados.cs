@@ -46,5 +46,10 @@ namespace Databasesproyect
                 MessageBox.Show("Por favor, ingresa un ID válido.");
             }
         }
+
+        private void dataGridViewEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

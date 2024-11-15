@@ -19,24 +19,28 @@ namespace Databasesproyect
 
         private void btnAcpetar_Click(object sender, EventArgs e)
         {
-            daoProductos productos = new daoProductos();
-            clsProductos product = productos.obtenerCodigo(txtCodigo.Text);
-
-            if (product == null)
+            if (txtCodigo.Text.Equals(""))
             {
-                MessageBox.Show("No se encontro el producto");
+                MessageBox.Show("Debes primero introducir el codigo del producto a buscar");
             }
             else
             {
-                gpCode.Visible = false;
-                gpProducto.Visible = true;
+                daoProductos productos = new daoProductos();
+                clsProductos product = productos.obtenerCodigo(txtCodigo.Text);
 
-                txtDes.Text = product.descripcion;
-                txtPrecio.Text = product.precio.ToString();
-                txtNombre.Text = product.nombre;
-                txtCode.Text = product.codigoBarra.ToString();
-                txtMarca.Text = product.marca;
-                txtCantidad.Text=product.cantidad.ToString();
+                if (product == null)
+                {
+                    MessageBox.Show("No se encontro el producto");
+                }
+                else
+                {   
+                    dataGridProductos.Rows.Add(product.idProducto,product.codigoBarra,product.nombre,product.precio,
+                        product.marca,product.descripcion,product.cantidad);
+                    gpCode.Visible = false;
+                    gpProducto.Visible = true;
+
+
+                }
             }
         }
 
@@ -48,6 +52,21 @@ namespace Databasesproyect
         }
 
         private void txtMarca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gpProducto_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gpCode_Enter(object sender, EventArgs e)
         {
 
         }
