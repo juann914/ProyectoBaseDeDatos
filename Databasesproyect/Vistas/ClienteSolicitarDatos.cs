@@ -16,5 +16,28 @@ namespace Databasesproyect.Vistas
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            daoClientes daoClientes = new daoClientes();
+            clsCliente[] clientes = daoClientes.obtenerTodos();
+
+            dataGridUser.Rows.Clear();
+
+
+            if (clientes != null)
+            {
+                foreach (clsCliente cliente in clientes)
+                {
+                    dataGridUser.Rows.Add(
+                        cliente.idCliente,
+                        cliente.nombre,
+                        cliente.apellidos,
+                        cliente.correo,
+                        cliente.rfc
+                    );
+                }
+            }
+        }
     }
 }

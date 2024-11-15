@@ -109,6 +109,42 @@ namespace Databasesproyect
             conexion.Close();
 
         }
+
+
+        public clsCliente[] obtenerTodos()
+        {
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+            conexion.Open();
+
+            string str = "select idCliente,nombre,apellido,correo,rfc from clientes";
+            MySqlCommand comando = new MySqlCommand(str, conexion);
+
+            MySqlDataReader read = comando.ExecuteReader();
+
+
+            List<clsCliente> listaClientes = new List<clsCliente>();
+
+            while (read.Read())
+            {
+                clsCliente cliente = new clsCliente();
+                cliente.idCliente = int.Parse(read["idCliente"].ToString());
+                cliente.nombre = read["nombre"].ToString();
+                cliente.apellidos = read["apellido"].ToString();
+                cliente.correo = read["correo"].ToString() ;
+                cliente.rfc = read["rfc"].ToString();
+                
+
+                listaClientes.Add(cliente);
+            }
+
+            comando.Connection.Close();
+            conexion.Close();
+            return listaClientes.ToArray();
+        }
+
+
+
     }
 
     }
