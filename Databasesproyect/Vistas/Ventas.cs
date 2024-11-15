@@ -49,12 +49,15 @@ namespace Databasesproyect
        
         private void butAgregar_Click(object sender, EventArgs e)
         {
-            String codigoBarras =textCodigo.Text;
             DaoVenta daoVenta = new DaoVenta();
+            String codigoBarras =textCodigo.Text;
+            decimal a = decimal.Parse(teDes.Text);          
             daoVenta.AgregarProducto(codigoBarras);
             textCodigo.Clear();
             laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal();
-
+            laDesc.Text="$ " + daoVenta.Descuento(daoVenta.CalcularSubtotal(),a);
+            laIVA.Text="$ "+ daoVenta.Iva(daoVenta.CalcularSubtotal());
+            laTotal.Text = "$ " + daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a));
         }
        
 

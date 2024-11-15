@@ -98,6 +98,24 @@ namespace Databasesproyect
 
             return subtotal;
         }
+        public decimal Descuento(decimal subtotal, decimal porcentaje)
+        {
+            decimal descuento = subtotal * (porcentaje / 100);
+            
+            return descuento;
+        }
+        public decimal Iva(decimal subtotal)
+        {
+            decimal iva = subtotal * (16 / 100);
+
+            return iva;
+        }
+        public decimal Total(decimal subtotal,decimal iva,decimal descuento)
+        {
+            decimal total = subtotal + iva-descuento;
+
+            return total;
+        }
 
     }
     }

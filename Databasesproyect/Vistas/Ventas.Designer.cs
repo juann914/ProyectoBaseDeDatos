@@ -40,7 +40,7 @@
             this.laIVA = new System.Windows.Forms.Label();
             this.laSubtotal = new System.Windows.Forms.Label();
             this.laDesc = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.teDes = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -136,7 +136,7 @@
             this.groupBox1.Controls.Add(this.laIVA);
             this.groupBox1.Controls.Add(this.laSubtotal);
             this.groupBox1.Controls.Add(this.laDesc);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.teDes);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -182,16 +182,15 @@
             this.laDesc.AutoSize = true;
             this.laDesc.Location = new System.Drawing.Point(144, 23);
             this.laDesc.Name = "laDesc";
-            this.laDesc.Size = new System.Drawing.Size(35, 13);
+            this.laDesc.Size = new System.Drawing.Size(0, 13);
             this.laDesc.TabIndex = 12;
-            this.laDesc.Text = "label9";
             // 
-            // textBox1
+            // teDes
             // 
-            this.textBox1.Location = new System.Drawing.Point(48, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(30, 20);
-            this.textBox1.TabIndex = 11;
+            this.teDes.Location = new System.Drawing.Point(48, 19);
+            this.teDes.Name = "teDes";
+            this.teDes.Size = new System.Drawing.Size(30, 20);
+            this.teDes.TabIndex = 11;
             // 
             // label4
             // 
@@ -392,7 +391,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox teDes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
