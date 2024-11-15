@@ -53,7 +53,7 @@ namespace Databasesproyect
             DaoVenta daoVenta = new DaoVenta();
             daoVenta.AgregarProducto(codigoBarras);
             textCodigo.Clear();
-
+            laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal();
 
         }
        
