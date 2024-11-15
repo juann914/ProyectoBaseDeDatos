@@ -221,6 +221,9 @@
     <EmbeddedResource Include="Vistas\ConfirmarEliminarP.resx">
       <DependentUpon>ConfirmarEliminarP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ConsultarEmpleados.resx">
+      <DependentUpon>ConsultarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\EliminarEpleado.resx">
       <DependentUpon>EliminarEpleado.cs</DependentUpon>
     </EmbeddedResource>
