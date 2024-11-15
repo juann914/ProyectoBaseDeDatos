@@ -116,7 +116,7 @@
             this.dataGridProductos.Name = "dataGridProductos";
             this.dataGridProductos.RowHeadersWidth = 51;
             this.dataGridProductos.RowTemplate.Height = 24;
-            this.dataGridProductos.Size = new System.Drawing.Size(930, 241);
+            this.dataGridProductos.Size = new System.Drawing.Size(1189, 241);
             this.dataGridProductos.TabIndex = 0;
             this.dataGridProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -125,10 +125,9 @@
             this.gpProducto.Controls.Add(this.dataGridProductos);
             this.gpProducto.Location = new System.Drawing.Point(27, 192);
             this.gpProducto.Name = "gpProducto";
-            this.gpProducto.Size = new System.Drawing.Size(1082, 297);
+            this.gpProducto.Size = new System.Drawing.Size(1207, 297);
             this.gpProducto.TabIndex = 7;
             this.gpProducto.TabStop = false;
-            this.gpProducto.Visible = false;
             this.gpProducto.Enter += new System.EventHandler(this.gpProducto_Enter);
             // 
             // button1
@@ -139,6 +138,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Ver todos";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // IdProducto
             // 
@@ -193,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1337, 483);
+            this.ClientSize = new System.Drawing.Size(1246, 483);
             this.Controls.Add(this.gpProducto);
             this.Controls.Add(this.gpCode);
             this.Name = "ProductosSolictarDatos";

@@ -34,9 +34,10 @@ namespace Databasesproyect
                 }
                 else
                 {   
+                    dataGridProductos.Rows.Clear();
                     dataGridProductos.Rows.Add(product.idProducto,product.codigoBarra,product.nombre,product.precio,
                         product.marca,product.descripcion,product.cantidad);
-                    gpCode.Visible = false;
+                    
                     gpProducto.Visible = true;
 
 
@@ -68,6 +69,24 @@ namespace Databasesproyect
 
         private void gpCode_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            daoProductos daoProductos = new daoProductos();
+            clsProductos[] product=daoProductos.obtenerTodos();
+            dataGridProductos.Rows.Clear();
+
+            int contador = 0;
+
+            while (contador < product.Length)
+            {
+                dataGridProductos.Rows.Add(product[contador].idProducto, product[contador].codigoBarra, product[contador]
+                .nombre, product[contador].precio,product[contador].marca, product[contador].descripcion, product[contador].cantidad);
+           
+                contador++;
+            }
 
         }
     }

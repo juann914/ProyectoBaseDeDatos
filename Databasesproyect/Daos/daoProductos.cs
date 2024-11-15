@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Misc;
 
 namespace Databasesproyect
 {
@@ -49,7 +50,39 @@ namespace Databasesproyect
 
 
         }
+        
+        public clsProductos[] obtenerTodos()
+        {
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+            conexion.Open();
 
+            string str = "select idProducto,codigoBarra,nombre,precio,marca,descripcion,cantidad from productos";
+            MySqlCommand comando = new MySqlCommand(str, conexion);
+
+            MySqlDataReader read = comando.ExecuteReader();
+
+
+            List<clsProductos> listaProductos = new List<clsProductos>();
+
+            while (read.Read())
+            {
+                clsProductos producto = new clsProductos();
+                producto.idProducto = int.Parse(read["idProducto"].ToString());
+                producto.codigoBarra = read["codigoBarra"].ToString();
+                producto.nombre = read["nombre"].ToString();
+                producto.precio = double.Parse(read["precio"].ToString());
+                producto.marca = read["marca"].ToString();
+                producto.descripcion = read["descripcion"].ToString();
+                producto.cantidad = int.Parse(read["cantidad"].ToString());
+
+                listaProductos.Add(producto);
+            }
+
+            comando.Connection.Close();
+            conexion.Close();
+            return listaProductos.ToArray();
+        }
 
         public clsProductos obtenerCodigo(String code)
         {
