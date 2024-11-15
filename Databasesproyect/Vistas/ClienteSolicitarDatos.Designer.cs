@@ -76,6 +76,7 @@
             this.btnAcpetar.TabIndex = 2;
             this.btnAcpetar.Text = "Aceptar";
             this.btnAcpetar.UseVisualStyleBackColor = true;
+            this.btnAcpetar.Click += new System.EventHandler(this.btnAcpetar_Click);
             // 
             // btnCancelar
             // 
@@ -85,6 +86,7 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Regresar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtCodigo
             // 
@@ -119,7 +121,7 @@
             this.dataGridUser.Name = "dataGridUser";
             this.dataGridUser.RowHeadersWidth = 51;
             this.dataGridUser.RowTemplate.Height = 24;
-            this.dataGridUser.Size = new System.Drawing.Size(940, 241);
+            this.dataGridUser.Size = new System.Drawing.Size(916, 241);
             this.dataGridUser.TabIndex = 8;
             // 
             // IdProductoddd
@@ -161,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 450);
+            this.ClientSize = new System.Drawing.Size(931, 450);
             this.Controls.Add(this.dataGridUser);
             this.Controls.Add(this.gpCode);
             this.Name = "ClienteSolicitarDatos";

@@ -75,7 +75,7 @@
             // 
             // btnAcpetar
             // 
-            this.btnAcpetar.Location = new System.Drawing.Point(619, 90);
+            this.btnAcpetar.Location = new System.Drawing.Point(635, 90);
             this.btnAcpetar.Name = "btnAcpetar";
             this.btnAcpetar.Size = new System.Drawing.Size(106, 48);
             this.btnAcpetar.TabIndex = 2;
@@ -91,6 +91,7 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Regresar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtCodigo
             // 
