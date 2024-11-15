@@ -118,6 +118,39 @@ namespace ProyectoDeBaseDeDatos
 
         }
 
+        public clsEmpleados consultarEmpleado(int idEmpleado)
+        {
+
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+            using (MySqlConnection conexion = new MySqlConnection(strConexion))
+            {
+                conexion.Open();
+                string strConsulta = "SELECT * FROM empleados WHERE idEmpleado = @id";
+                using (MySqlCommand comando = new MySqlCommand(strConsulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@id", idEmpleado);
+
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        clsEmpleados emp = new clsEmpleados();
+                        if (reader.Read())
+                        {
+                            emp.idEmpleado = reader.GetInt32("idEmpleado");
+                            emp.clave = reader.GetString("clave");
+                            emp.username = reader.GetString("username");
+                            emp.nombre = reader.GetString("nombre");
+                            emp.apellido = reader.GetString("apellido");
+                            emp.telefono = reader.GetString("telefono");
+                            emp.curp = reader.GetString("curp");
+                            emp.edad = reader.GetInt32("edad");
+                        }
+                        return emp;
+                    }
+                }
+            }
+
+        }
+
 
 
     }

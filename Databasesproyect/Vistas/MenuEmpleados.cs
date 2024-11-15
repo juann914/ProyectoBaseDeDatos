@@ -21,9 +21,9 @@ namespace Databasesproyect
         private void button3_Click(object sender, EventArgs e)
         {
             Register registroForm = new Register();
-            registroForm.FormAnterior = this; // Guarda la referencia al formulario actual (Ventas)
-            registroForm.Show(); // Muestra el formulario Registro
-            this.Hide(); // Oculta el formulario Ventas
+            registroForm.FormAnterior = this; 
+            registroForm.Show(); 
+            this.Hide(); 
         }
 
         private void label3_Click(object sender, EventArgs e)

@@ -86,6 +86,18 @@ namespace Databasesproyect
                 }
             }
         }
+        public decimal CalcularSubtotal()
+        {
+            decimal subtotal = 0;
+
+            // Recorre cada fila en el DataGridView
+            foreach (var productos in productosEnVenta)
+            {
+                subtotal += (decimal) productos.precio;
+            }
+
+            return subtotal;
+        }
 
     }
     }
