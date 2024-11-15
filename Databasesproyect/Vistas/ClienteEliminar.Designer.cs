@@ -28,141 +28,216 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.gpCodigo = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.gpEliminar = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lblEliminar = new System.Windows.Forms.Label();
-            this.gpCliente = new System.Windows.Forms.GroupBox();
+            this.dataGridClientes = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoBarra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gpCodigo.SuspendLayout();
             this.gpEliminar.SuspendLayout();
-            this.gpCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gpCodigo
+            // 
+            this.gpCodigo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gpCodigo.Controls.Add(this.label1);
+            this.gpCodigo.Controls.Add(this.txtCodigo);
+            this.gpCodigo.Controls.Add(this.btnCancelar);
+            this.gpCodigo.Controls.Add(this.btnAceptar);
+            this.gpCodigo.Location = new System.Drawing.Point(12, 12);
+            this.gpCodigo.Name = "gpCodigo";
+            this.gpCodigo.Size = new System.Drawing.Size(896, 207);
+            this.gpCodigo.TabIndex = 10;
+            this.gpCodigo.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(161, 27);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(245, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 25);
+            this.label1.Size = new System.Drawing.Size(287, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ingresa el id del cliente ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Ingresa el id del cliente";
             // 
-            // txtId
+            // txtCodigo
             // 
-            this.txtId.Location = new System.Drawing.Point(166, 57);
-            this.txtId.Multiline = true;
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(215, 22);
-            this.txtId.TabIndex = 1;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(236, 73);
+            this.txtCodigo.Multiline = true;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(365, 33);
+            this.txtCodigo.TabIndex = 1;
             // 
-            // button1
+            // btnCancelar
             // 
-            this.button1.Location = new System.Drawing.Point(142, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 54);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnCancelar.Location = new System.Drawing.Point(462, 128);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(130, 59);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Regresar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button2
+            // btnAceptar
             // 
-            this.button2.Location = new System.Drawing.Point(313, 108);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 54);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAceptar.Location = new System.Drawing.Point(236, 128);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(135, 59);
+            this.btnAceptar.TabIndex = 2;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // gpEliminar
             // 
-            this.gpEliminar.Controls.Add(this.button4);
-            this.gpEliminar.Controls.Add(this.button3);
-            this.gpEliminar.Controls.Add(this.lblEliminar);
-            this.gpEliminar.Location = new System.Drawing.Point(12, 238);
+            this.gpEliminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gpEliminar.Controls.Add(this.dataGridClientes);
+            this.gpEliminar.Controls.Add(this.button2);
+            this.gpEliminar.Controls.Add(this.label2);
+            this.gpEliminar.Controls.Add(this.button1);
+            this.gpEliminar.Location = new System.Drawing.Point(12, 251);
             this.gpEliminar.Name = "gpEliminar";
-            this.gpEliminar.Size = new System.Drawing.Size(611, 229);
-            this.gpEliminar.TabIndex = 4;
+            this.gpEliminar.Size = new System.Drawing.Size(896, 278);
+            this.gpEliminar.TabIndex = 11;
             this.gpEliminar.TabStop = false;
             this.gpEliminar.Text = "groupBox1";
             this.gpEliminar.Visible = false;
-            this.gpEliminar.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button4
+            // dataGridClientes
             // 
-            this.button4.Location = new System.Drawing.Point(295, 128);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 54);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.dataGridClientes.AllowUserToOrderColumns = true;
+            this.dataGridClientes.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProducto,
+            this.CodigoBarra,
+            this.Nombre,
+            this.Precio,
+            this.Marca});
+            this.dataGridClientes.Location = new System.Drawing.Point(6, 11);
+            this.dataGridClientes.Name = "dataGridClientes";
+            this.dataGridClientes.RowHeadersWidth = 51;
+            this.dataGridClientes.RowTemplate.Height = 24;
+            this.dataGridClientes.Size = new System.Drawing.Size(884, 78);
+            this.dataGridClientes.TabIndex = 4;
+            this.dataGridClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellContentClick);
             // 
-            // button3
+            // button2
             // 
-            this.button3.Location = new System.Drawing.Point(121, 128);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 54);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Aceptar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button2.Location = new System.Drawing.Point(480, 194);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(135, 59);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "No";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // lblEliminar
+            // label2
             // 
-            this.lblEliminar.AutoSize = true;
-            this.lblEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEliminar.Location = new System.Drawing.Point(35, 28);
-            this.lblEliminar.Name = "lblEliminar";
-            this.lblEliminar.Size = new System.Drawing.Size(0, 25);
-            this.lblEliminar.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(148, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(494, 58);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Se eliminara este cliente, ¿Estas seguro?\r\n\r\n";
             // 
-            // gpCliente
+            // button1
             // 
-            this.gpCliente.Controls.Add(this.label1);
-            this.gpCliente.Controls.Add(this.txtId);
-            this.gpCliente.Controls.Add(this.button2);
-            this.gpCliente.Controls.Add(this.button1);
-            this.gpCliente.Location = new System.Drawing.Point(12, 12);
-            this.gpCliente.Name = "gpCliente";
-            this.gpCliente.Size = new System.Drawing.Size(611, 190);
-            this.gpCliente.TabIndex = 5;
-            this.gpCliente.TabStop = false;
-            this.gpCliente.Text = "groupBox2";
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.Location = new System.Drawing.Point(236, 194);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 59);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Si";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "IdUsuario";
+            this.IdProducto.MinimumWidth = 6;
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.Width = 125;
+            // 
+            // CodigoBarra
+            // 
+            this.CodigoBarra.HeaderText = "Nombre";
+            this.CodigoBarra.MinimumWidth = 6;
+            this.CodigoBarra.Name = "CodigoBarra";
+            this.CodigoBarra.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Apellidos";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Correo";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 125;
+            // 
+            // Marca
+            // 
+            this.Marca.HeaderText = "RFC";
+            this.Marca.MinimumWidth = 6;
+            this.Marca.Name = "Marca";
+            this.Marca.Width = 125;
             // 
             // ClienteEliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 465);
-            this.Controls.Add(this.gpCliente);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(920, 531);
             this.Controls.Add(this.gpEliminar);
+            this.Controls.Add(this.gpCodigo);
             this.Name = "ClienteEliminar";
             this.Text = "ClienteEliminar";
+            this.gpCodigo.ResumeLayout(false);
+            this.gpCodigo.PerformLayout();
             this.gpEliminar.ResumeLayout(false);
             this.gpEliminar.PerformLayout();
-            this.gpCliente.ResumeLayout(false);
-            this.gpCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.GroupBox gpCodigo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.GroupBox gpEliminar;
-        private System.Windows.Forms.Label lblEliminar;
-        private System.Windows.Forms.GroupBox gpCliente;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoBarra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

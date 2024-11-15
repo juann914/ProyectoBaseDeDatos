@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Org.BouncyCastle.Tls.Crypto;
 
 namespace Databasesproyect
 {
@@ -24,21 +25,7 @@ namespace Databasesproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            daoClientes daoClientes = new daoClientes();
-            clsCliente clsCliente = daoClientes.obenterCliente(txtId.Text);
-
-            if (clsCliente == null)
-            {
-                MessageBox.Show("No se encontro el cliente");
-
-            }
-            else
-            {
-                gpCliente.Visible = false;
-                gpEliminar.Visible = true;
-                lblEliminar.Text = "¿Estas seguro de eliminar a " + clsCliente.nombre + " " + clsCliente.apellidos + "?";
-
-            }
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -48,19 +35,12 @@ namespace Databasesproyect
 
         private void button3_Click(object sender, EventArgs e)
         {
-            daoClientes clientes    = new daoClientes();
-            clientes.borrarCliente(txtId.Text);
-            MessageBox.Show("El cliente se ha eliminado");
-            gpEliminar.Visible=false;
-            gpCliente.Visible=true;
-            txtId.Text = ";";
+          
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            gpEliminar.Visible=false;
-            gpCliente.Visible=true;
-            txtId.Text = "";
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -68,6 +48,67 @@ namespace Databasesproyect
             this.Close();
             Clientes clientes = new Clientes();
             clientes.Show();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Equals(""))
+            {
+                MessageBox.Show("Debes primero introducir el id del cliente");
+            }
+            else
+            {
+                daoClientes daoclientes= new daoClientes();
+                clsCliente cliente = daoclientes.obenterCliente(txtCodigo.Text);
+
+                if (cliente == null)
+                {
+                    MessageBox.Show("No se encontro el cliente");
+                }
+                else
+                {
+                    dataGridClientes.Rows.Clear();
+                    dataGridClientes.Rows.Add(cliente.idCliente,cliente.nombre,cliente.apellidos,cliente.correo,cliente.rfc);
+
+
+                    gpEliminar.Visible = true;
+                    gpCodigo.Visible = false;
+
+
+                }
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            daoClientes daoClientes= new daoClientes(); 
+            daoClientes.borrarCliente(txtCodigo.Text);
+
+            MessageBox.Show("cliente eliminado correctamente");
+            txtCodigo.Text = "";
+            gpEliminar.Visible = false;
+            gpCodigo.Visible = true;
+            dataGridClientes.Rows.Clear();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Clientes clientes = new Clientes();
+            clientes.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            dataGridClientes.Rows.Clear();
+            gpEliminar.Visible = false;
+            gpCodigo.Visible = true;
+            txtCodigo.Text = "";
+        }
+
+        private void dataGridClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

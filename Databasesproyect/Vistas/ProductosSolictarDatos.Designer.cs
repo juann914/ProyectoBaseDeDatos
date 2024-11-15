@@ -50,15 +50,15 @@
             // 
             // gpCode
             // 
-            this.gpCode.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.gpCode.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.gpCode.Controls.Add(this.button1);
             this.gpCode.Controls.Add(this.btnAcpetar);
             this.gpCode.Controls.Add(this.btnCancelar);
             this.gpCode.Controls.Add(this.txtCodigo);
             this.gpCode.Controls.Add(this.label1);
-            this.gpCode.Location = new System.Drawing.Point(40, 12);
+            this.gpCode.Location = new System.Drawing.Point(2, 12);
             this.gpCode.Name = "gpCode";
-            this.gpCode.Size = new System.Drawing.Size(1176, 174);
+            this.gpCode.Size = new System.Drawing.Size(1230, 174);
             this.gpCode.TabIndex = 6;
             this.gpCode.TabStop = false;
             this.gpCode.Enter += new System.EventHandler(this.gpCode_Enter);
@@ -115,6 +115,7 @@
             // dataGridProductos
             // 
             this.dataGridProductos.AllowUserToOrderColumns = true;
+            this.dataGridProductos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
@@ -124,11 +125,11 @@
             this.Marca,
             this.Descripcion,
             this.cantidad});
-            this.dataGridProductos.Location = new System.Drawing.Point(0, 21);
+            this.dataGridProductos.Location = new System.Drawing.Point(6, 21);
             this.dataGridProductos.Name = "dataGridProductos";
             this.dataGridProductos.RowHeadersWidth = 51;
             this.dataGridProductos.RowTemplate.Height = 24;
-            this.dataGridProductos.Size = new System.Drawing.Size(1041, 241);
+            this.dataGridProductos.Size = new System.Drawing.Size(1214, 241);
             this.dataGridProductos.TabIndex = 0;
             this.dataGridProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -184,9 +185,9 @@
             // gpProducto
             // 
             this.gpProducto.Controls.Add(this.dataGridProductos);
-            this.gpProducto.Location = new System.Drawing.Point(27, 192);
+            this.gpProducto.Location = new System.Drawing.Point(2, 192);
             this.gpProducto.Name = "gpProducto";
-            this.gpProducto.Size = new System.Drawing.Size(1207, 297);
+            this.gpProducto.Size = new System.Drawing.Size(1236, 279);
             this.gpProducto.TabIndex = 7;
             this.gpProducto.TabStop = false;
             this.gpProducto.Enter += new System.EventHandler(this.gpProducto_Enter);
@@ -195,7 +196,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 483);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1235, 483);
             this.Controls.Add(this.gpProducto);
             this.Controls.Add(this.gpCode);
             this.Name = "ProductosSolictarDatos";
