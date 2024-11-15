@@ -103,5 +103,10 @@ namespace Databasesproyect
         {
 
         }
+
+        private void laSubtotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

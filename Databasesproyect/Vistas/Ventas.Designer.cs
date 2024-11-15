@@ -173,9 +173,9 @@
             this.laSubtotal.AutoSize = true;
             this.laSubtotal.Location = new System.Drawing.Point(144, 48);
             this.laSubtotal.Name = "laSubtotal";
-            this.laSubtotal.Size = new System.Drawing.Size(41, 13);
+            this.laSubtotal.Size = new System.Drawing.Size(0, 13);
             this.laSubtotal.TabIndex = 13;
-            this.laSubtotal.Text = "label10";
+            this.laSubtotal.Click += new System.EventHandler(this.laSubtotal_Click);
             // 
             // laDesc
             // 

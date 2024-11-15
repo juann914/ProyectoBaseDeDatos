@@ -93,7 +93,7 @@ namespace Databasesproyect
             // Recorre cada fila en el DataGridView
             foreach (var productos in productosEnVenta)
             {
-                subtotal += (decimal) productos.precio;
+                subtotal += (decimal) (productos.precio*productos.cantidad);
             }
 
             return subtotal;
