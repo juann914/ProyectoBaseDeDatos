@@ -46,5 +46,10 @@ namespace Databasesproyect
                 c.lnbPro.Text = "Esta a punto de eliminar el producto " + p.nombre + "\n                ¿Estas seguro?";
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.gpCode = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnAcpetar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridProductos = new System.Windows.Forms.DataGridView();
-            this.gpProducto = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoBarra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +42,7 @@
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gpProducto = new System.Windows.Forms.GroupBox();
             this.gpCode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             this.gpProducto.SuspendLayout();
@@ -50,6 +50,7 @@
             // 
             // gpCode
             // 
+            this.gpCode.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.gpCode.Controls.Add(this.button1);
             this.gpCode.Controls.Add(this.btnAcpetar);
             this.gpCode.Controls.Add(this.btnCancelar);
@@ -61,6 +62,16 @@
             this.gpCode.TabIndex = 6;
             this.gpCode.TabStop = false;
             this.gpCode.Enter += new System.EventHandler(this.gpCode_Enter);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(21, 90);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 48);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Ver todos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnAcpetar
             // 
@@ -116,29 +127,9 @@
             this.dataGridProductos.Name = "dataGridProductos";
             this.dataGridProductos.RowHeadersWidth = 51;
             this.dataGridProductos.RowTemplate.Height = 24;
-            this.dataGridProductos.Size = new System.Drawing.Size(1189, 241);
+            this.dataGridProductos.Size = new System.Drawing.Size(1041, 241);
             this.dataGridProductos.TabIndex = 0;
             this.dataGridProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // gpProducto
-            // 
-            this.gpProducto.Controls.Add(this.dataGridProductos);
-            this.gpProducto.Location = new System.Drawing.Point(27, 192);
-            this.gpProducto.Name = "gpProducto";
-            this.gpProducto.Size = new System.Drawing.Size(1207, 297);
-            this.gpProducto.TabIndex = 7;
-            this.gpProducto.TabStop = false;
-            this.gpProducto.Enter += new System.EventHandler(this.gpProducto_Enter);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(21, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 48);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Ver todos";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // IdProducto
             // 
@@ -188,6 +179,16 @@
             this.cantidad.MinimumWidth = 6;
             this.cantidad.Name = "cantidad";
             this.cantidad.Width = 125;
+            // 
+            // gpProducto
+            // 
+            this.gpProducto.Controls.Add(this.dataGridProductos);
+            this.gpProducto.Location = new System.Drawing.Point(27, 192);
+            this.gpProducto.Name = "gpProducto";
+            this.gpProducto.Size = new System.Drawing.Size(1207, 297);
+            this.gpProducto.TabIndex = 7;
+            this.gpProducto.TabStop = false;
+            this.gpProducto.Enter += new System.EventHandler(this.gpProducto_Enter);
             // 
             // ProductosSolictarDatos
             // 

@@ -74,18 +74,31 @@ namespace Databasesproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             daoProductos daoProductos = new daoProductos();
-            clsProductos[] product=daoProductos.obtenerTodos();
+            clsProductos[] products = daoProductos.obtenerTodos();
+
             dataGridProductos.Rows.Clear();
 
-            int contador = 0;
-
-            while (contador < product.Length)
+            
+            if (products != null)
             {
-                dataGridProductos.Rows.Add(product[contador].idProducto, product[contador].codigoBarra, product[contador]
-                .nombre, product[contador].precio,product[contador].marca, product[contador].descripcion, product[contador].cantidad);
-           
-                contador++;
+                foreach (clsProductos product in products)
+                {
+                    dataGridProductos.Rows.Add(
+                        product.idProducto,
+                        product.codigoBarra,
+                        product.nombre,
+                        product.precio,
+                        product.marca,
+                        product.descripcion,
+                        product.cantidad
+                    );
+                }
             }
 
         }
