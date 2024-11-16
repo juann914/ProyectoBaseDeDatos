@@ -162,7 +162,6 @@ namespace Databasesproyect
             }
             catch (Exception ex)
             {
-                // Revertir la transacción si ocurre un error
                 transaccion.Rollback();
                 conexion.Close();
                 Console.WriteLine($"Error al guardar la venta: {ex.Message}");
