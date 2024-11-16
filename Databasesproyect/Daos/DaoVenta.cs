@@ -170,8 +170,62 @@ namespace Databasesproyect
                 Console.WriteLine($"Error al guardar la venta: {ex.Message}");
             }
 
-        }
 
+        }
+        public int idEmpleado(String nombre)
+        {
+
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+            using (MySqlConnection conexion = new MySqlConnection(strConexion))
+            {
+                conexion.Open();
+                string strConsulta = "SELECT idEmpleado FROM empleados WHERE nombre = @nombre";
+                using (MySqlCommand comando = new MySqlCommand(strConsulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@nombre", nombre);
+
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        int s = 0;
+                        clsEmpleados emp = new clsEmpleados();
+                        if (reader.Read())
+                        {
+                            emp.idEmpleado = reader.GetInt32("idEmpleado");
+                            s = emp.idEmpleado;
+                        }
+                        return s;
+                    }
+                }
+            }
+
+        }
+        public int idProducto(String nombre)
+        {
+
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+            using (MySqlConnection conexion = new MySqlConnection(strConexion))
+            {
+                conexion.Open();
+                string strConsulta = "SELECT idProducto FROM productos WHERE nombre = @nombre";
+                using (MySqlCommand comando = new MySqlCommand(strConsulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@nombre", nombre);
+
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        int s = 0;
+                        clsProductos emp = new clsProductos();
+                        if (reader.Read())
+                        {
+                            emp.idProducto = reader.GetInt32("idEmpleado");
+                            s = emp.idProducto;
+                        }
+                        return s;
+                    }
+                }
+            }
+
+        }
     }
     }
 

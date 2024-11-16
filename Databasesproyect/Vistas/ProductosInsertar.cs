@@ -102,5 +102,7 @@ namespace Databasesproyect
         {
 
         }
+        public String nombre()
+            { return txtNombre.Text; }
     }
 }

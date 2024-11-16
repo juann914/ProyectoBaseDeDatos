@@ -109,12 +109,18 @@ namespace Databasesproyect
         private void button1_Click(object sender, EventArgs e)
         {
             DaoVenta daoVenta = new DaoVenta();
+            Register register = new Register();
+            ProductosInsertar productosInsertar = new ProductosInsertar();
+            String n = register.nombre();
+            String m = productosInsertar.nombre();
             decimal a = decimal.Parse(teDes.Text);
             clsVentas venta = new clsVentas{
                 subtotal = daoVenta.CalcularSubtotal(),
                 descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(),a),
                 iva= daoVenta.Iva(daoVenta.CalcularSubtotal()),
-                total= daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a))
+                total= daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
+                idEmpleado =daoVenta.idEmpleado(n)
+                
 
 
             };
@@ -125,12 +131,13 @@ namespace Databasesproyect
                 {
                     detalles.Add(new clsDetallesVenta
                     {
-                        idProducto = Convert.ToInt32(row.Cells["idProducto"].Value),
+                        idProducto = daoVenta.idProducto(m),
                         cantidad = Convert.ToInt32(row.Cells["cantidad"].Value),
                         precio = Convert.ToDecimal(row.Cells["precio"].Value),
                         subtotal = daoVenta.CalcularSubtotal(),
                         descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), a),
-                        total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a))
+                        total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
+                        
                     });
                 }
             }

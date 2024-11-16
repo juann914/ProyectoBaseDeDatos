@@ -37,7 +37,7 @@ namespace Databasesproyect
         private void button1_Click(object sender, EventArgs e)
         {
             clsEmpleados emp = new clsEmpleados();
-
+           
             emp.clave=txtContraseña.Text;
             emp.username=txtUserName.Text;
             emp.nombre=txtNombre.Text;
@@ -67,6 +67,15 @@ namespace Databasesproyect
             {
                 MessageBox.Show("No hay formulario anterior.");
             }
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
+        public String nombre()
+        {
+            return txtNombre.Text;
         }
     }
 }

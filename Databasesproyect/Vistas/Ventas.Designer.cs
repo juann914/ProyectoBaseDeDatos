@@ -282,7 +282,7 @@
             // 
             // butAgreC
             // 
-            this.butAgreC.Location = new System.Drawing.Point(279, 33);
+            this.butAgreC.Location = new System.Drawing.Point(273, 32);
             this.butAgreC.Name = "butAgreC";
             this.butAgreC.Size = new System.Drawing.Size(75, 23);
             this.butAgreC.TabIndex = 19;
