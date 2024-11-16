@@ -51,5 +51,12 @@ namespace Databasesproyect
             menu.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ConsultarEmpleados menu = new ConsultarEmpleados();
+            menu.Show();
+            this.Hide();
+        }
     }
 }
