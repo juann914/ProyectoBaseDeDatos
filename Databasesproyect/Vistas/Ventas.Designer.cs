@@ -31,7 +31,7 @@
             this.butAgregar = new System.Windows.Forms.Button();
             this.butBorrar = new System.Windows.Forms.Button();
             this.butEditar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.butGuardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -92,15 +92,15 @@
             this.butEditar.UseVisualStyleBackColor = true;
             this.butEditar.Click += new System.EventHandler(this.butEditar_Click);
             // 
-            // button1
+            // butGuardar
             // 
-            this.button1.Location = new System.Drawing.Point(20, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Nuevo/Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.butGuardar.Location = new System.Drawing.Point(20, 415);
+            this.butGuardar.Name = "butGuardar";
+            this.butGuardar.Size = new System.Drawing.Size(91, 23);
+            this.butGuardar.TabIndex = 5;
+            this.butGuardar.Text = "Nuevo/Guardar";
+            this.butGuardar.UseVisualStyleBackColor = true;
+            this.butGuardar.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -351,7 +351,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.butGuardar);
             this.Controls.Add(this.butEditar);
             this.Controls.Add(this.butBorrar);
             this.Controls.Add(this.butAgregar);
@@ -370,7 +370,7 @@
         private System.Windows.Forms.Button butAgregar;
         private System.Windows.Forms.Button butBorrar;
         private System.Windows.Forms.Button butEditar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button butGuardar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
