@@ -90,6 +90,7 @@
             this.butEditar.TabIndex = 4;
             this.butEditar.Text = "Editar";
             this.butEditar.UseVisualStyleBackColor = true;
+            this.butEditar.Click += new System.EventHandler(this.butEditar_Click);
             // 
             // button1
             // 
@@ -143,9 +144,8 @@
             this.laTotal.AutoSize = true;
             this.laTotal.Location = new System.Drawing.Point(144, 93);
             this.laTotal.Name = "laTotal";
-            this.laTotal.Size = new System.Drawing.Size(41, 13);
+            this.laTotal.Size = new System.Drawing.Size(0, 13);
             this.laTotal.TabIndex = 15;
-            this.laTotal.Text = "label12";
             // 
             // laIVA
             // 
@@ -153,9 +153,8 @@
             this.laIVA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.laIVA.Location = new System.Drawing.Point(144, 71);
             this.laIVA.Name = "laIVA";
-            this.laIVA.Size = new System.Drawing.Size(41, 13);
+            this.laIVA.Size = new System.Drawing.Size(0, 13);
             this.laIVA.TabIndex = 14;
-            this.laIVA.Text = "label11";
             // 
             // laSubtotal
             // 

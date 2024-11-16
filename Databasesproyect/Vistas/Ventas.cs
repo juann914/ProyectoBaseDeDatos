@@ -111,5 +111,10 @@ namespace Databasesproyect
         {
 
         }
+
+        private void butEditar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
