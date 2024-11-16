@@ -119,7 +119,8 @@ namespace Databasesproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            DaoVenta daoVenta = new DaoVenta();
+            daoVenta.insertarVenta();
         }
     }
 }
