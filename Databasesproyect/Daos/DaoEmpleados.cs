@@ -52,7 +52,7 @@ namespace ProyectoDeBaseDeDatos
             MySqlConnection conexion = new MySqlConnection(strConexion);
             conexion.Open();
 
-            string strInsert = "insert into empleados values (null,@clave,@username,@nombre,@apellido,@telefono,@curp,@edad)";
+            string strInsert = "insert into empleados values (null,SHA2(@clave, 256),@username,@nombre,@apellido,@telefono,@curp,@edad)";
 
             MySqlCommand comando = conexion.CreateCommand();
 
