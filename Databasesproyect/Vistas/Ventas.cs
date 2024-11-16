@@ -112,15 +112,31 @@ namespace Databasesproyect
             decimal a = decimal.Parse(teDes.Text);
             clsVentas venta = new clsVentas{
                 subtotal = daoVenta.CalcularSubtotal(),
-                descuento = daoVenta.Descuento((daoVenta.CalcularSubtotal(), a),
-                iva =daoVenta.Iva(daoVenta.CalcularSubtotal()),
-                total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)))
-                
+                descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(),a),
+                iva= daoVenta.Iva(daoVenta.CalcularSubtotal()),
+                total= daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a))
+
+
             };
+            List<clsDetallesVenta> detalles = new List<clsDetallesVenta>();
+            foreach (DataGridViewRow row in dataVentas.Rows)
+            {
+                if (row.Cells["idProducto"].Value != null) // Evitar filas vacías
+                {
+                    detalles.Add(new clsDetallesVenta
+                    {
+                        idProducto = Convert.ToInt32(row.Cells["idProducto"].Value),
+                        cantidad = Convert.ToInt32(row.Cells["cantidad"].Value),
+                        precio = Convert.ToDecimal(row.Cells["precio"].Value),
+                        subtotal = daoVenta.CalcularSubtotal(),
+                        descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), a),
+                        total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a))
+                    });
+                }
+            }
 
 
-
-            daoVenta.insertarVenta(venta,);
+            daoVenta.insertarVenta(venta,detalles);
         }
     }
 }
