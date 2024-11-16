@@ -98,6 +98,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\clsDetallesVenta.cs" />
+    <Compile Include="Clases\clsVentas.cs" />
     <Compile Include="Vistas\ClienteEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
