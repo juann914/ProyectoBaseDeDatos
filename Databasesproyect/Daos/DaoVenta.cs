@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using ProyectoDeBaseDeDatos;
 using Databasesproyect.Clases;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Databasesproyect
 {
@@ -124,7 +125,7 @@ namespace Databasesproyect
             MySqlConnection conexion = new MySqlConnection(strConexion);
             conexion.Open();
 
-            string strInsert = "insert into ventas values(@idventa,@descuento,@subtotal,@total,@idEmpleado,@idCliente);";
+            string strInsert = "insert into ventas values(@idventa,@descuento,@Iva,@subtotal,@total,@idEmpleado,@idCliente);";
             MySqlTransaction transaccion = conexion.BeginTransaction();
 
             try {
@@ -133,6 +134,7 @@ namespace Databasesproyect
 
             comando.Parameters.AddWithValue("@idventa", venta.idventa);
             comando.Parameters.AddWithValue("@descuento", venta.descuento);
+            comando.Parameters.AddWithValue("@Iva", venta.iva);
             comando.Parameters.AddWithValue("@subtotal", venta.subtotal);
             comando.Parameters.AddWithValue("@total", venta.total);
             comando.Parameters.AddWithValue("@idEmpleado", venta.idEmpleado);
@@ -141,13 +143,14 @@ namespace Databasesproyect
 
             comando.ExecuteNonQuery();
             long idventa=comando.LastInsertedId;
-                string strVenta = "insert into detallesDeVentas values(@idDetalle,@idventa,@idProducto,@cantidad,@precio,@descuento,@subtotal,@total);";
+                string strVenta = "insert into detallesDeVentas values(@idDetalle,@idventa,@idProducto,@cantidad,@precio,@descuento,@Iva,@subtotal,@total);";
             foreach (var detalle in detalles)
                 {
                     MySqlCommand comandoVend = new MySqlCommand(strVenta, conexion, transaccion);
                     comandoVend.Parameters.AddWithValue("@idDetalle", idventa);
                     comandoVend.Parameters.AddWithValue("@idventa", detalle.idventa);
                     comandoVend.Parameters.AddWithValue("@idProducto", detalle.idProducto);
+                    comandoVend.Parameters.AddWithValue("@Iva", detalle.iva);
                     comandoVend.Parameters.AddWithValue("@cantidad", detalle.cantidad);
                     comandoVend.Parameters.AddWithValue("@precio", detalle.precio);
                     comandoVend.Parameters.AddWithValue("@descuento", detalle.descuento);

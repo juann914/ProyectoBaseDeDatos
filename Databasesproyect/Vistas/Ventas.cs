@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Databasesproyect.Clases;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,15 +21,7 @@ namespace Databasesproyect
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -112,15 +105,23 @@ namespace Databasesproyect
 
         }
 
-        private void butEditar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             DaoVenta daoVenta = new DaoVenta();
-            daoVenta.insertarVenta();
+            decimal a = decimal.Parse(teDes.Text);
+            clsVentas venta = new clsVentas();
+            {
+                venta.subtotal = daoVenta.CalcularSubtotal(),
+                venta.descuento = daoVenta.Descuento((daoVenta.CalcularSubtotal(), a),
+                venta.iva=daoVenta.Iva(daoVenta.CalcularSubtotal()),
+                venta.total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
+                
+            };
+
+
+
+            daoVenta.insertarVenta(venta,);
         }
     }
 }

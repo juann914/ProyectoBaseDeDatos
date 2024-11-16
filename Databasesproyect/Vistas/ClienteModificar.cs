@@ -89,5 +89,10 @@ namespace Databasesproyect
             gpId.Visible = true;
             txtId.Text = "";
         }
+
+        private void ClienteModificar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

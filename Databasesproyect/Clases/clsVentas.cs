@@ -10,6 +10,7 @@ namespace Databasesproyect.Clases
     {
         public int idventa {  get; set; }
         public decimal descuento { get; set; }
+        public decimal iva {  get; set; }
         public decimal subtotal { get; set; }
         public decimal total { get; set; }
         public int idEmpleado { get; set; }
