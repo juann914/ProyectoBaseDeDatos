@@ -110,12 +110,11 @@ namespace Databasesproyect
         {
             DaoVenta daoVenta = new DaoVenta();
             decimal a = decimal.Parse(teDes.Text);
-            clsVentas venta = new clsVentas();
-            {
-                venta.subtotal = daoVenta.CalcularSubtotal(),
-                venta.descuento = daoVenta.Descuento((daoVenta.CalcularSubtotal(), a),
-                venta.iva=daoVenta.Iva(daoVenta.CalcularSubtotal()),
-                venta.total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
+            clsVentas venta = new clsVentas{
+                subtotal = daoVenta.CalcularSubtotal(),
+                descuento = daoVenta.Descuento((daoVenta.CalcularSubtotal(), a),
+                iva =daoVenta.Iva(daoVenta.CalcularSubtotal()),
+                total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)))
                 
             };
 
