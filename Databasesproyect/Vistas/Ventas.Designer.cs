@@ -44,13 +44,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textCorreo = new System.Windows.Forms.TextBox();
+            this.textApellidos = new System.Windows.Forms.TextBox();
+            this.textRFC = new System.Windows.Forms.TextBox();
             this.butAgregarC = new System.Windows.Forms.Button();
             this.butAgreC = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -216,12 +216,12 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Nombre Cliente";
             // 
-            // textBox2
+            // textNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(20, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
+            this.textNombre.Location = new System.Drawing.Point(20, 35);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(100, 20);
+            this.textNombre.TabIndex = 11;
             // 
             // label6
             // 
@@ -250,26 +250,26 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "RFC";
             // 
-            // textBox3
+            // textCorreo
             // 
-            this.textBox3.Location = new System.Drawing.Point(158, 34);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 15;
+            this.textCorreo.Location = new System.Drawing.Point(158, 34);
+            this.textCorreo.Name = "textCorreo";
+            this.textCorreo.Size = new System.Drawing.Size(100, 20);
+            this.textCorreo.TabIndex = 15;
             // 
-            // textBox4
+            // textApellidos
             // 
-            this.textBox4.Location = new System.Drawing.Point(20, 74);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 16;
+            this.textApellidos.Location = new System.Drawing.Point(20, 74);
+            this.textApellidos.Name = "textApellidos";
+            this.textApellidos.Size = new System.Drawing.Size(100, 20);
+            this.textApellidos.TabIndex = 16;
             // 
-            // textBox5
+            // textRFC
             // 
-            this.textBox5.Location = new System.Drawing.Point(158, 74);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 17;
+            this.textRFC.Location = new System.Drawing.Point(158, 74);
+            this.textRFC.Name = "textRFC";
+            this.textRFC.Size = new System.Drawing.Size(100, 20);
+            this.textRFC.TabIndex = 17;
             // 
             // butAgregarC
             // 
@@ -329,13 +329,13 @@
             this.Controls.Add(this.textCodigo);
             this.Controls.Add(this.butAgreC);
             this.Controls.Add(this.dataVentas);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textRFC);
+            this.Controls.Add(this.textApellidos);
+            this.Controls.Add(this.textCorreo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textNombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
@@ -367,13 +367,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox teDes;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textCorreo;
+        private System.Windows.Forms.TextBox textApellidos;
+        private System.Windows.Forms.TextBox textRFC;
         private System.Windows.Forms.Label laTotal;
         private System.Windows.Forms.Label laIVA;
         private System.Windows.Forms.Label laSubtotal;

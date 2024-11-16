@@ -113,13 +113,15 @@ namespace Databasesproyect
             ProductosInsertar productosInsertar = new ProductosInsertar();
             String n = register.nombre();
             String m = productosInsertar.nombre();
+            String c = textNombre.Text;
             decimal a = decimal.Parse(teDes.Text);
             clsVentas venta = new clsVentas{
                 subtotal = daoVenta.CalcularSubtotal(),
                 descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(),a),
                 iva= daoVenta.Iva(daoVenta.CalcularSubtotal()),
                 total= daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
-                idEmpleado =daoVenta.idEmpleado(n)
+                idEmpleado =daoVenta.idEmpleado(n),
+                idCliente =daoVenta.idCliente(c)
                 
 
 

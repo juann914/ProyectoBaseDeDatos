@@ -226,6 +226,34 @@ namespace Databasesproyect
             }
 
         }
+        public int idCliente(String nombre)
+        {
+
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+            using (MySqlConnection conexion = new MySqlConnection(strConexion))
+            {
+                conexion.Open();
+                string strConsulta = "SELECT idCliente FROM clientes WHERE nombre = @nombre";
+                using (MySqlCommand comando = new MySqlCommand(strConsulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@nombre", nombre);
+
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        int s = 0;
+                        clsCliente emp = new clsCliente();
+                        if (reader.Read())
+                        {
+                            emp.idCliente = reader.GetInt32("idEmpleado");
+                            s = emp.idCliente;
+                        }
+                        return s;
+                    }
+                }
+            }
+
+        }
+
     }
     }
 
