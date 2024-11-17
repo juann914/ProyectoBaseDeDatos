@@ -111,42 +111,72 @@ namespace Databasesproyect
             DaoVenta daoVenta = new DaoVenta();
             Register register = new Register();
             
-            ProductosInsertar productosInsertar = new ProductosInsertar();
-            String n = register.nombre();
-            String m = productosInsertar.nombre();
-            
-            decimal a = decimal.Parse(teDes.Text);
-            clsVentas venta = new clsVentas {
+
+            string nombreCliente = textNombre.Text;
+            decimal descuentoAplicado = decimal.Parse(teDes.Text);
+
+            // Crear objeto venta
+            clsVentas venta = new clsVentas
+            {
                 subtotal = daoVenta.CalcularSubtotal(),
-                descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), a),
+                descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuentoAplicado),
                 iva = daoVenta.Iva(daoVenta.CalcularSubtotal()),
-                total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
+                total = daoVenta.Total(daoVenta.CalcularSubtotal(),
+                                       daoVenta.Iva(daoVenta.CalcularSubtotal()),
+                                       daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuentoAplicado)),
                 idEmpleado = idEmpleado,
-                idCliente = daoVenta.idCliente(textNombre.Text)
-
-
-
+                idCliente = daoVenta.idCliente(nombreCliente)
             };
+
+            // Crear lista de detalles de venta
             List<clsDetallesVenta> detalles = new List<clsDetallesVenta>();
+
             foreach (DataGridViewRow row in dataVentas.Rows)
             {
-                if (row.Cells["codigoBarra"].Value != null) // Evitar filas vacías
+                if (row.Cells["codigoBarra"].Value != null) // Validar filas no vacías
                 {
-                    detalles.Add(new clsDetallesVenta
+                    try
                     {
-                        idProducto = daoVenta.idProducto(m),
-                        cantidad = Convert.ToInt32(row.Cells["cantidad"].Value),
-                        precio = Convert.ToDecimal(row.Cells["precio"].Value),
-                        subtotal = daoVenta.CalcularSubtotal(),
-                        descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), a),
-                        total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
+                        int cantidad = Convert.ToInt32(row.Cells["cantidad"].Value);
+                        decimal precio = Convert.ToDecimal(row.Cells["precio"].Value);
+                        string codigoProducto = textCodigo.Text; // Recuperar nombre del producto
+                        int idProducto = daoVenta.idProducto(codigoProducto);
 
-                    });
+                        // Calcular valores específicos del detalle
+                        decimal subtotalDetalle = cantidad * precio;
+                        decimal descuentoDetalle = daoVenta.Descuento(subtotalDetalle, descuentoAplicado);
+                        decimal ivaDetalle = daoVenta.Iva(subtotalDetalle - descuentoDetalle);
+                        decimal totalDetalle = subtotalDetalle - descuentoDetalle + ivaDetalle;
+
+                        // Agregar detalle a la lista
+                        detalles.Add(new clsDetallesVenta
+                        {
+                            idProducto = idProducto,
+                            cantidad = cantidad,
+                            precio = precio,
+                            subtotal = subtotalDetalle,
+                            descuento = descuentoDetalle,
+                            iva = ivaDetalle,
+                            total = totalDetalle
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al procesar la fila: {ex.Message}");
+                    }
                 }
             }
 
-
-            daoVenta.insertarVenta(venta, detalles);
+            // Insertar la venta y sus detalles
+            try
+            {
+                daoVenta.insertarVenta(venta, detalles);
+                MessageBox.Show("Venta registrada con éxito.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al registrar la venta: {ex.Message}");
+            }
         }
 
         
