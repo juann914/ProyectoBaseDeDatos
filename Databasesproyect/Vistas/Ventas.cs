@@ -1,4 +1,5 @@
 ﻿using Databasesproyect.Clases;
+using Databasesproyect.Vistas;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -110,10 +111,11 @@ namespace Databasesproyect
         {
             DaoVenta daoVenta = new DaoVenta();
             Register register = new Register();
+            RegistrarCliente registrar = new RegistrarCliente();
             ProductosInsertar productosInsertar = new ProductosInsertar();
             String n = register.nombre();
             String m = productosInsertar.nombre();
-            String c = textNombre.Text;
+            String c =registrar.idCliente() ;
             decimal a = decimal.Parse(teDes.Text);
             clsVentas venta = new clsVentas {
                 subtotal = daoVenta.CalcularSubtotal(),
@@ -148,38 +150,9 @@ namespace Databasesproyect
             daoVenta.insertarVenta(venta, detalles);
         }
 
-        private void butAgreC_Click(object sender, EventArgs e)
-        {
-            if (textNombre.Text.Equals("") || textApellidos.Text.Equals("") || textCorreo.Text.Equals("") ||
-                textRFC.Text.Equals(""))
-            {
-                MessageBox.Show("Debes de ingresar todos los campos");
-            }
-            else
-            {
-                clsCliente clsCliente = new clsCliente();
-                
-               
-               
-                clsCliente.nombre= textNombre.Text;
-                clsCliente.apellidos= textApellidos.Text;
-                clsCliente.rfc= textRFC.Text;
-                clsCliente.correo= textCorreo.Text;
-
-                daoClientes daoClientes = new daoClientes();
-                daoClientes.insertarCliente(clsCliente);
-
-                textApellidos.Text = "";
-                textNombre.Text = "";
-                textCorreo.Text = "";
-                textRFC.Text = "";
-                
-
-
-            }
-
+        
             
-        }
+        
 
         private void textCodigo_TextChanged(object sender, EventArgs e)
         {

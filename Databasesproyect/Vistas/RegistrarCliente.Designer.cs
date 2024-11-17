@@ -122,6 +122,7 @@
             this.butAgreC.TabIndex = 23;
             this.butAgreC.Text = "Agregar";
             this.butAgreC.UseVisualStyleBackColor = true;
+            this.butAgreC.Click += new System.EventHandler(this.butAgreC_Click);
             // 
             // RegistrarCliente
             // 
@@ -139,6 +140,7 @@
             this.Controls.Add(this.label5);
             this.Name = "RegistrarCliente";
             this.Text = "RegistrarCliente";
+            this.Load += new System.EventHandler(this.RegistrarCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
