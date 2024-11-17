@@ -16,11 +16,11 @@ namespace Databasesproyect
 {
     public partial class Ventas : Form
     {
-        
-        public Ventas()
+        public int idEmpleado;
+        public Ventas(int idEmpleado)
         {
             InitializeComponent();
-            
+            this.idEmpleado = idEmpleado;
         }
 
 
@@ -165,7 +165,7 @@ namespace Databasesproyect
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
+            Menu menu = new Menu(idEmpleado);
             menu.ShowDialog();
             this.Close();
         }

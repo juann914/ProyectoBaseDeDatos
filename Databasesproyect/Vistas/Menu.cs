@@ -12,14 +12,22 @@ namespace Databasesproyect
 {
     public partial class Menu : Form
     {
+        public int idEmpleado;
+        public Menu(int idEmpleado)
+        {
+            InitializeComponent();
+            this.idEmpleado = idEmpleado;
+        }
+
         public Menu()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Ventas ventas= new Ventas();
+            Ventas ventas= new Ventas(idEmpleado);
             ventas.Show();
 
             this.Hide();
@@ -38,6 +46,11 @@ namespace Databasesproyect
             MenuEmpleados productos = new MenuEmpleados();
             productos.Show();
             this.Hide();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,8 +33,10 @@ namespace Databasesproyect
             {
                 //llamar otro forms
                 this.Hide();
-                Menu menu = new Menu();
+                clsEmpleados clsEmpleados = daoEmpleados.consultarEmpleadoPorUserName(txtUserame.Text);
+                Menu menu =new Menu (clsEmpleados.idEmpleado);
                 menu.Show();
+                
               
 
             }
@@ -61,6 +63,11 @@ namespace Databasesproyect
             registroForm.FormAnterior = this; // Guarda la referencia al formulario actual (Ventas)
             registroForm.Show(); // Muestra el formulario Registro
             this.Hide(); // Oculta el formulario Ventas
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
