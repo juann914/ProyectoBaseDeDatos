@@ -17,6 +17,7 @@ namespace Databasesproyect
     public partial class Ventas : Form
     {
         public int idEmpleado;
+        
         public Ventas(int idEmpleado)
         {
             InitializeComponent();
@@ -109,19 +110,19 @@ namespace Databasesproyect
         {
             DaoVenta daoVenta = new DaoVenta();
             Register register = new Register();
-            RegistrarCliente registrar = new RegistrarCliente();
+            
             ProductosInsertar productosInsertar = new ProductosInsertar();
             String n = register.nombre();
             String m = productosInsertar.nombre();
-            String c =registrar.idCliente() ;
+            
             decimal a = decimal.Parse(teDes.Text);
             clsVentas venta = new clsVentas {
                 subtotal = daoVenta.CalcularSubtotal(),
                 descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), a),
                 iva = daoVenta.Iva(daoVenta.CalcularSubtotal()),
                 total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
-                idEmpleado = daoVenta.idEmpleado(n),
-                idCliente = daoVenta.idCliente(c)
+                idEmpleado = idEmpleado,
+                idCliente = daoVenta.idCliente(textNombre.Text)
 
 
 
@@ -159,8 +160,35 @@ namespace Databasesproyect
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            RegistrarCliente registrarCliente = new RegistrarCliente();
-            registrarCliente.ShowDialog();
+            
+                if (textNombre.Text.Equals("") || textApellidos.Text.Equals("") || textCorreo.Text.Equals("") ||
+                    textRFC.Text.Equals(""))
+                {
+                    MessageBox.Show("Debes de ingresar todos los campos");
+                }
+                else
+                {
+                    clsCliente clsCliente = new clsCliente();
+
+
+
+                    clsCliente.nombre = textNombre.Text;
+                    clsCliente.apellidos = textApellidos.Text;
+                    clsCliente.rfc = textRFC.Text;
+                    clsCliente.correo = textCorreo.Text;
+
+                    daoClientes daoClientes = new daoClientes();
+                    daoClientes.insertarCliente(clsCliente);
+
+                    textApellidos.Text = "";
+                    textNombre.Text = "";
+                    textCorreo.Text = "";
+                    textRFC.Text = "";
+
+
+
+                }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
