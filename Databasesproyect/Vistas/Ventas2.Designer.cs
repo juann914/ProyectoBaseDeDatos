@@ -190,6 +190,7 @@
             this.butAgregar.TabIndex = 23;
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
+            this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
             // 
             // button4
             // 

@@ -26,5 +26,17 @@ namespace Databasesproyect.Vistas
         {
 
         }
+
+        private void butAgregar_Click(object sender, EventArgs e)
+        {
+            daoProductos daoProductos = new daoProductos();
+            clsProductos product = daoProductos.obtenerCodigo(textCodigo.Text);
+
+
+            dataGridProductos.Rows.Add(product.idProducto, product.codigoBarra, product.nombre, product.precio,
+                product.marca, product.descripcion, product.cantidad);
+
+
+        }
     }
 }
