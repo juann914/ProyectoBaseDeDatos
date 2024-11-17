@@ -173,7 +173,7 @@ namespace Databasesproyect
                 textNombre.Text = "";
                 textCorreo.Text = "";
                 textRFC.Text = "";
-                MessageBox.Show("Producto insertado correctamente");
+                
 
 
             }
