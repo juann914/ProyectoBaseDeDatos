@@ -126,54 +126,63 @@ namespace Databasesproyect
         {
 
             string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
-            MySqlConnection conexion = new MySqlConnection(strConexion);
-            conexion.Open();
 
-            string strInsert = "insert into ventas values(@idventa,@descuento,@Iva,@subtotal,@total,@idEmpleado,@idCliente);";
-            MySqlTransaction transaccion = conexion.BeginTransaction();
-
-            try
+            using (MySqlConnection conexion = new MySqlConnection(strConexion))
             {
-                MySqlCommand comando = new MySqlCommand(strInsert, conexion, transaccion);
+                conexion.Open();
 
-
-                comando.Parameters.AddWithValue("@idventa", venta.idventa);
-                comando.Parameters.AddWithValue("@descuento", venta.descuento);
-                comando.Parameters.AddWithValue("@Iva", venta.iva);
-                comando.Parameters.AddWithValue("@subtotal", venta.subtotal);
-                comando.Parameters.AddWithValue("@total", venta.total);
-                comando.Parameters.AddWithValue("@idEmpleado", venta.idEmpleado);
-                comando.Parameters.AddWithValue("@idCliente", venta.idCliente);
-
-
-                comando.ExecuteNonQuery();
-                long idventa = comando.LastInsertedId;
-                string strVenta = "insert into detallesDeVentas values(@idDetalle,@idventa,@idProducto,@cantidad,@precio,@descuento,@Iva,@subtotal,@total);";
-                foreach (var detalle in detalles)
+                using (MySqlTransaction transaccion = conexion.BeginTransaction())
                 {
-                    MySqlCommand comandoVend = new MySqlCommand(strVenta, conexion, transaccion);
-                    comandoVend.Parameters.AddWithValue("@idDetalle", idventa);
-                    comandoVend.Parameters.AddWithValue("@idventa", detalle.idventa);
-                    comandoVend.Parameters.AddWithValue("@idProducto", detalle.idProducto);
-                    comandoVend.Parameters.AddWithValue("@Iva", detalle.iva);
-                    comandoVend.Parameters.AddWithValue("@cantidad", detalle.cantidad);
-                    comandoVend.Parameters.AddWithValue("@precio", detalle.precio);
-                    comandoVend.Parameters.AddWithValue("@descuento", detalle.descuento);
-                    comandoVend.Parameters.AddWithValue("@subtotal", detalle.subtotal);
-                    comandoVend.Parameters.AddWithValue("@total", detalle.total);
-                    comandoVend.ExecuteNonQuery();
+                    try
+                    {
+                        // Insertar la venta sin especificar el idventa (autoincremental)
+                        string strInsertVenta = "INSERT INTO ventas (descuento, Iva, subtotal, total, idEmpleado, idCliente) " +
+                                                "VALUES (@descuento, @Iva, @subtotal, @total, @idEmpleado, @idCliente);";
+                        MySqlCommand comandoVenta = new MySqlCommand(strInsertVenta, conexion, transaccion);
 
+                        comandoVenta.Parameters.AddWithValue("@descuento", venta.descuento);
+                        comandoVenta.Parameters.AddWithValue("@Iva", venta.iva);
+                        comandoVenta.Parameters.AddWithValue("@subtotal", venta.subtotal);
+                        comandoVenta.Parameters.AddWithValue("@total", venta.total);
+                        comandoVenta.Parameters.AddWithValue("@idEmpleado", venta.idEmpleado);
+                        comandoVenta.Parameters.AddWithValue("@idCliente", venta.idCliente);
+
+                        comandoVenta.ExecuteNonQuery();
+
+                        // Obtener el ID de la venta generada automáticamente
+                        long idVentaGenerado = comandoVenta.LastInsertedId;
+
+                        // Insertar los detalles de la venta
+                        string strInsertDetalle = "INSERT INTO detallesDeVentas (idventa, idProducto, cantidad, precio, descuento, Iva, subtotal, total) " +
+                                                  "VALUES (@idventa, @idProducto, @cantidad, @precio, @descuento, @Iva, @subtotal, @total);";
+
+                        foreach (var detalle in detalles)
+                        {
+                            MySqlCommand comandoDetalle = new MySqlCommand(strInsertDetalle, conexion, transaccion);
+
+                            comandoDetalle.Parameters.AddWithValue("@idventa", idVentaGenerado); // Asociar el detalle con el ID de la venta
+                            comandoDetalle.Parameters.AddWithValue("@idProducto", detalle.idProducto);
+                            comandoDetalle.Parameters.AddWithValue("@cantidad", detalle.cantidad);
+                            comandoDetalle.Parameters.AddWithValue("@precio", detalle.precio);
+                            comandoDetalle.Parameters.AddWithValue("@descuento", detalle.descuento);
+                            comandoDetalle.Parameters.AddWithValue("@Iva", detalle.iva);
+                            comandoDetalle.Parameters.AddWithValue("@subtotal", detalle.subtotal);
+                            comandoDetalle.Parameters.AddWithValue("@total", detalle.total);
+
+                            comandoDetalle.ExecuteNonQuery();
+                        }
+
+                        // Confirmar la transacción
+                        transaccion.Commit();
+                        MessageBox.Show("Venta realizada exitosamente.");
+                    }
+                    catch (Exception ex)
+                    {
+                        // Revertir la transacción en caso de error
+                        transaccion.Rollback();
+                        MessageBox.Show($"Error al guardar la venta: {ex.Message}");
+                    }
                 }
-                transaccion.Commit();
-                MessageBox.Show("Venta realizada ");
-                conexion.Close();
-            }
-            catch (Exception ex)
-            {
-                transaccion.Rollback();
-                conexion.Close();
-                Console.WriteLine($"Error al guardar la venta: {ex.Message}");
-                MessageBox.Show("Error en la Venta  ");
             }
 
 
@@ -205,17 +214,17 @@ namespace Databasesproyect
             }
 
         }
-        public int idProducto(String nombre)
+        public int idProducto(String codigo)
         {
 
             string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
             using (MySqlConnection conexion = new MySqlConnection(strConexion))
             {
                 conexion.Open();
-                string strConsulta = "SELECT idProducto FROM productos WHERE nombre = @nombre";
+                string strConsulta = "SELECT idProducto FROM productos WHERE codigoBarra = @codigoBarra";
                 using (MySqlCommand comando = new MySqlCommand(strConsulta, conexion))
                 {
-                    comando.Parameters.AddWithValue("@nombre", nombre);
+                    comando.Parameters.AddWithValue("@codigoBarra", codigo);
 
                     using (MySqlDataReader reader = comando.ExecuteReader())
                     {
@@ -223,7 +232,7 @@ namespace Databasesproyect
                         clsProductos emp = new clsProductos();
                         if (reader.Read())
                         {
-                            emp.idProducto = reader.GetInt32("idEmpleado");
+                            emp.idProducto = reader.GetInt32("idProducto");
                             s = emp.idProducto;
                         }
                         return s;
