@@ -158,5 +158,11 @@ namespace Databasesproyect
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            RegistrarCliente registrarCliente = new RegistrarCliente();
+            registrarCliente.ShowDialog();
+        }
     }
 }
