@@ -128,8 +128,9 @@
             this.laTotal.AutoSize = true;
             this.laTotal.Location = new System.Drawing.Point(144, 93);
             this.laTotal.Name = "laTotal";
-            this.laTotal.Size = new System.Drawing.Size(0, 13);
+            this.laTotal.Size = new System.Drawing.Size(31, 13);
             this.laTotal.TabIndex = 15;
+            this.laTotal.Text = "$ 0.0";
             // 
             // laIVA
             // 
@@ -137,16 +138,18 @@
             this.laIVA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.laIVA.Location = new System.Drawing.Point(144, 71);
             this.laIVA.Name = "laIVA";
-            this.laIVA.Size = new System.Drawing.Size(0, 13);
+            this.laIVA.Size = new System.Drawing.Size(31, 13);
             this.laIVA.TabIndex = 14;
+            this.laIVA.Text = "$ 0.0";
             // 
             // laSubtotal
             // 
             this.laSubtotal.AutoSize = true;
             this.laSubtotal.Location = new System.Drawing.Point(144, 48);
             this.laSubtotal.Name = "laSubtotal";
-            this.laSubtotal.Size = new System.Drawing.Size(0, 13);
+            this.laSubtotal.Size = new System.Drawing.Size(31, 13);
             this.laSubtotal.TabIndex = 13;
+            this.laSubtotal.Text = "$ 0.0";
             this.laSubtotal.Click += new System.EventHandler(this.laSubtotal_Click);
             // 
             // laDesc
@@ -154,8 +157,9 @@
             this.laDesc.AutoSize = true;
             this.laDesc.Location = new System.Drawing.Point(144, 23);
             this.laDesc.Name = "laDesc";
-            this.laDesc.Size = new System.Drawing.Size(0, 13);
+            this.laDesc.Size = new System.Drawing.Size(31, 13);
             this.laDesc.TabIndex = 12;
+            this.laDesc.Text = "$ 0.0";
             // 
             // teDes
             // 
