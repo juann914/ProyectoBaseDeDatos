@@ -13,6 +13,7 @@ namespace Databasesproyect.Vistas
     public partial class Ventas2 : Form
     {
         public double subtotal;
+        public double subdesc;
         public Ventas2()
         {
             InitializeComponent();
@@ -43,13 +44,18 @@ namespace Databasesproyect.Vistas
             if (des > 0)
             {
 
-                laSubtotal.Text = "$" + (des / 100) * subtotal;
-              
+                laSubtotal.Text = "$" + (subtotal-((des / 100) * subtotal));
+                subdesc = (subtotal - ((des / 100) * subtotal));
             }
             else
             {
                 laSubtotal.Text = "$" + subtotal;
+                subdesc = (subtotal - ((des / 100) * subtotal));
             }
+            laIVA.Text ="$"+(subdesc*0.16);
+            laTotal.Text = "$" + ((subdesc) + (subdesc * 0.16));
+
+
         }
     }
 }
