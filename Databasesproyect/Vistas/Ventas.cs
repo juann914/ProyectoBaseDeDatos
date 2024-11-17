@@ -168,7 +168,11 @@ namespace Databasesproyect
 
                 daoClientes daoClientes = new daoClientes();
                 daoClientes.insertarCliente(clsCliente);
-                
+
+                textApellidos.Text = "";
+                textNombre.Text = "";
+                textCorreo.Text = "";
+                textRFC.Text = "";
                 MessageBox.Show("Producto insertado correctamente");
 
 
