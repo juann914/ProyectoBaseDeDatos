@@ -50,7 +50,7 @@ namespace Databasesproyect
 
 
 
-
+                dataGridCliente.Rows.Clear();
                 dataGridCliente.Rows.Add(cliente.idCliente, cliente.nombre, cliente.apellidos, cliente.correo, cliente.rfc);
                 gpCliente.Visible = true;
                // txtNombre.Text=cliente.nombre;
@@ -112,6 +112,7 @@ namespace Databasesproyect
             gpCliente.Visible = false;
             gpId.Visible = true;
             txtId.Text = "";
+            dataGridCliente.Rows.Clear();
         }
 
         private void ClienteModificar_Load(object sender, EventArgs e)
