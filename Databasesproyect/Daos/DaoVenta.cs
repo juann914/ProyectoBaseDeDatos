@@ -36,7 +36,7 @@ namespace Databasesproyect
             MySqlCommand comando = new MySqlCommand(str, conexion);
             comando.Parameters.AddWithValue("@codigoBarra", codigoBarra);
 
-            MySqlDataReader read = comando.ExecuteReader();
+           
 
 
             DataTable dataTable = new DataTable();
