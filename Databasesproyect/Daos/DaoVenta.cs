@@ -132,23 +132,24 @@ namespace Databasesproyect
             string strInsert = "insert into ventas values(@idventa,@descuento,@Iva,@subtotal,@total,@idEmpleado,@idCliente);";
             MySqlTransaction transaccion = conexion.BeginTransaction();
 
-            try {
+            try
+            {
                 MySqlCommand comando = new MySqlCommand(strInsert, conexion, transaccion);
 
 
-            comando.Parameters.AddWithValue("@idventa", venta.idventa);
-            comando.Parameters.AddWithValue("@descuento", venta.descuento);
-            comando.Parameters.AddWithValue("@Iva", venta.iva);
-            comando.Parameters.AddWithValue("@subtotal", venta.subtotal);
-            comando.Parameters.AddWithValue("@total", venta.total);
-            comando.Parameters.AddWithValue("@idEmpleado", venta.idEmpleado);
-            comando.Parameters.AddWithValue("@idCliente", venta.idCliente);
-            
+                comando.Parameters.AddWithValue("@idventa", venta.idventa);
+                comando.Parameters.AddWithValue("@descuento", venta.descuento);
+                comando.Parameters.AddWithValue("@Iva", venta.iva);
+                comando.Parameters.AddWithValue("@subtotal", venta.subtotal);
+                comando.Parameters.AddWithValue("@total", venta.total);
+                comando.Parameters.AddWithValue("@idEmpleado", venta.idEmpleado);
+                comando.Parameters.AddWithValue("@idCliente", venta.idCliente);
 
-            comando.ExecuteNonQuery();
-            long idventa=comando.LastInsertedId;
+
+                comando.ExecuteNonQuery();
+                long idventa = comando.LastInsertedId;
                 string strVenta = "insert into detallesDeVentas values(@idDetalle,@idventa,@idProducto,@cantidad,@precio,@descuento,@Iva,@subtotal,@total);";
-            foreach (var detalle in detalles)
+                foreach (var detalle in detalles)
                 {
                     MySqlCommand comandoVend = new MySqlCommand(strVenta, conexion, transaccion);
                     comandoVend.Parameters.AddWithValue("@idDetalle", idventa);
@@ -161,17 +162,18 @@ namespace Databasesproyect
                     comandoVend.Parameters.AddWithValue("@subtotal", detalle.subtotal);
                     comandoVend.Parameters.AddWithValue("@total", detalle.total);
                     comandoVend.ExecuteNonQuery();
-                    
+
                 }
-            transaccion.Commit();
-            Console.WriteLine("Venta y detalles guardados exitosamente.");
-            conexion.Close();
+                transaccion.Commit();
+                MessageBox.Show("Venta realizada ");
+                conexion.Close();
             }
             catch (Exception ex)
             {
                 transaccion.Rollback();
                 conexion.Close();
                 Console.WriteLine($"Error al guardar la venta: {ex.Message}");
+                MessageBox.Show("Error en la Venta  ");
             }
 
 
@@ -248,7 +250,7 @@ namespace Databasesproyect
                         clsCliente emp = new clsCliente();
                         if (reader.Read())
                         {
-                            emp.idCliente = reader.GetInt32("idEmpleado");
+                            emp.idCliente = reader.GetInt32("idCliente");
                             s = emp.idCliente;
                         }
                         return s;
