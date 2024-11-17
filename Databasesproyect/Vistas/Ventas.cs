@@ -16,10 +16,11 @@ namespace Databasesproyect
 {
     public partial class Ventas : Form
     {
-
+        
         public Ventas()
         {
             InitializeComponent();
+            
         }
 
 
@@ -44,17 +45,17 @@ namespace Databasesproyect
         private void butAgregar_Click(object sender, EventArgs e)
         {
             DaoVenta daoVenta = new DaoVenta();
-            String codigoBarras = textCodigo.Text;
+            
             decimal a = decimal.Parse(teDes.Text);
-            daoVenta.AgregarProducto(codigoBarras);
-            daoVenta.CargarDatos(dataVentas); ;
+            daoVenta.AgregarProducto(textCodigo.Text,dataVentas);
+            
             textCodigo.Clear();
             laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal();
             laDesc.Text = "$ " + daoVenta.Descuento(daoVenta.CalcularSubtotal(), a);
             laIVA.Text = "$ " + daoVenta.Iva(daoVenta.CalcularSubtotal());
             laTotal.Text = "$ " + daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a));
         }
-
+        
 
         private void Ventas_Load(object sender, EventArgs e)
         {

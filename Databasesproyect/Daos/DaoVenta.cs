@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 using ProyectoDeBaseDeDatos;
 using Databasesproyect.Clases;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.ComponentModel;
 
 namespace Databasesproyect
 {
@@ -47,14 +48,14 @@ namespace Databasesproyect
             return dataTable;
             
         }
-        public void AgregarProducto(string codigoBarras)
+        public void AgregarProducto(string codigoBarras, DataGridView dataGridView)
         {
 
             var productoExistente = productosEnVenta.FirstOrDefault(p => p.codigoBarra == codigoBarras);
 
             if (productoExistente != null)
             {
-                productoExistente.cantidad++; 
+                productoExistente.cantidad++; // Incrementar la cantidad
             }
             else
             {
@@ -65,12 +66,13 @@ namespace Databasesproyect
                     DataRow row = productoTable.Rows[0];
                     clsProductos nuevoProducto = new clsProductos
                     {
+                        idProducto = Convert.ToInt32(row["Idproducto"]),
                         codigoBarra = row["CodigoBarra"].ToString(),
                         nombre = row["Nombre"].ToString(),
                         marca = row["Marca"].ToString(),
                         precio = Convert.ToDouble(row["Precio"]),
                         descripcion = row["Descripcion"].ToString(),
-                        cantidad = 1 
+                        cantidad = 1 // Cantidad inicial
                     };
 
                     productosEnVenta.Add(nuevoProducto);
@@ -80,12 +82,17 @@ namespace Databasesproyect
                     throw new Exception("Producto no encontrado");
                 }
             }
+
+            // Actualiza el DataGridView
+            CargarDatos(dataGridView);
         }
         public void CargarDatos(DataGridView dataGridView)
         {
             dataGridView.DataSource = null; 
-            dataGridView.DataSource = productosEnVenta;
+            dataGridView.DataSource = productosEnVenta; 
+            dataGridView.Refresh(); 
         }
+
         public decimal CalcularSubtotal()
         {
             decimal subtotal = 0;
