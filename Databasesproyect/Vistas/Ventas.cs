@@ -164,5 +164,11 @@ namespace Databasesproyect
             RegistrarCliente registrarCliente = new RegistrarCliente();
             registrarCliente.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.ShowDialog();
+        }
     }
 }
