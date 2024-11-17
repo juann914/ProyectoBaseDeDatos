@@ -38,9 +38,18 @@ namespace Databasesproyect.Vistas
                 product.marca, product.descripcion, product.cantidad);
 
             subtotal += product.precio;
+            double des = double.Parse(teDes.Text);
+            laDesc.Text = "$" + (des / 100);
+            if (des > 0)
+            {
 
-            laSubtotal.Text = "$"+subtotal;
-
+                laSubtotal.Text = "$" + (des / 100) * subtotal;
+              
+            }
+            else
+            {
+                laSubtotal.Text = "$" + subtotal;
+            }
         }
     }
 }
