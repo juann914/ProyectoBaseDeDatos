@@ -55,6 +55,7 @@
             // 
             // gpId
             // 
+            this.gpId.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.gpId.Controls.Add(this.button2);
             this.gpId.Controls.Add(this.button1);
             this.gpId.Controls.Add(this.txtId);
@@ -111,6 +112,7 @@
             // 
             // gpCliente
             // 
+            this.gpCliente.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.gpCliente.Controls.Add(this.button4);
             this.gpCliente.Controls.Add(this.button3);
             this.gpCliente.Controls.Add(this.txtCorreo);
@@ -210,6 +212,7 @@
             // dataGridCliente
             // 
             this.dataGridCliente.AllowUserToOrderColumns = true;
+            this.dataGridCliente.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProductoddd,
@@ -264,6 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(974, 603);
             this.Controls.Add(this.dataGridCliente);
             this.Controls.Add(this.gpCliente);
