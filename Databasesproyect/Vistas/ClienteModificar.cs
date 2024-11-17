@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,11 +47,16 @@ namespace Databasesproyect
             else
             {
                 gpId.Visible = false;
+
+
+
+
+                dataGridCliente.Rows.Add(cliente.idCliente, cliente.nombre, cliente.apellidos, cliente.correo, cliente.rfc);
                 gpCliente.Visible = true;
-                txtNombre.Text=cliente.nombre;
-                txtApellidos.Text=cliente.apellidos;
-                txtCorreo.Text=cliente.correo;
-                lblNombre.Text="Cliente "+ cliente.nombre;
+               // txtNombre.Text=cliente.nombre;
+                //txtApellidos.Text=cliente.apellidos;
+                //txtCorreo.Text=cliente.correo;
+               
             }
         }
 
@@ -61,26 +67,44 @@ namespace Databasesproyect
 
         private void button3_Click(object sender, EventArgs e)
         {
-            daoClientes daoClientes = new daoClientes();
 
-            clsCliente cliente = daoClientes.obenterCliente(txtId.Text);
+            if (txtCorreo.Text.Equals("") || txtNombre.Text.Equals("") || txtApellidos.Text.Equals(""))
+            {
 
-            cliente.nombre = txtNombre.Text;
-            cliente.apellidos = txtApellidos.Text;
-            cliente.correo = txtCorreo.Text;
+                MessageBox.Show("Debes rellenar los campos");
+            }
+            else
+            {
 
-            daoClientes.editarCliente(cliente);
-            MessageBox.Show("Cliente editado");
-            gpCliente.Visible=false;
-            gpId.Visible=true;
-            txtId.Text = "";
+
+                daoClientes daoClientes = new daoClientes();
+
+                clsCliente cliente = daoClientes.obenterCliente(txtId.Text);
+
+                cliente.nombre = txtNombre.Text;
+                cliente.apellidos = txtApellidos.Text;
+                cliente.correo = txtCorreo.Text;
+
+                daoClientes.editarCliente(cliente);
+                MessageBox.Show("Cliente editado");
+
+                dataGridCliente.Rows.Clear();
+                dataGridCliente.Rows.Add(cliente.idCliente, cliente.nombre, cliente.apellidos, cliente.correo, cliente.rfc);
+
+                gpCliente.Visible = false;
+                gpId.Visible = true;
+                txtId.Text = "";
+                txtApellidos.Text="";
+                txtCorreo.Text = "";
+                txtNombre.Text = "";
+            }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
             Clientes clientes   = new Clientes();
             clientes.Show();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -91,6 +115,11 @@ namespace Databasesproyect
         }
 
         private void ClienteModificar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

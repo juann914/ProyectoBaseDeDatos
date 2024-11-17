@@ -64,7 +64,7 @@
             // butAgregar
             // 
             this.butAgregar.Location = new System.Drawing.Point(27, 455);
-            this.butAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(100, 28);
             this.butAgregar.TabIndex = 2;
@@ -75,7 +75,7 @@
             // butBorrar
             // 
             this.butBorrar.Location = new System.Drawing.Point(172, 455);
-            this.butBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.butBorrar.Name = "butBorrar";
             this.butBorrar.Size = new System.Drawing.Size(100, 28);
             this.butBorrar.TabIndex = 3;
@@ -86,7 +86,7 @@
             // butGuardar
             // 
             this.butGuardar.Location = new System.Drawing.Point(27, 511);
-            this.butGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.butGuardar.Name = "butGuardar";
             this.butGuardar.Size = new System.Drawing.Size(121, 28);
             this.butGuardar.TabIndex = 5;
@@ -97,7 +97,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(172, 511);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 6;
@@ -108,7 +108,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(597, 498);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 8;
@@ -127,9 +127,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(772, 396);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(289, 155);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
@@ -177,7 +177,7 @@
             // teDes
             // 
             this.teDes.Location = new System.Drawing.Point(64, 23);
-            this.teDes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.teDes.Margin = new System.Windows.Forms.Padding(4);
             this.teDes.Name = "teDes";
             this.teDes.Size = new System.Drawing.Size(39, 22);
             this.teDes.TabIndex = 11;
@@ -236,11 +236,10 @@
             // textNombre
             // 
             this.textNombre.Location = new System.Drawing.Point(27, 43);
-            this.textNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(132, 22);
             this.textNombre.TabIndex = 11;
-            //this.textNombre.TextChanged += new System.EventHandler(this.textNombre_TextChanged);
             // 
             // label6
             // 
@@ -275,7 +274,7 @@
             // textCorreo
             // 
             this.textCorreo.Location = new System.Drawing.Point(211, 42);
-            this.textCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.textCorreo.Name = "textCorreo";
             this.textCorreo.Size = new System.Drawing.Size(132, 22);
             this.textCorreo.TabIndex = 15;
@@ -283,7 +282,7 @@
             // textApellidos
             // 
             this.textApellidos.Location = new System.Drawing.Point(27, 91);
-            this.textApellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textApellidos.Margin = new System.Windows.Forms.Padding(4);
             this.textApellidos.Name = "textApellidos";
             this.textApellidos.Size = new System.Drawing.Size(132, 22);
             this.textApellidos.TabIndex = 16;
@@ -291,7 +290,7 @@
             // textRFC
             // 
             this.textRFC.Location = new System.Drawing.Point(211, 91);
-            this.textRFC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textRFC.Margin = new System.Windows.Forms.Padding(4);
             this.textRFC.Name = "textRFC";
             this.textRFC.Size = new System.Drawing.Size(132, 22);
             this.textRFC.TabIndex = 17;
@@ -308,7 +307,7 @@
             // butAgreC
             // 
             this.butAgreC.Location = new System.Drawing.Point(364, 39);
-            this.butAgreC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAgreC.Margin = new System.Windows.Forms.Padding(4);
             this.butAgreC.Name = "butAgreC";
             this.butAgreC.Size = new System.Drawing.Size(100, 28);
             this.butAgreC.TabIndex = 19;
@@ -324,7 +323,7 @@
             // 
             this.dataVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataVentas.Location = new System.Drawing.Point(16, 137);
-            this.dataVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataVentas.Margin = new System.Windows.Forms.Padding(4);
             this.dataVentas.Name = "dataVentas";
             this.dataVentas.RowHeadersWidth = 51;
             this.dataVentas.Size = new System.Drawing.Size(860, 256);
@@ -334,10 +333,11 @@
             // textCodigo
             // 
             this.textCodigo.Location = new System.Drawing.Point(27, 425);
-            this.textCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.textCodigo.Name = "textCodigo";
             this.textCodigo.Size = new System.Drawing.Size(132, 22);
             this.textCodigo.TabIndex = 20;
+            this.textCodigo.TextChanged += new System.EventHandler(this.textCodigo_TextChanged);
             // 
             // Código
             // 
@@ -373,7 +373,7 @@
             this.Controls.Add(this.butGuardar);
             this.Controls.Add(this.butBorrar);
             this.Controls.Add(this.butAgregar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ventas";
             this.Text = "Ventas";
             this.Load += new System.EventHandler(this.Ventas_Load);

@@ -180,5 +180,10 @@ namespace Databasesproyect
 
             
         }
+
+        private void textCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
