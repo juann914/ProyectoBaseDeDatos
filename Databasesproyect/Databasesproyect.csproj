@@ -217,6 +217,12 @@
     <Compile Include="Vistas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Ventas2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Ventas2.Designer.cs">
+      <DependentUpon>Ventas2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Vistas\ClienteEliminar.resx">
       <DependentUpon>ClienteEliminar.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Ventas2.resx">
+      <DependentUpon>Ventas2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
