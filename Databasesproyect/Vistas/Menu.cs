@@ -27,9 +27,10 @@ namespace Databasesproyect
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Productos productos= new Productos();
             productos.Show();
-            this.Hide();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
