@@ -68,10 +68,10 @@ namespace Databasesproyect
         private void button3_Click(object sender, EventArgs e)
         {
 
-            if (txtCorreo.Text.Equals("") || txtNombre.Text.Equals("") || txtApellidos.Text.Equals(""))
+            if (txtCorreo.Text.Equals("") && txtNombre.Text.Equals("") && txtApellidos.Text.Equals(""))
             {
 
-                MessageBox.Show("Debes rellenar los campos");
+                MessageBox.Show("Debes rellenar por los menos un campo");
             }
             else
             {

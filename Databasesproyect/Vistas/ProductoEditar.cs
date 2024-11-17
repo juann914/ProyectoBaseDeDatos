@@ -40,10 +40,13 @@ namespace Databasesproyect
             {
                 gpCode.Visible = false;
                 gpProducto.Visible = true;
-                lblProducto.Text = product.nombre;
-                txtDes.Text = product.descripcion;
-                txtPrecio.Text = product.precio.ToString();
-                txtNombre.Text = product.nombre;
+
+                dataGridProductos.Rows.Clear();
+
+                dataGridProductos.Rows.Add(product.idProducto,product.codigoBarra,product.nombre,product.precio
+                    ,product.marca,product.descripcion,product.cantidad);
+
+               
             }
         }
 
@@ -82,19 +85,36 @@ namespace Databasesproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            daoProductos daoProductos = new daoProductos();
+            if (txtDes.Text.Equals("") && txtNombre.Text.Equals("") && txtPrecio.Text.Equals(""))
+            {
+                MessageBox.Show("Debes de ingresar por lo menos un campo");
+            }
+            else
+            {
 
-            clsProductos productos = daoProductos.obtenerCodigo(txtCodigo.Text);
 
-            productos.nombre = txtNombre.Text;
-            productos.precio = double.Parse(txtPrecio.Text);
-            productos.descripcion = txtDes.Text;
+                daoProductos daoProductos = new daoProductos();
 
-            daoProductos.editarProducto(productos);
-            MessageBox.Show("Producto editado correctamente");
-            gpProducto.Visible = false;
-            gpCode.Visible = true;
-            txtCodigo.Text = "";
+                clsProductos productos = daoProductos.obtenerCodigo(txtCodigo.Text);
+
+                productos.nombre = txtNombre.Text;
+                productos.precio = double.Parse(txtPrecio.Text);
+                productos.descripcion = txtDes.Text;
+
+                daoProductos.editarProducto(productos);
+                MessageBox.Show("Producto editado correctamente");
+
+                dataGridProductos.Rows.Clear();
+                dataGridProductos.Rows.Add(productos.idProducto, productos.codigoBarra, productos.nombre, productos.precio
+                       , productos.marca, productos.descripcion, productos.cantidad);
+
+                gpProducto.Visible = false;
+                gpCode.Visible = true;
+                txtCodigo.Text = "";
+                txtDes.Text = "";
+                txtNombre.Text = "";
+                txtPrecio.Text = "";
+            }
         }
 
         }
