@@ -50,7 +50,7 @@ namespace Databasesproyect
                     codigoBarra = row["codigoBarra"].ToString(),
                     nombre = row["nombre"].ToString(),
                     marca = row["marca"].ToString(),
-                    precio = (double)Convert.ToDecimal(row["Precio"]),
+                    precio = (double)Convert.ToDecimal(row["Precio"].ToString()),
                     descripcion = row["descripcion"].ToString(),
                     cantidad = 1
                 };
