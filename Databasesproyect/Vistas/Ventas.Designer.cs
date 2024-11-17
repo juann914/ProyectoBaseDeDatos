@@ -213,79 +213,7 @@
             this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "%Desc.";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 23);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Nombre Cliente";
-            // 
-            // textNombre
-            // 
-            this.textNombre.Location = new System.Drawing.Point(27, 43);
-            this.textNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(132, 22);
-            this.textNombre.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 71);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 16);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Apellidos";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(207, 22);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 16);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Correo";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(207, 71);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 16);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "RFC";
-            // 
-            // textCorreo
-            // 
-            this.textCorreo.Location = new System.Drawing.Point(211, 42);
-            this.textCorreo.Margin = new System.Windows.Forms.Padding(4);
-            this.textCorreo.Name = "textCorreo";
-            this.textCorreo.Size = new System.Drawing.Size(132, 22);
-            this.textCorreo.TabIndex = 15;
-            // 
-            // textApellidos
-            // 
-            this.textApellidos.Location = new System.Drawing.Point(27, 91);
-            this.textApellidos.Margin = new System.Windows.Forms.Padding(4);
-            this.textApellidos.Name = "textApellidos";
-            this.textApellidos.Size = new System.Drawing.Size(132, 22);
-            this.textApellidos.TabIndex = 16;
-            // 
-            // textRFC
-            // 
-            this.textRFC.Location = new System.Drawing.Point(211, 91);
-            this.textRFC.Margin = new System.Windows.Forms.Padding(4);
-            this.textRFC.Name = "textRFC";
-            this.textRFC.Size = new System.Drawing.Size(132, 22);
-            this.textRFC.TabIndex = 17;
-            // 
+           
             // butAgregarC
             // 
             this.butAgregarC.Location = new System.Drawing.Point(288, 35);
@@ -295,17 +223,7 @@
             this.butAgregarC.Text = "Agregar";
             this.butAgregarC.UseVisualStyleBackColor = true;
             // 
-            // butAgreC
-            // 
-            this.butAgreC.Location = new System.Drawing.Point(364, 39);
-            this.butAgreC.Margin = new System.Windows.Forms.Padding(4);
-            this.butAgreC.Name = "butAgreC";
-            this.butAgreC.Size = new System.Drawing.Size(100, 28);
-            this.butAgreC.TabIndex = 19;
-            this.butAgreC.Text = "Agregar";
-            this.butAgreC.UseVisualStyleBackColor = true;
-            this.butAgreC.Click += new System.EventHandler(this.butAgreC_Click);
-            // 
+            
             // backgroundWorker1
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
