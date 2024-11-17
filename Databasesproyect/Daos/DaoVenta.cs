@@ -21,7 +21,7 @@ namespace Databasesproyect
 
 
 
-        public clsProductos obenterProducto(string codigoBarra)
+        public DataTable obtenerProducto(string codigoBarra)
         {
             string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
 
@@ -30,67 +30,67 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string str = "select codigoBarra,nombre,precio ,marca,descripcion from productos where codigoBarra=@codigoBarra;";
+            string str = "select CodigoBarra,Nombre,Precio ,Marca,Descripcion from productos where codigoBarra=@codigoBarra;";
 
 
             MySqlCommand comando = new MySqlCommand(str, conexion);
             comando.Parameters.AddWithValue("@codigoBarra", codigoBarra);
 
-           
-
+         
 
             DataTable dataTable = new DataTable();
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(comando);
-            
-            dataAdapter.Fill(dataTable);
-            if (dataTable.Rows.Count > 0)
+            using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(comando))
             {
-                DataRow row = dataTable.Rows[0];
-                return new clsProductos
-                {
-                    codigoBarra = row["codigoBarra"].ToString(),
-                    nombre = row["nombre"].ToString(),
-                    marca = row["marca"].ToString(),
-                    precio = (double)Convert.ToDecimal(row["Precio"].ToString()),
-                    descripcion = row["descripcion"].ToString(),
-                    cantidad = 1
-                };
+                dataAdapter.Fill(dataTable);
             }
             conexion.Close();
-            return null;
+            return dataTable;
             
         }
         public void AgregarProducto(string codigoBarras)
         {
 
-            clsProductos productoExistente = null;
-
-            foreach (var producto in productosEnVenta)
-            {
-                if (producto.codigoBarra == codigoBarras)
-                {
-                    productoExistente = producto;
-                    break;
-                }
-            }
+            var productoExistente = productosEnVenta.FirstOrDefault(p => p.codigoBarra == codigoBarras);
 
             if (productoExistente != null)
             {
-                
                 productoExistente.cantidad++;
             }
             else
             {
-                
-                clsProductos nuevoProducto = obenterProducto(codigoBarras);
-                if (nuevoProducto != null)
+                DataTable productoTable = obtenerProducto(codigoBarras);
+
+                if (productoTable.Rows.Count > 0)
                 {
+                    DataRow row = productoTable.Rows[0];
+                    clsProductos nuevoProducto = new clsProductos
+                    {
+                        codigoBarra = row["CodigoBarra"].ToString(),
+                        nombre = row["Nombre"].ToString(),
+                        marca = row["Marca"].ToString(),
+                        precio = Convert.ToDouble(row["Precio"]),
+                        descripcion = row["Descripcion"].ToString(),
+                        cantidad = 1
+                    };
+
                     productosEnVenta.Add(nuevoProducto);
                 }
                 else
                 {
                     throw new Exception("Producto no encontrado");
                 }
+            }
+        }
+        public void CargarDatos(DataGridView dataGridView, string codigoBarra)
+        {
+            DataTable dataTable = obtenerProducto(codigoBarra);
+            if (dataTable.Rows.Count > 0)
+            {
+                dataGridView.DataSource = dataTable;
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron productos con el código especificado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         public decimal CalcularSubtotal()

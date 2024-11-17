@@ -47,6 +47,7 @@ namespace Databasesproyect
             String codigoBarras = textCodigo.Text;
             decimal a = decimal.Parse(teDes.Text);
             daoVenta.AgregarProducto(codigoBarras);
+            daoVenta.CargarDatos(dataVentas, codigoBarras);
             textCodigo.Clear();
             laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal();
             laDesc.Text = "$ " + daoVenta.Descuento(daoVenta.CalcularSubtotal(), a);
@@ -57,11 +58,7 @@ namespace Databasesproyect
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-            dataVentas.Columns.Add("codigoBarra", "Código de Barra");
-            dataVentas.Columns.Add("nombre", "Nombre");
-            dataVentas.Columns.Add("marca", "Marca");
-            dataVentas.Columns.Add("precio", "Precio Unitario");
-            dataVentas.Columns.Add("cantidad", "Cantidad");
+            
 
         }
 
@@ -74,7 +71,7 @@ namespace Databasesproyect
                     dataVentas.Rows.Remove(row);
                 }
 
-                MessageBox.Show("Producto eliminado de la tabla (solo visualización).");
+                MessageBox.Show("Producto eliminado de la tabla.");
             }
             else
             {
@@ -169,6 +166,7 @@ namespace Databasesproyect
         {
             Menu menu = new Menu();
             menu.ShowDialog();
+            this.Close();
         }
     }
 }
