@@ -17,9 +17,9 @@ namespace Databasesproyect
    
     internal class DaoVenta
     {
-        private List<clsProductos> productosEnVenta;
-        
-      
+        private List<clsProductos> productosEnVenta = new List<clsProductos>();
+
+
 
         public clsProductos obenterProducto(string codigoBarra)
         {
@@ -36,11 +36,12 @@ namespace Databasesproyect
             MySqlCommand comando = new MySqlCommand(str, conexion);
             comando.Parameters.AddWithValue("@codigoBarra", codigoBarra);
 
-            MySqlDataReader read = comando.ExecuteReader();
+           
 
 
             DataTable dataTable = new DataTable();
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(comando);
+            
             dataAdapter.Fill(dataTable);
             if (dataTable.Rows.Count > 0)
             {
@@ -55,10 +56,13 @@ namespace Databasesproyect
                     cantidad = 1
                 };
             }
+            conexion.Close();
             return null;
+            
         }
         public void AgregarProducto(string codigoBarras)
         {
+
             clsProductos productoExistente = null;
 
             foreach (var producto in productosEnVenta)
