@@ -22,7 +22,7 @@ namespace ProyectoDeBaseDeDatos
             MySqlConnection conexion = new MySqlConnection(strConexion);
             conexion.Open();
 
-            string sql = "Select * from empleados where username=@usuario and clave =@password";
+            string sql = "Select * from empleados where username=@usuario and clave =sha2(@password,256)";
 
             MySqlCommand comando = new MySqlCommand(sql, conexion);
 
