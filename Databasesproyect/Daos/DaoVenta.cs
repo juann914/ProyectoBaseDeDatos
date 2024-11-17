@@ -70,7 +70,7 @@ namespace Databasesproyect
                         marca = row["Marca"].ToString(),
                         precio = Convert.ToDouble(row["Precio"]),
                         descripcion = row["Descripcion"].ToString(),
-                        cantidad = 1
+                        cantidad = +1
                     };
 
                     productosEnVenta.Add(nuevoProducto);
@@ -81,17 +81,10 @@ namespace Databasesproyect
                 }
             }
         }
-        public void CargarDatos(DataGridView dataGridView, string codigoBarra)
+        public void CargarDatos(DataGridView dataGridView)
         {
-            DataTable dataTable = obtenerProducto(codigoBarra);
-            if (dataTable.Rows.Count > 0)
-            {
-                dataGridView.DataSource = dataTable;
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron productos con el código especificado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            dataGridView.DataSource = null; 
+            dataGridView.DataSource = productosEnVenta;
         }
         public decimal CalcularSubtotal()
         {

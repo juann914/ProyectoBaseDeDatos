@@ -47,7 +47,7 @@ namespace Databasesproyect
             String codigoBarras = textCodigo.Text;
             decimal a = decimal.Parse(teDes.Text);
             daoVenta.AgregarProducto(codigoBarras);
-            daoVenta.CargarDatos(dataVentas, codigoBarras);
+            daoVenta.CargarDatos(dataVentas); ;
             textCodigo.Clear();
             laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal();
             laDesc.Text = "$ " + daoVenta.Descuento(daoVenta.CalcularSubtotal(), a);
@@ -128,7 +128,7 @@ namespace Databasesproyect
             List<clsDetallesVenta> detalles = new List<clsDetallesVenta>();
             foreach (DataGridViewRow row in dataVentas.Rows)
             {
-                if (row.Cells["idProducto"].Value != null) // Evitar filas vacías
+                if (row.Cells["codigoBarra"].Value != null) // Evitar filas vacías
                 {
                     detalles.Add(new clsDetallesVenta
                     {

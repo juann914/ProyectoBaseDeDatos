@@ -225,7 +225,7 @@
             this.dataVentas.Location = new System.Drawing.Point(12, 111);
             this.dataVentas.Name = "dataVentas";
             this.dataVentas.RowHeadersWidth = 51;
-            this.dataVentas.Size = new System.Drawing.Size(645, 208);
+            this.dataVentas.Size = new System.Drawing.Size(776, 208);
             this.dataVentas.TabIndex = 18;
             this.dataVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
