@@ -144,8 +144,49 @@ namespace Databasesproyect
         }
 
 
+        public void insertarCliente(clsCliente cliente)
+        {
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+
+
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+
+            conexion.Open();
+
+            string strInsert = "insert into clientes values (null,@nombre,@apellido,@correo,@rfc)";
+
+
+            MySqlCommand comando = conexion.CreateCommand();
+
+
+            comando.Parameters.AddWithValue("@nombre", cliente.nombre);
+
+
+            comando.Parameters.AddWithValue("@apellido", cliente.apellidos);
+
+            comando.Parameters.AddWithValue("@correo", cliente.correo);
+
+            comando.Parameters.AddWithValue("@rfc", cliente.rfc);
+
+          
+
+            comando.CommandText = strInsert;
+
+
+            comando.ExecuteNonQuery();
+
+
+            conexion.Close();
+
+
+
+        }
+
+
+
+
 
     }
 
-    }
+}
 

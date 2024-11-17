@@ -15,20 +15,20 @@ namespace Databasesproyect
 {
     public partial class Ventas : Form
     {
-        
+
         public Ventas()
         {
             InitializeComponent();
         }
 
-        
+
 
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -39,20 +39,20 @@ namespace Databasesproyect
         {
 
         }
-       
+
         private void butAgregar_Click(object sender, EventArgs e)
         {
             DaoVenta daoVenta = new DaoVenta();
-            String codigoBarras =textCodigo.Text;
-            decimal a = decimal.Parse(teDes.Text);          
+            String codigoBarras = textCodigo.Text;
+            decimal a = decimal.Parse(teDes.Text);
             daoVenta.AgregarProducto(codigoBarras);
             textCodigo.Clear();
             laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal();
-            laDesc.Text="$ " + daoVenta.Descuento(daoVenta.CalcularSubtotal(),a);
-            laIVA.Text="$ "+ daoVenta.Iva(daoVenta.CalcularSubtotal());
+            laDesc.Text = "$ " + daoVenta.Descuento(daoVenta.CalcularSubtotal(), a);
+            laIVA.Text = "$ " + daoVenta.Iva(daoVenta.CalcularSubtotal());
             laTotal.Text = "$ " + daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a));
         }
-       
+
 
         private void Ventas_Load(object sender, EventArgs e)
         {
@@ -61,12 +61,12 @@ namespace Databasesproyect
             dataVentas.Columns.Add("marca", "Marca");
             dataVentas.Columns.Add("precio", "Precio Unitario");
             dataVentas.Columns.Add("cantidad", "Cantidad");
-            
+
         }
 
         private void butBorrar_Click(object sender, EventArgs e)
         {
-            if (dataVentas.SelectedRows.Count > 0) 
+            if (dataVentas.SelectedRows.Count > 0)
             {
                 foreach (DataGridViewRow row in dataVentas.SelectedRows)
                 {
@@ -85,12 +85,12 @@ namespace Databasesproyect
         {
             if (dataVentas.DataSource != null)
             {
-                
+
                 dataVentas.DataSource = null;
             }
             else
             {
-                
+
                 dataVentas.Rows.Clear();
             }
         }
@@ -105,7 +105,7 @@ namespace Databasesproyect
 
         }
 
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             DaoVenta daoVenta = new DaoVenta();
@@ -115,14 +115,14 @@ namespace Databasesproyect
             String m = productosInsertar.nombre();
             String c = textNombre.Text;
             decimal a = decimal.Parse(teDes.Text);
-            clsVentas venta = new clsVentas{
+            clsVentas venta = new clsVentas {
                 subtotal = daoVenta.CalcularSubtotal(),
-                descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(),a),
-                iva= daoVenta.Iva(daoVenta.CalcularSubtotal()),
-                total= daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
-                idEmpleado =daoVenta.idEmpleado(n),
-                idCliente =daoVenta.idCliente(c)
-                
+                descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), a),
+                iva = daoVenta.Iva(daoVenta.CalcularSubtotal()),
+                total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
+                idEmpleado = daoVenta.idEmpleado(n),
+                idCliente = daoVenta.idCliente(c)
+
 
 
             };
@@ -139,13 +139,42 @@ namespace Databasesproyect
                         subtotal = daoVenta.CalcularSubtotal(),
                         descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), a),
                         total = daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a)),
-                        
+
                     });
                 }
             }
 
 
-            daoVenta.insertarVenta(venta,detalles);
+            daoVenta.insertarVenta(venta, detalles);
+        }
+
+        private void butAgreC_Click(object sender, EventArgs e)
+        {
+            if (textNombre.Text.Equals("") || textApellidos.Text.Equals("") || textCorreo.Text.Equals("") ||
+                textRFC.Text.Equals(""))
+            {
+                MessageBox.Show("Debes de ingresar todos los campos");
+            }
+            else
+            {
+                clsCliente clsCliente = new clsCliente();
+                
+               
+               
+                clsCliente.nombre= textNombre.Text;
+                clsCliente.apellidos= textApellidos.Text;
+                clsCliente.rfc= textRFC.Text;
+                clsCliente.correo= textCorreo.Text;
+
+                daoClientes daoClientes = new daoClientes();
+                daoClientes.insertarCliente(clsCliente);
+                
+                MessageBox.Show("Producto insertado correctamente");
+
+
+            }
+
+            
         }
     }
 }
