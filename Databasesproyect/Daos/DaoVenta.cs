@@ -56,7 +56,9 @@ namespace Databasesproyect
                     cantidad = 1
                 };
             }
+            conexion.Close();
             return null;
+            
         }
         public void AgregarProducto(string codigoBarras)
         {
