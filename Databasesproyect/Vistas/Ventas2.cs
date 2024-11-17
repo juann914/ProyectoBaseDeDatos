@@ -12,6 +12,7 @@ namespace Databasesproyect.Vistas
 {
     public partial class Ventas2 : Form
     {
+        public double subtotal;
         public Ventas2()
         {
             InitializeComponent();
@@ -36,6 +37,9 @@ namespace Databasesproyect.Vistas
             dataGridProductos.Rows.Add(product.idProducto, product.codigoBarra, product.nombre, product.precio,
                 product.marca, product.descripcion, product.cantidad);
 
+            subtotal += product.precio;
+
+            laSubtotal.Text = "$"+subtotal;
 
         }
     }
