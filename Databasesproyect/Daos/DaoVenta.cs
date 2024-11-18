@@ -55,7 +55,7 @@ namespace Databasesproyect
 
             if (productoExistente != null)
             {
-                productoExistente.cantidad++; // Incrementar la cantidad
+                productoExistente.cantidad++; 
             }
             else
             {
@@ -72,7 +72,7 @@ namespace Databasesproyect
                         marca = row["Marca"].ToString(),
                         precio = Convert.ToDouble(row["Precio"]),
                         descripcion = row["Descripcion"].ToString(),
-                        cantidad = 1 // Cantidad inicial
+                        cantidad = 1 
                     };
 
                     productosEnVenta.Add(nuevoProducto);
@@ -83,7 +83,7 @@ namespace Databasesproyect
                 }
             }
 
-            // Actualiza el DataGridView
+            
             CargarDatos(dataGridView);
         }
         public void CargarDatos(DataGridView dataGridView)

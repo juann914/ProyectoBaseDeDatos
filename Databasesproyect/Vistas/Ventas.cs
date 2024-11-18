@@ -47,7 +47,7 @@ namespace Databasesproyect
         private void butAgregar_Click(object sender, EventArgs e)
         {
             DaoVenta daoVenta = new DaoVenta();
-            daoVenta.CalcularSubtotal();
+            
             decimal a = decimal.Parse(teDes.Text);
             daoVenta.AgregarProducto(textCodigo.Text, dataVentas);
            
