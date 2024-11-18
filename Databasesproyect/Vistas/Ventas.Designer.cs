@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.butAgregar = new System.Windows.Forms.Button();
-            this.butBorrar = new System.Windows.Forms.Button();
             this.butGuardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -71,16 +70,6 @@
             this.butAgregar.Text = "Agregar";
             this.butAgregar.UseVisualStyleBackColor = true;
             this.butAgregar.Click += new System.EventHandler(this.butAgregar_Click);
-            // 
-            // butBorrar
-            // 
-            this.butBorrar.Location = new System.Drawing.Point(129, 370);
-            this.butBorrar.Name = "butBorrar";
-            this.butBorrar.Size = new System.Drawing.Size(75, 23);
-            this.butBorrar.TabIndex = 3;
-            this.butBorrar.Text = "Borrar";
-            this.butBorrar.UseVisualStyleBackColor = true;
-            this.butBorrar.Click += new System.EventHandler(this.butBorrar_Click);
             // 
             // butGuardar
             // 
@@ -371,7 +360,6 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.butGuardar);
-            this.Controls.Add(this.butBorrar);
             this.Controls.Add(this.butAgregar);
             this.Name = "Ventas";
             this.Text = "Ventas";
@@ -386,7 +374,6 @@
 
         #endregion
         private System.Windows.Forms.Button butAgregar;
-        private System.Windows.Forms.Button butBorrar;
         private System.Windows.Forms.Button butGuardar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;

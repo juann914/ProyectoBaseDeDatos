@@ -63,7 +63,8 @@ namespace Databasesproyect
 
                 if (productoTable.Rows.Count > 0)
                 {
-                    DataRow row = productoTable.Rows[0];
+                    int contador = 0;
+                    DataRow row = productoTable.Rows[contador];
                     clsProductos nuevoProducto = new clsProductos
                     {
                         idProducto = Convert.ToInt32(row["Idproducto"]),
@@ -73,13 +74,16 @@ namespace Databasesproyect
                         precio = Convert.ToDouble(row["Precio"]),
                         descripcion = row["Descripcion"].ToString(),
                         cantidad = 1 
+                        
                     };
-
+                    contador++;
                     productosEnVenta.Add(nuevoProducto);
+                    
                 }
                 else
                 {
-                    throw new Exception("Producto no encontrado");
+                    
+                    MessageBox.Show("Producto no encontrado.");
                 }
             }
 
@@ -88,9 +92,9 @@ namespace Databasesproyect
         }
         public void CargarDatos(DataGridView dataGridView)
         {
-            dataGridView.DataSource = null; 
+            
             dataGridView.DataSource = productosEnVenta; 
-            dataGridView.Refresh(); 
+           
         }
 
         public decimal CalcularSubtotal()

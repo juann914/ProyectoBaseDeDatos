@@ -73,8 +73,12 @@ namespace Databasesproyect
                 {
                     dataVentas.Rows.Remove(row);
                 }
+                laSubtotal.Text = "$ 0.0"  ;
+                laDesc.Text = "$ 0.0";
+                laIva.Text = "$ 0.0";
+                laTotal.Text = "$ 0.0";
 
-                MessageBox.Show("Producto eliminado de la tabla.");
+                    MessageBox.Show("Producto eliminado de la tabla.");
             }
             else
             {
@@ -88,6 +92,10 @@ namespace Databasesproyect
             {
 
                 dataVentas.DataSource = null;
+                laSubtotal.Text = "$ 0.0";
+                laDesc.Text = "$ 0.0";
+                laIva.Text = "$ 0.0";
+                laTotal.Text = "$ 0.0";
             }
             else
             {
