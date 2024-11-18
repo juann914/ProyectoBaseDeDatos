@@ -34,10 +34,13 @@ namespace Databasesproyect.Vistas
             daoProductos daoProductos = new daoProductos();
             clsProductos product = daoProductos.obtenerCodigo(textCodigo.Text);
 
-
+           
+            
+            
             dataGridProductos.Rows.Add(product.idProducto, product.codigoBarra, product.nombre, product.precio,
                 product.marca, product.descripcion, product.cantidad);
 
+           
             subtotal += product.precio;
             double des = double.Parse(teDes.Text);
             laDesc.Text = "$" + (des / 100);
@@ -55,7 +58,24 @@ namespace Databasesproyect.Vistas
             laIVA.Text ="$"+(subdesc*0.16);
             laTotal.Text = "$" + ((subdesc) + (subdesc * 0.16));
 
+            
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            daoClientes daoclientes=new daoClientes();
+
+            clsCliente clsCliente = daoclientes.obenterCliente(txtId.Text);
+
+            if(clsCliente == null)
+            {
+                MessageBox.Show("No se encontro el cliente");
+            }
+            else
+            {
+                MessageBox.Show("Se encontro el cliente");
+                txtId.Text = "";
+            }
         }
     }
 }

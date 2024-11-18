@@ -120,6 +120,12 @@
     <Compile Include="Vistas\ClienteSolicitarDatos.Designer.cs">
       <DependentUpon>ClienteSolicitarDatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ClietneInsertar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ClietneInsertar.Designer.cs">
+      <DependentUpon>ClietneInsertar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\ConfirmarEliminarP.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ClienteSolicitarDatos.resx">
       <DependentUpon>ClienteSolicitarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ClietneInsertar.resx">
+      <DependentUpon>ClietneInsertar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ConfirmarEliminarP.resx">
       <DependentUpon>ConfirmarEliminarP.cs</DependentUpon>
