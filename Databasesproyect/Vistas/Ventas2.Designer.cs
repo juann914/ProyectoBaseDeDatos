@@ -56,6 +56,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProductos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +138,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Cliente Nuevo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -238,9 +240,8 @@
             this.laTotal.Location = new System.Drawing.Point(192, 114);
             this.laTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.laTotal.Name = "laTotal";
-            this.laTotal.Size = new System.Drawing.Size(34, 16);
+            this.laTotal.Size = new System.Drawing.Size(0, 16);
             this.laTotal.TabIndex = 15;
-            this.laTotal.Text = "$ 0.0";
             this.laTotal.Click += new System.EventHandler(this.laTotal_Click);
             // 
             // laIVA
@@ -250,9 +251,8 @@
             this.laIVA.Location = new System.Drawing.Point(192, 87);
             this.laIVA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.laIVA.Name = "laIVA";
-            this.laIVA.Size = new System.Drawing.Size(34, 16);
+            this.laIVA.Size = new System.Drawing.Size(0, 16);
             this.laIVA.TabIndex = 14;
-            this.laIVA.Text = "$ 0.0";
             // 
             // laSubtotal
             // 
@@ -260,9 +260,8 @@
             this.laSubtotal.Location = new System.Drawing.Point(192, 59);
             this.laSubtotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.laSubtotal.Name = "laSubtotal";
-            this.laSubtotal.Size = new System.Drawing.Size(34, 16);
+            this.laSubtotal.Size = new System.Drawing.Size(0, 16);
             this.laSubtotal.TabIndex = 13;
-            this.laSubtotal.Text = "$ 0.0";
             // 
             // laDesc
             // 
@@ -270,9 +269,8 @@
             this.laDesc.Location = new System.Drawing.Point(192, 28);
             this.laDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.laDesc.Name = "laDesc";
-            this.laDesc.Size = new System.Drawing.Size(34, 16);
+            this.laDesc.Size = new System.Drawing.Size(0, 16);
             this.laDesc.TabIndex = 12;
-            this.laDesc.Text = "$ 0.0";
             // 
             // teDes
             // 
@@ -333,11 +331,23 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(443, 385);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 28);
+            this.button5.TabIndex = 29;
+            this.button5.Text = "Guardar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Ventas2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1265, 533);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
@@ -391,5 +401,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
     }
 }

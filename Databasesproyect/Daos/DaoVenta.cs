@@ -269,6 +269,44 @@ namespace Databasesproyect
 
         }
 
+        public void insertarUnaVenta(clsVentas ventas)
+        {
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+
+
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+
+            conexion.Open();
+
+            string strInsert = "insert into ventas values (null,@descuento,@Iva,@subtotal,@total,@idEmpleado,@idCliente)";
+
+
+            MySqlCommand comando = conexion.CreateCommand();
+
+
+            comando.Parameters.AddWithValue("@descuento", ventas.descuento);
+
+
+            comando.Parameters.AddWithValue("@Iva", ventas.iva);
+
+            comando.Parameters.AddWithValue("@subtotal", ventas.subtotal);
+
+            comando.Parameters.AddWithValue("@total", ventas.total);
+
+            comando.Parameters.AddWithValue("@idEmpleado", ventas.idEmpleado);
+
+            comando.Parameters.AddWithValue("@idCliente", ventas.idCliente);
+
+            comando.CommandText = strInsert;
+
+
+            comando.ExecuteNonQuery();
+
+
+            conexion.Close();
+
+        }
+
     }
     }
 

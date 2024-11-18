@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Databasesproyect.Vistas;
 
 namespace Databasesproyect
 {
@@ -51,6 +52,13 @@ namespace Databasesproyect
         private void Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Ventas2 ventas = new Ventas2();
+            ventas.Show();
+            this.Close();
         }
     }
 }
