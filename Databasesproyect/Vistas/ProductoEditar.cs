@@ -97,9 +97,21 @@ namespace Databasesproyect
 
                 clsProductos productos = daoProductos.obtenerCodigo(txtCodigo.Text);
 
-                productos.nombre = txtNombre.Text;
-                productos.precio = double.Parse(txtPrecio.Text);
-                productos.descripcion = txtDes.Text;
+                if (txtNombre.Text.Length>0)
+                {
+                    productos.nombre = txtNombre.Text;
+                }
+                
+                if (txtPrecio.Text.Length>0)
+                {
+                    productos.precio = double.Parse(txtPrecio.Text);
+                }
+
+                if (txtDes.Text.Length > 0)
+                {
+                    productos.descripcion = txtDes.Text;
+                }
+                
 
                 daoProductos.editarProducto(productos);
                 MessageBox.Show("Producto editado correctamente");

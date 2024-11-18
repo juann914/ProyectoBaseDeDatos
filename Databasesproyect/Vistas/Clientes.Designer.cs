@@ -31,9 +31,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(94, 220);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(198, 69);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Solicitar datos";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -89,15 +99,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(94, 220);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(198, 69);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Solicitar datos";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Clientes
             // 

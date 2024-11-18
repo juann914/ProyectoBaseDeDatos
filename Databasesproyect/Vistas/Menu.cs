@@ -60,5 +60,13 @@ namespace Databasesproyect
             ventas.Show();
             this.Close();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Clientes c= new Clientes();
+            c.Show();
+            this.Close();
+                        
+        }
     }
 }

@@ -47,9 +47,10 @@ namespace Databasesproyect
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             ProductosSolictarDatos productos   = new ProductosSolictarDatos();
             productos.Show();
+            this.Close();
 
         }
 

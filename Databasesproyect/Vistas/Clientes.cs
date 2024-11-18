@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Databasesproyect.Vistas;
 
 namespace Databasesproyect
 {
@@ -29,6 +30,20 @@ namespace Databasesproyect
             this.Close();
             ClienteModificar cliente = new ClienteModificar();
             cliente.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ClienteSolicitarDatos cliente=new ClienteSolicitarDatos();
+            cliente.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu .Show();
+            this.Close();
         }
     }
 }

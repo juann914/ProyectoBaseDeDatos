@@ -81,9 +81,21 @@ namespace Databasesproyect
 
                 clsCliente cliente = daoClientes.obenterCliente(txtId.Text);
 
-                cliente.nombre = txtNombre.Text;
-                cliente.apellidos = txtApellidos.Text;
-                cliente.correo = txtCorreo.Text;
+                if (txtApellidos.Text.Length>0)
+                {
+                    cliente.apellidos = txtApellidos.Text;
+                }
+
+                if (txtCorreo.Text.Length > 0)
+                {
+                    cliente.correo = txtCorreo.Text;
+                }
+                if(txtNombre.Text.Length > 0) {
+                    cliente.nombre = txtNombre.Text;
+                }
+               
+               
+                
 
                 daoClientes.editarCliente(cliente);
                 MessageBox.Show("Cliente editado");
