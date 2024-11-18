@@ -113,9 +113,9 @@ namespace Databasesproyect
         }
         public decimal Iva(decimal subtotal)
         {
-            decimal iva = subtotal * (16 / 100);
+            decimal resul = subtotal * (16 / 100);
 
-            return iva;
+            return resul;
         }
         public decimal Total(decimal subtotal,decimal iva,decimal descuento)
         {
