@@ -151,6 +151,7 @@ namespace Databasesproyect
                         // Agregar detalle a la lista
                         detalles.Add(new clsDetallesVenta
                         {
+                            
                             idProducto = idProducto,
                             cantidad = cantidad,
                             precio = precio,
