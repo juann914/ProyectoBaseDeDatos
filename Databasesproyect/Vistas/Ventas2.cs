@@ -14,7 +14,7 @@ namespace Databasesproyect.Vistas
 {
     public partial class Ventas2 : Form
     {
-        clsProductos <productos>;
+        
         clsVentas ventas1 = new clsVentas();
         public double subtotal;
         public double subdesc;
