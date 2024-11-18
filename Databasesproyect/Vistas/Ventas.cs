@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,14 +47,14 @@ namespace Databasesproyect
         private void butAgregar_Click(object sender, EventArgs e)
         {
             DaoVenta daoVenta = new DaoVenta();
-            
+            daoVenta.CalcularSubtotal();
             decimal a = decimal.Parse(teDes.Text);
-            daoVenta.AgregarProducto(textCodigo.Text,dataVentas);
-            
+            daoVenta.AgregarProducto(textCodigo.Text, dataVentas);
+           
             textCodigo.Clear();
-            laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal();
+            laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal(); ;
             laDesc.Text = "$ " + daoVenta.Descuento(daoVenta.CalcularSubtotal(), a);
-            laIVA.Text = "$ " + daoVenta.Iva(daoVenta.CalcularSubtotal());
+            laIva.Text = "$ " + daoVenta.Iva(daoVenta.CalcularSubtotal());
             laTotal.Text = "$ " + daoVenta.Total(daoVenta.CalcularSubtotal(), daoVenta.Iva(daoVenta.CalcularSubtotal()), daoVenta.Descuento(daoVenta.CalcularSubtotal(), a));
         }
         

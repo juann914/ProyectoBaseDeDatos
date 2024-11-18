@@ -35,7 +35,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.laTotal = new System.Windows.Forms.Label();
-            this.laIVA = new System.Windows.Forms.Label();
+            this.laIva = new System.Windows.Forms.Label();
             this.laSubtotal = new System.Windows.Forms.Label();
             this.laDesc = new System.Windows.Forms.Label();
             this.teDes = new System.Windows.Forms.TextBox();
@@ -115,7 +115,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.laTotal);
-            this.groupBox1.Controls.Add(this.laIVA);
+            this.groupBox1.Controls.Add(this.laIva);
             this.groupBox1.Controls.Add(this.laSubtotal);
             this.groupBox1.Controls.Add(this.laDesc);
             this.groupBox1.Controls.Add(this.teDes);
@@ -140,15 +140,15 @@
             this.laTotal.TabIndex = 15;
             this.laTotal.Text = "$ 0.0";
             // 
-            // laIVA
+            // laIva
             // 
-            this.laIVA.AutoSize = true;
-            this.laIVA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.laIVA.Location = new System.Drawing.Point(144, 71);
-            this.laIVA.Name = "laIVA";
-            this.laIVA.Size = new System.Drawing.Size(31, 13);
-            this.laIVA.TabIndex = 14;
-            this.laIVA.Text = "$ 0.0";
+            this.laIva.AutoSize = true;
+            this.laIva.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.laIva.Location = new System.Drawing.Point(144, 71);
+            this.laIva.Name = "laIva";
+            this.laIva.Size = new System.Drawing.Size(31, 13);
+            this.laIva.TabIndex = 14;
+            this.laIva.Text = "$ 0.0";
             // 
             // laSubtotal
             // 
@@ -397,7 +397,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox teDes;
         private System.Windows.Forms.Label laTotal;
-        private System.Windows.Forms.Label laIVA;
+        private System.Windows.Forms.Label laIva;
         private System.Windows.Forms.Label laSubtotal;
         private System.Windows.Forms.Label laDesc;
         private System.Windows.Forms.Button butAgregarC;
