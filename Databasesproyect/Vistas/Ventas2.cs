@@ -14,6 +14,8 @@ namespace Databasesproyect.Vistas
 {
     public partial class Ventas2 : Form
     {
+        clsProductos <productos>;
+        clsVentas ventas1 = new clsVentas();
         public double subtotal;
         public double subdesc;
         public int idcliente;
@@ -107,12 +109,22 @@ namespace Databasesproyect.Vistas
             ventas.idCliente = idcliente;
             ventas.idEmpleado = idempleado;
 
+            ventas1 = ventas;
+
             DaoVenta daoventa = new DaoVenta();
             daoventa.insertarUnaVenta(ventas);
 
             MessageBox.Show("Se guardo la venta");
 
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Menu mu = new Menu(idempleado);
+            mu.Show();
+            this.Close();
+
         }
     }
 }
