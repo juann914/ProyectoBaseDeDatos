@@ -56,7 +56,7 @@ namespace Databasesproyect
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Ventas2 ventas = new Ventas2();
+            Ventas2 ventas = new Ventas2(idEmpleado);
             ventas.Show();
             this.Close();
         }

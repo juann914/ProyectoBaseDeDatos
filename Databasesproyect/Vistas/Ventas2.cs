@@ -109,6 +109,10 @@ namespace Databasesproyect.Vistas
 
             DaoVenta daoventa = new DaoVenta();
             daoventa.insertarUnaVenta(ventas);
+
+            MessageBox.Show("Se guardo la venta");
+
+            
         }
     }
 }

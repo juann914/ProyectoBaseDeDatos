@@ -36,8 +36,8 @@ namespace Databasesproyect
                 clsEmpleados clsEmpleados = daoEmpleados.consultarEmpleadoPorUserName(txtUserame.Text);
                 Menu menu =new Menu (clsEmpleados.idEmpleado);
                 menu.Show();
-                    
-              
+
+                
 
             }
             else
