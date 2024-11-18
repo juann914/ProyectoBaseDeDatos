@@ -140,7 +140,7 @@ namespace Databasesproyect
                         int cantidad = Convert.ToInt32(row.Cells["cantidad"].Value);
                         decimal precio = Convert.ToDecimal(row.Cells["precio"].Value);
                         string codigoProducto = textCodigo.Text; // Recuperar nombre del producto
-                        int idProducto = daoVenta.idProducto(codigoProducto);
+                    
 
                         // Calcular valores específicos del detalle
                         decimal subtotalDetalle = cantidad * precio;
@@ -151,7 +151,7 @@ namespace Databasesproyect
 
 
                         
-
+                        clsDetalles.idProducto= daoVenta.idProducto(codigoProducto); ;
                         clsDetalles.cantidad = cantidad;
                         clsDetalles.precio = precio;
                         clsDetalles.subtotal = subtotalDetalle;

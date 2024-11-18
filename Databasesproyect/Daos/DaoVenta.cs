@@ -152,13 +152,14 @@ namespace Databasesproyect
                         long idVentaGenerado = comandoVenta.LastInsertedId;
 
                         // Insertar los detalles de la venta
-                        string strInsertDetalle = "INSERT INTO detallesDeVentas VALUES (null, @idventa, @idProducto, @cantidad, @precio, @descuento, @Iva, @subtotal, @total);";
+                        string strInsertDetalle = "INSERT INTO detallesDeVentas VALUES (null,  @idProducto,@idventa , @cantidad, @precio, @descuento, @Iva, @subtotal, @total);";
 
                        
                             MySqlCommand comandoDetalle = new MySqlCommand(strInsertDetalle, conexion, transaccion);
 
-                            comandoDetalle.Parameters.AddWithValue("@idventa", idVentaGenerado); // Asociar el detalle con el ID de la venta
-                            comandoDetalle.Parameters.AddWithValue("@idProducto", detalles.idProducto);
+                            
+                            comandoDetalle.Parameters.AddWithValue("@idProducto", 1);
+                            comandoDetalle.Parameters.AddWithValue("@idventa", idVentaGenerado);
                             comandoDetalle.Parameters.AddWithValue("@cantidad", detalles.cantidad);
                             comandoDetalle.Parameters.AddWithValue("@precio", detalles.precio);
                             comandoDetalle.Parameters.AddWithValue("@descuento", detalles.descuento);
@@ -229,11 +230,11 @@ namespace Databasesproyect
             while (read.Read())
             {
                 mensaje1 = new clsProductos();
-                mensaje1.idProducto = int.Parse(read["idMensaje"].ToString());
+                mensaje1.idProducto = int.Parse(read["idProducto"].ToString());
 
 
                 
-                id += mensaje1.idProducto ;
+                id = mensaje1.idProducto ;
 
             }
             conexion.Close();
