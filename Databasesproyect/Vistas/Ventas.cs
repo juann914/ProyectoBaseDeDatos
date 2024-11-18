@@ -129,7 +129,7 @@ namespace Databasesproyect
             };
 
             // Crear lista de detalles de venta
-            List<clsDetallesVenta> detalles = new List<clsDetallesVenta>();
+            clsDetallesVenta clsDetalles = new clsDetallesVenta();
 
             foreach (DataGridViewRow row in dataVentas.Rows)
             {
@@ -148,18 +148,17 @@ namespace Databasesproyect
                         decimal ivaDetalle = daoVenta.Iva(subtotalDetalle - descuentoDetalle);
                         decimal totalDetalle = subtotalDetalle - descuentoDetalle + ivaDetalle;
 
-                        // Agregar detalle a la lista
-                        detalles.Add(new clsDetallesVenta
-                        {
-                            
-                            idProducto = idProducto,
-                            cantidad = cantidad,
-                            precio = precio,
-                            subtotal = subtotalDetalle,
-                            descuento = descuentoDetalle,
-                            iva = ivaDetalle,
-                            total = totalDetalle
-                        });
+
+
+                        
+
+                        clsDetalles.cantidad = cantidad;
+                        clsDetalles.precio = precio;
+                        clsDetalles.subtotal = subtotalDetalle;
+                        clsDetalles.descuento = descuentoDetalle;
+                        clsDetalles.iva = ivaDetalle;
+                        clsDetalles.total = totalDetalle;
+                        
                     }
                     catch (Exception ex)
                     {
@@ -168,10 +167,10 @@ namespace Databasesproyect
                 }
             }
 
-            // Insertar la venta y sus detalles
+            
             try
             {
-                daoVenta.insertarVenta(venta, detalles);
+                daoVenta.insertarVenta(venta, clsDetalles);
                 MessageBox.Show("Venta registrada con éxito.");
             }
             catch (Exception ex)
