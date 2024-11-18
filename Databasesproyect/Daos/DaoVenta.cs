@@ -122,7 +122,7 @@ namespace Databasesproyect
             decimal total = subtotal + iva-descuento;
             return total;
         }
-        public void insertarVenta(clsVentas venta, List<clsDetallesVenta> detalles)
+        public void insertarVenta(clsVentas venta, clsDetallesVenta detalles)
         {
 
             string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
@@ -136,8 +136,7 @@ namespace Databasesproyect
                     try
                     {
                         // Insertar la venta sin especificar el idventa (autoincremental)
-                        string strInsertVenta = "INSERT INTO ventas (descuento, Iva, subtotal, total, idEmpleado, idCliente) " +
-                                                "VALUES (@descuento, @Iva, @subtotal, @total, @idEmpleado, @idCliente);";
+                        string strInsertVenta = "INSERT INTO ventas VALUES (null,@descuento,@Iva,@subtotal,@total,@idEmpleado,@idCliente);";
                         MySqlCommand comandoVenta = new MySqlCommand(strInsertVenta, conexion, transaccion);
 
                         comandoVenta.Parameters.AddWithValue("@descuento", venta.descuento);
@@ -153,24 +152,22 @@ namespace Databasesproyect
                         long idVentaGenerado = comandoVenta.LastInsertedId;
 
                         // Insertar los detalles de la venta
-                        string strInsertDetalle = "INSERT INTO detallesDeVentas (idventa, idProducto, cantidad, precio, descuento, Iva, subtotal, total) " +
-                                                  "VALUES (@idventa, @idProducto, @cantidad, @precio, @descuento, @Iva, @subtotal, @total);";
+                        string strInsertDetalle = "INSERT INTO detallesDeVentas VALUES (null, @idventa, @idProducto, @cantidad, @precio, @descuento, @Iva, @subtotal, @total);";
 
-                        foreach (var detalle in detalles)
-                        {
+                       
                             MySqlCommand comandoDetalle = new MySqlCommand(strInsertDetalle, conexion, transaccion);
 
                             comandoDetalle.Parameters.AddWithValue("@idventa", idVentaGenerado); // Asociar el detalle con el ID de la venta
-                            comandoDetalle.Parameters.AddWithValue("@idProducto", detalle.idProducto);
-                            comandoDetalle.Parameters.AddWithValue("@cantidad", detalle.cantidad);
-                            comandoDetalle.Parameters.AddWithValue("@precio", detalle.precio);
-                            comandoDetalle.Parameters.AddWithValue("@descuento", detalle.descuento);
-                            comandoDetalle.Parameters.AddWithValue("@Iva", detalle.iva);
-                            comandoDetalle.Parameters.AddWithValue("@subtotal", detalle.subtotal);
-                            comandoDetalle.Parameters.AddWithValue("@total", detalle.total);
+                            comandoDetalle.Parameters.AddWithValue("@idProducto", detalles.idProducto);
+                            comandoDetalle.Parameters.AddWithValue("@cantidad", detalles.cantidad);
+                            comandoDetalle.Parameters.AddWithValue("@precio", detalles.precio);
+                            comandoDetalle.Parameters.AddWithValue("@descuento", detalles.descuento);
+                            comandoDetalle.Parameters.AddWithValue("@Iva", detalles.iva);
+                            comandoDetalle.Parameters.AddWithValue("@subtotal", detalles.subtotal);
+                            comandoDetalle.Parameters.AddWithValue("@total", detalles.total);
 
                             comandoDetalle.ExecuteNonQuery();
-                        }
+                        
 
                         // Confirmar la transacción
                         transaccion.Commit();
@@ -217,28 +214,30 @@ namespace Databasesproyect
         public int idProducto(String codigo)
         {
 
-            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
-            using (MySqlConnection conexion = new MySqlConnection(strConexion))
-            {
-                conexion.Open();
-                string strConsulta = "SELECT idProducto FROM productos WHERE codigoBarra = @codigoBarra";
-                using (MySqlCommand comando = new MySqlCommand(strConsulta, conexion))
-                {
-                    comando.Parameters.AddWithValue("@codigoBarra", codigo);
+            
+            string strConexion = "server=localhost; User ID=root; password=root;Database=ventas2; port=3306;";
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+            conexion.Open();
+            string ver = "select idProducto from productos where codigoBarra=@CodigoBarra";
+            MySqlCommand comando = new MySqlCommand(ver, conexion);
+            comando.Parameters.AddWithValue("@CodigoBarra", codigo);
 
-                    using (MySqlDataReader reader = comando.ExecuteReader())
-                    {
-                        int s = 0;
-                        clsProductos emp = new clsProductos();
-                        if (reader.Read())
-                        {
-                            emp.idProducto = reader.GetInt32("idProducto");
-                            s = emp.idProducto;
-                        }
-                        return s;
-                    }
-                }
+            MySqlDataReader read = comando.ExecuteReader();
+            clsProductos mensaje1 = new clsProductos();
+            int id = 0;
+            
+            while (read.Read())
+            {
+                mensaje1 = new clsProductos();
+                mensaje1.idProducto = int.Parse(read["idMensaje"].ToString());
+
+
+                
+                id += mensaje1.idProducto ;
+
             }
+            conexion.Close();
+            return id;
 
         }
         public int idCliente(String nombre)
