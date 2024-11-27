@@ -156,7 +156,7 @@ namespace Databasesproyect
                         long idVentaGenerado = comandoVenta.LastInsertedId;
 
                         // Insertar los detalles de la venta
-                        string strInsertDetalle = "INSERT INTO detallesDeVentas VALUES (null,  @idProducto,@idventa , @cantidad, @precio, @descuento, @Iva, @subtotal, @total);";
+                        string strInsertDetalle = "INSERT INTO detallesDeVentas VALUES (null, @idventa , @idProducto, @cantidad, @precio, @descuento, @Iva, @subtotal, @total);";
 
                        
                             MySqlCommand comandoDetalle = new MySqlCommand(strInsertDetalle, conexion, transaccion);
