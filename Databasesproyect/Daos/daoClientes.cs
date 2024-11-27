@@ -39,9 +39,9 @@ namespace Databasesproyect
                 cli.apellidos = read["apellido"].ToString();
                 cli.correo = read["correo"].ToString();
                 cli.rfc = read["rfc"].ToString();
-               
 
-                
+
+
                 conexion.Close();
                 comando.Connection.Close();
 
@@ -70,9 +70,9 @@ namespace Databasesproyect
             MySqlCommand comando = new MySqlCommand("eliminarClientes", conexion);
 
 
-            comando.CommandType= System.Data.CommandType.StoredProcedure;
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@c_idCliente", id);    
+            comando.Parameters.AddWithValue("@c_idCliente", id);
 
 
 
@@ -91,16 +91,17 @@ namespace Databasesproyect
 
             MySqlConnection conexion = new MySqlConnection(strConexion);
             conexion.Open();
-            string strInsert = "update clientes set nombre =@nombre,apellido = @apellido,correo = @correo where idCliente = @id";
 
 
-            MySqlCommand comando = conexion.CreateCommand();
-            comando.Parameters.AddWithValue("@nombre",cliente.nombre);
-            comando.Parameters.AddWithValue("@apellido", cliente.apellidos);
-            comando.Parameters.AddWithValue("@correo", cliente.correo);
-            comando.Parameters.AddWithValue("@id", cliente.idCliente);
-            comando.CommandText = strInsert;
 
+            MySqlCommand comando = new MySqlCommand("editarClientes", conexion);
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@c_nombre",cliente.nombre);
+            comando.Parameters.AddWithValue("@c_apellido", cliente.apellidos);
+            comando.Parameters.AddWithValue("@c_correo", cliente.correo);
+            comando.Parameters.AddWithValue("@c_idCliente", cliente.idCliente);
+            
 
             comando.ExecuteNonQuery();
 
