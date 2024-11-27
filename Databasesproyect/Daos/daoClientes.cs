@@ -64,17 +64,16 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string strInsert = "delete from clientes where idCliente=@id";
-
-
-            MySqlCommand comando = conexion.CreateCommand();
-
-
-            comando.Parameters.AddWithValue("@id", id);
 
 
 
-            comando.CommandText = strInsert;
+            MySqlCommand comando = new MySqlCommand("eliminarClientes", conexion);
+
+
+            comando.CommandType= System.Data.CommandType.StoredProcedure;
+
+            comando.Parameters.AddWithValue("@c_idCliente", id);    
+
 
 
             comando.ExecuteNonQuery();
