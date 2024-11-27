@@ -153,26 +153,23 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string strInsert = "insert into clientes values (null,@nombre,@apellido,@correo,@rfc)";
 
 
-            MySqlCommand comando = conexion.CreateCommand();
+
+            MySqlCommand comando = new MySqlCommand("insertarClientes", conexion);
+            comando.CommandType=System.Data.CommandType.StoredProcedure;
 
 
-            comando.Parameters.AddWithValue("@nombre", cliente.nombre);
+            comando.Parameters.AddWithValue("@c_nombre", cliente.nombre);
 
 
-            comando.Parameters.AddWithValue("@apellido", cliente.apellidos);
+            comando.Parameters.AddWithValue("@c_apellido", cliente.apellidos);
 
-            comando.Parameters.AddWithValue("@correo", cliente.correo);
+            comando.Parameters.AddWithValue("@c_correo", cliente.correo);
 
-            comando.Parameters.AddWithValue("@rfc", cliente.rfc);
+            comando.Parameters.AddWithValue("@c_rfc", cliente.rfc);
 
-          
-
-            comando.CommandText = strInsert;
-
-
+      
             comando.ExecuteNonQuery();
 
 
