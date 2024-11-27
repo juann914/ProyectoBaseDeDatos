@@ -51,7 +51,7 @@ namespace Databasesproyect
             decimal a = decimal.Parse(teDes.Text);
             daoVenta.AgregarProducto(textCodigo.Text, dataVentas);
            
-            textCodigo.Clear();
+            
             laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal(); ;
             laDesc.Text = "$ " + daoVenta.Descuento(daoVenta.CalcularSubtotal(), a);
             laIva.Text = "$ " + daoVenta.Iva(daoVenta.CalcularSubtotal());
@@ -148,8 +148,8 @@ namespace Databasesproyect
                     {
                         int cantidad = Convert.ToInt32(row.Cells["cantidad"].Value);
                         decimal precio = Convert.ToDecimal(row.Cells["precio"].Value);
-                        string codigoProducto = textCodigo.Text; // Recuperar nombre del producto
-                    
+                        string codigoProducto = textCodigo.Text; 
+                        int idP= Convert.ToInt32(row.Cells["idProducto"].Value);
 
                         // Calcular valores específicos del detalle
                         decimal subtotalDetalle = cantidad * precio;
@@ -160,13 +160,14 @@ namespace Databasesproyect
 
 
                         
-                        clsDetalles.idProducto= daoVenta.idProducto(codigoProducto); ;
+                        clsDetalles.idProducto= idP ;
                         clsDetalles.cantidad = cantidad;
                         clsDetalles.precio = precio;
                         clsDetalles.subtotal = subtotalDetalle;
                         clsDetalles.descuento = descuentoDetalle;
                         clsDetalles.iva = ivaDetalle;
                         clsDetalles.total = totalDetalle;
+                        textCodigo.Clear();
                         
                     }
                     catch (Exception ex)

@@ -162,7 +162,7 @@ namespace Databasesproyect
                             MySqlCommand comandoDetalle = new MySqlCommand(strInsertDetalle, conexion, transaccion);
 
                             
-                            comandoDetalle.Parameters.AddWithValue("@idProducto", 1);
+                            comandoDetalle.Parameters.AddWithValue("@idProducto", detalles.idProducto);
                             comandoDetalle.Parameters.AddWithValue("@idventa", idVentaGenerado);
                             comandoDetalle.Parameters.AddWithValue("@cantidad", detalles.cantidad);
                             comandoDetalle.Parameters.AddWithValue("@precio", detalles.precio);
@@ -216,35 +216,7 @@ namespace Databasesproyect
             }
 
         }
-        public int idProducto(String codigo)
-        {
-
-            
-            string strConexion = "server=localhost; User ID=root; password=root;Database=ventas2; port=3306;";
-            MySqlConnection conexion = new MySqlConnection(strConexion);
-            conexion.Open();
-            string ver = "select idProducto from productos where codigoBarra=@CodigoBarra";
-            MySqlCommand comando = new MySqlCommand(ver, conexion);
-            comando.Parameters.AddWithValue("@CodigoBarra", codigo);
-
-            MySqlDataReader read = comando.ExecuteReader();
-            clsProductos mensaje1 = new clsProductos();
-            int id = 0;
-            
-            while (read.Read())
-            {
-                mensaje1 = new clsProductos();
-                mensaje1.idProducto = int.Parse(read["idProducto"].ToString());
-
-
-                
-                id = mensaje1.idProducto ;
-
-            }
-            conexion.Close();
-            return id;
-
-        }
+        
         public int idCliente(String nombre)
         {
 
