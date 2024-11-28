@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -137,10 +139,33 @@ namespace Databasesproyect.Vistas
 
             ventas.idventa = daoventa.obterUltimoIdVenta();
 
+            foreach (DataGridViewRow row in dataGridProductos.Rows)
+            {
 
-            MessageBox.Show("Se guardo la venta");
+                if (row.Cells["idProducto"].Value != null)
+                {
+                    clsDetallesVenta detallesVenta = new clsDetallesVenta();
 
-            
+                    detallesVenta.idProducto = Convert.ToInt32(row.Cells["IdProducto"].Value);
+                    detallesVenta.idventa=ventas.idventa;
+                    detallesVenta.cantidad=Convert.ToInt32(row.Cells["cantidad"].Value);
+                    detallesVenta.precio = Convert.ToDecimal(row.Cells["Precio"].Value);
+                  
+                    decimal des = decimal.Parse(teDes.Text);
+                    detallesVenta.descuento=  (des / 100)*(detallesVenta.cantidad*detallesVenta.precio);
+                    detallesVenta.subtotal = (detallesVenta.cantidad * detallesVenta.precio) - detallesVenta.descuento;
+                    detallesVenta.iva= detallesVenta.subtotal*(decimal)0.16;
+
+                    
+                    detallesVenta.total = (detallesVenta.subtotal + detallesVenta.iva); 
+               
+                    daoventa.insertarDetallesVentas(detallesVenta);
+
+
+                    MessageBox.Show("Se guardo la venta");
+
+                }
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -152,6 +177,11 @@ namespace Databasesproyect.Vistas
         }
 
         private void teDes_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -80,6 +80,7 @@
             this.dataGridProductos.RowTemplate.Height = 24;
             this.dataGridProductos.Size = new System.Drawing.Size(1214, 241);
             this.dataGridProductos.TabIndex = 1;
+            this.dataGridProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProductos_CellContentClick);
             // 
             // IdProducto
             // 
