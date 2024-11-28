@@ -12,6 +12,7 @@ using ProyectoDeBaseDeDatos;
 using Databasesproyect.Clases;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.ComponentModel;
+using Databasesproyect.Vistas;
 
 namespace Databasesproyect
 {
@@ -125,6 +126,43 @@ namespace Databasesproyect
         {
             decimal total = subtotal + iva-descuento;
             return total;
+        }
+
+        public void insertarDetallesVentas(clsDetallesVenta detalles)
+        {
+
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+
+
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+
+            conexion.Open();
+
+   string strInsert = "insert into detallesDeVentas values (null,@idProducto,@idventa,@cantidad,@precio,@Iva,@subtotal,@total)";
+
+
+            MySqlCommand comando = conexion.CreateCommand();
+
+
+            comando.Parameters.AddWithValue("@idProducto",detalles.idProducto);
+            comando.Parameters.AddWithValue("@idventa", detalles.idventa);
+            comando.Parameters.AddWithValue("@cantidad", detalles.cantidad);
+            comando.Parameters.AddWithValue("@precio", detalles.precio);
+            comando.Parameters.AddWithValue("@Iva", detalles.iva);
+            comando.Parameters.AddWithValue("@subtotal", detalles.subtotal);
+            comando.Parameters.AddWithValue("@total", detalles.total);
+
+
+            comando.CommandText = strInsert;
+
+
+            comando.ExecuteNonQuery();
+
+
+            conexion.Close();
+
+
+
         }
         public void insertarVenta(clsVentas venta, clsDetallesVenta detalles)
         {
