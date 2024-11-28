@@ -48,13 +48,34 @@ namespace Databasesproyect.Vistas
             daoProductos daoProductos = new daoProductos();
             clsProductos product = daoProductos.obtenerCodigo(textCodigo.Text);
 
-           
             
-            
-            dataGridProductos.Rows.Add(product.idProducto, product.codigoBarra, product.nombre, product.precio,
-                product.marca, product.descripcion, product.cantidad);
+            bool productoExistente = false;
 
            
+            foreach (DataGridViewRow row in dataGridProductos.Rows)
+            {
+                
+                if (row.Cells["idProducto"].Value != null &&
+                    Convert.ToInt32(row.Cells["idProducto"].Value) == product.idProducto)
+                {
+                    
+                    int cantidadActual = Convert.ToInt32(row.Cells["cantidad"].Value);
+                    row.Cells["cantidad"].Value = cantidadActual + 1; 
+
+                    decimal precioUnitario = Convert.ToDecimal(row.Cells["precio"].Value);
+                   
+
+                    productoExistente = true;
+                    break;
+                }
+            }
+            if (!productoExistente)
+            {
+                dataGridProductos.Rows.Add(product.idProducto, product.codigoBarra, product.nombre, product.precio,
+                    product.marca, product.descripcion,1); 
+            }
+
+
             subtotal += product.precio;
             double des = double.Parse(teDes.Text);
             laDesc.Text = "" + (des / 100);
