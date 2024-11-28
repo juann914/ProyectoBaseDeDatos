@@ -28,7 +28,7 @@ namespace Databasesproyect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Ventas ventas= new Ventas(idEmpleado);
+            Ventas2 ventas= new Ventas2(idEmpleado);
             ventas.Show();
 
             this.Hide();
@@ -67,6 +67,12 @@ namespace Databasesproyect
             c.Show();
             this.Close();
                         
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Ventas2 ventas = new Ventas2(idEmpleado);
+            ventas.Show();
         }
     }
 }

@@ -36,10 +36,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 124);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(47, 153);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 45);
+            this.button1.Size = new System.Drawing.Size(135, 55);
             this.button1.TabIndex = 0;
             this.button1.Text = "Venta";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,10 +47,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(202, 124);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(269, 153);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 45);
+            this.button2.Size = new System.Drawing.Size(135, 55);
             this.button2.TabIndex = 1;
             this.button2.Text = "Productos";
             this.button2.UseVisualStyleBackColor = true;
@@ -58,10 +58,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(376, 124);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(501, 153);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 45);
+            this.button3.Size = new System.Drawing.Size(135, 55);
             this.button3.TabIndex = 2;
             this.button3.Text = "Empleados";
             this.button3.UseVisualStyleBackColor = true;
@@ -69,10 +69,10 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(516, 124);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Location = new System.Drawing.Point(688, 153);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(101, 45);
+            this.button5.Size = new System.Drawing.Size(135, 55);
             this.button5.TabIndex = 4;
             this.button5.Text = "Clientes";
             this.button5.UseVisualStyleBackColor = true;
@@ -80,14 +80,14 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 233);
+            this.ClientSize = new System.Drawing.Size(885, 287);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Menu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);

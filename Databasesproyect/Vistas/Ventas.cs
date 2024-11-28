@@ -49,9 +49,16 @@ namespace Databasesproyect
             DaoVenta daoVenta = new DaoVenta();
             
             decimal a = decimal.Parse(teDes.Text);
-            daoVenta.AgregarProducto(textCodigo.Text, dataVentas);
-           
-            
+            daoProductos daoProductos = new daoProductos();
+            clsProductos product = daoProductos.obtenerCodigo(textCodigo.Text);
+
+
+
+
+            dataVentas.Rows.Add(product.idProducto, product.codigoBarra, product.nombre, product.precio,
+                product.marca, product.descripcion, product.cantidad);
+
+
             laSubtotal.Text = "$ " + daoVenta.CalcularSubtotal(); ;
             laDesc.Text = "$ " + daoVenta.Descuento(daoVenta.CalcularSubtotal(), a);
             laIva.Text = "$ " + daoVenta.Iva(daoVenta.CalcularSubtotal());
@@ -127,7 +134,9 @@ namespace Databasesproyect
             // Crear objeto venta
             clsVentas venta = new clsVentas();
 
-            venta.subtotal = daoVenta.CalcularSubtotal();
+            venta.subtotal = 1;
+
+            MessageBox.Show("" + venta.subtotal);
             venta.descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuento);
             venta.iva = daoVenta.Iva(daoVenta.CalcularSubtotal());
             venta.total = daoVenta.Total(daoVenta.CalcularSubtotal(),

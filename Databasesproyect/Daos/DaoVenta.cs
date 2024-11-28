@@ -283,6 +283,38 @@ namespace Databasesproyect
 
         }
 
+        public int obterUltimoIdVenta()
+        {
+            string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
+
+
+            MySqlConnection conexion = new MySqlConnection(strConexion);
+
+            conexion.Open();
+
+            string str = "select * from ventas";
+
+
+            MySqlCommand comando = new MySqlCommand(str, conexion);
+            
+
+            MySqlDataReader read = comando.ExecuteReader();
+
+            int id = 0;
+
+            while (read.Read())
+            {
+                
+                id = int.Parse(read["idventa"].ToString());
+               
+               
+
+            }
+            conexion.Close();
+            comando.Connection.Close();
+            return id;
+        }
+
     }
     }
 

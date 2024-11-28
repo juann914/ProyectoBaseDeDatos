@@ -44,7 +44,6 @@
             this.butBorrar = new System.Windows.Forms.Button();
             this.butAgregar = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.laTotal = new System.Windows.Forms.Label();
             this.laIVA = new System.Windows.Forms.Label();
@@ -176,7 +175,7 @@
             // 
             // butBorrar
             // 
-            this.butBorrar.Location = new System.Drawing.Point(159, 443);
+            this.butBorrar.Location = new System.Drawing.Point(371, 440);
             this.butBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.butBorrar.Name = "butBorrar";
             this.butBorrar.Size = new System.Drawing.Size(100, 28);
@@ -186,7 +185,7 @@
             // 
             // butAgregar
             // 
-            this.butAgregar.Location = new System.Drawing.Point(15, 443);
+            this.butAgregar.Location = new System.Drawing.Point(44, 446);
             this.butAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.butAgregar.Name = "butAgregar";
             this.butAgregar.Size = new System.Drawing.Size(100, 28);
@@ -205,16 +204,6 @@
             this.button4.Text = "Salir";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(380, 443);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Generar ticket";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -363,7 +352,6 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.butBorrar);
             this.Controls.Add(this.butAgregar);
@@ -402,7 +390,6 @@
         private System.Windows.Forms.Button butBorrar;
         private System.Windows.Forms.Button butAgregar;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label laTotal;
         private System.Windows.Forms.Label laIVA;
