@@ -125,17 +125,17 @@ namespace Databasesproyect
             decimal descuentoAplicado = decimal.Parse(teDes.Text);
 
             // Crear objeto venta
-            clsVentas venta = new clsVentas
-            {
-                subtotal = daoVenta.CalcularSubtotal(),
-                descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuentoAplicado),
-                iva = daoVenta.Iva(daoVenta.CalcularSubtotal()),
-                total = daoVenta.Total(daoVenta.CalcularSubtotal(),
+            clsVentas venta = new clsVentas();
+
+            venta.subtotal = daoVenta.CalcularSubtotal();
+            venta.descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuentoAplicado);
+            venta.iva = daoVenta.Iva(daoVenta.CalcularSubtotal());
+            venta.total = daoVenta.Total(daoVenta.CalcularSubtotal(),
                                        daoVenta.Iva(daoVenta.CalcularSubtotal()),
-                                       daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuentoAplicado)),
-                idEmpleado = idEmpleado,
-                idCliente = daoVenta.idCliente(nombreCliente)
-            };
+                                       daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuentoAplicado));
+            venta.idEmpleado = idEmpleado;
+            venta.idCliente = daoVenta.idCliente(nombreCliente);
+            
 
             // Crear lista de detalles de venta
             clsDetallesVenta clsDetalles = new clsDetallesVenta();
