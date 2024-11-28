@@ -122,17 +122,17 @@ namespace Databasesproyect
             
 
             string nombreCliente = textNombre.Text;
-            decimal descuentoAplicado = decimal.Parse(teDes.Text);
+            decimal descuento = decimal.Parse(teDes.Text);
 
             // Crear objeto venta
             clsVentas venta = new clsVentas();
 
             venta.subtotal = daoVenta.CalcularSubtotal();
-            venta.descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuentoAplicado);
+            venta.descuento = daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuento);
             venta.iva = daoVenta.Iva(daoVenta.CalcularSubtotal());
             venta.total = daoVenta.Total(daoVenta.CalcularSubtotal(),
                                        daoVenta.Iva(daoVenta.CalcularSubtotal()),
-                                       daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuentoAplicado));
+                                       daoVenta.Descuento(daoVenta.CalcularSubtotal(), descuento));
             venta.idEmpleado = idEmpleado;
             venta.idCliente = daoVenta.idCliente(nombreCliente);
             
