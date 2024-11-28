@@ -162,7 +162,7 @@ namespace Databasesproyect
                             MySqlCommand comandoDetalle = new MySqlCommand(strInsertDetalle, conexion, transaccion);
 
                             
-                            comandoDetalle.Parameters.AddWithValue("@idProducto", detalles.idProducto);
+                            comandoDetalle.Parameters.AddWithValue("@idProducto", 1);
                             comandoDetalle.Parameters.AddWithValue("@idventa", idVentaGenerado);
                             comandoDetalle.Parameters.AddWithValue("@cantidad", detalles.cantidad);
                             comandoDetalle.Parameters.AddWithValue("@precio", detalles.precio);
