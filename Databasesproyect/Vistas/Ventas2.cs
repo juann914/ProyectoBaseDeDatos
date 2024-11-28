@@ -78,7 +78,7 @@ namespace Databasesproyect.Vistas
 
             subtotal += product.precio;
             double des = double.Parse(teDes.Text);
-            laDesc.Text = "" + (des / 100);
+            laDesc.Text = "" + (des / 100)*subtotal;
             if (des > 0)
             {
 
@@ -126,7 +126,7 @@ namespace Databasesproyect.Vistas
             ventas.total = decimal.Parse(laTotal.Text);
             ventas.iva = decimal.Parse(laIVA.Text);
             ventas.descuento = decimal.Parse(laDesc.Text);
-            ventas.subtotal=decimal.Parse(laSubtotal.Text);
+            ventas.subtotal = decimal.Parse(laSubtotal.Text);
             ventas.idCliente = idcliente;
             ventas.idEmpleado = idempleado;
 
@@ -138,7 +138,7 @@ namespace Databasesproyect.Vistas
             ventas.idventa = daoventa.obterUltimoIdVenta();
 
 
-            MessageBox.Show("Se guardo la venta"+ventas.idventa);
+            MessageBox.Show("Se guardo la venta");
 
             
         }
@@ -148,6 +148,11 @@ namespace Databasesproyect.Vistas
             Menu mu = new Menu(idempleado);
             mu.Show();
             this.Close();
+
+        }
+
+        private void teDes_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

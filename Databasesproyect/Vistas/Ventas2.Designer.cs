@@ -270,6 +270,7 @@
             this.teDes.Name = "teDes";
             this.teDes.Size = new System.Drawing.Size(39, 22);
             this.teDes.TabIndex = 11;
+            this.teDes.TextChanged += new System.EventHandler(this.teDes_TextChanged);
             // 
             // label4
             // 
