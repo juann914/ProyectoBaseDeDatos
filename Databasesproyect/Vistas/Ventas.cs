@@ -153,7 +153,7 @@ namespace Databasesproyect
 
                         // Calcular valores específicos del detalle
                         decimal subtotalDetalle = cantidad * precio;
-                        decimal descuentoDetalle = daoVenta.Descuento(subtotalDetalle, descuentoAplicado);
+                        decimal descuentoDetalle = daoVenta.Descuento(subtotalDetalle, descuento);
                         decimal ivaDetalle = daoVenta.Iva(subtotalDetalle - descuentoDetalle);
                         decimal totalDetalle = subtotalDetalle - descuentoDetalle + ivaDetalle;
 
