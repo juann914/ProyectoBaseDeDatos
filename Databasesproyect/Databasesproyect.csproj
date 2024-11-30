@@ -99,7 +99,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\clsDetallesVenta.cs" />
+    <Compile Include="Clases\ClsReportePorEmpleado.cs" />
     <Compile Include="Clases\clsVentas.cs" />
+    <Compile Include="Clases\ClsVentasPorMes.cs" />
+    <Compile Include="Clases\ClsVentasPorTrimestre.cs" />
+    <Compile Include="Daos\DaoReportes.cs" />
     <Compile Include="Vistas\ClienteEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +152,12 @@
     </Compile>
     <Compile Include="Vistas\EliminarEpleado.Designer.cs">
       <DependentUpon>EliminarEpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\MenuReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\MenuReportes.Designer.cs">
+      <DependentUpon>MenuReportes.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\MenuEmpleados.cs">
       <SubType>Form</SubType>
@@ -217,6 +227,24 @@
     <Compile Include="Vistas\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ReporteEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ReporteEmpleado.Designer.cs">
+      <DependentUpon>ReporteEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ReporteMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ReporteMes.Designer.cs">
+      <DependentUpon>ReporteMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ReporteTrimestre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ReporteTrimestre.Designer.cs">
+      <DependentUpon>ReporteTrimestre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\EliminarEpleado.resx">
       <DependentUpon>EliminarEpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\MenuReportes.resx">
+      <DependentUpon>MenuReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MenuEmpleados.resx">
       <DependentUpon>MenuEmpleados.cs</DependentUpon>

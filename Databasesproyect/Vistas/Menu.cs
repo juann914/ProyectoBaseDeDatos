@@ -74,5 +74,12 @@ namespace Databasesproyect
             Ventas2 ventas = new Ventas2(idEmpleado);
             ventas.Show();
         }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            Menu_de_reportes reportes = new Menu_de_reportes();
+            reportes.Show();
+            this.Hide();
+        }
     }
 }
