@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Databasesproyect.Clases;
 using ProyectoDeBaseDeDatos;
 
+
 namespace Databasesproyect.Vistas
 {
     public partial class Ventas2 : Form
@@ -131,6 +132,11 @@ namespace Databasesproyect.Vistas
             ventas.subtotal = decimal.Parse(laSubtotal.Text);
             ventas.idCliente = idcliente;
             ventas.idEmpleado = idempleado;
+
+            Random random = new Random();
+            ventas.fechaVenta = "2024" + "-" + random.Next(1, 12) + "-" + random.Next(1, 31);
+
+
 
             ventas1 = ventas;
 

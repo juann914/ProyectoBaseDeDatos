@@ -294,7 +294,7 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string strInsert = "insert into ventas values (null,@descuento,@Iva,@subtotal,@total,@idEmpleado,@idCliente)";
+            string strInsert = "insert into ventas values (null,@descuento,@Iva,@subtotal,@total,@fechaVenta,@idEmpleado,@idCliente)";
 
 
             MySqlCommand comando = conexion.CreateCommand();
@@ -308,6 +308,8 @@ namespace Databasesproyect
             comando.Parameters.AddWithValue("@subtotal", ventas.subtotal);
 
             comando.Parameters.AddWithValue("@total", ventas.total);
+
+            comando.Parameters.AddWithValue("@fechaVenta", ventas.fechaVenta);
 
             comando.Parameters.AddWithValue("@idEmpleado", ventas.idEmpleado);
 
