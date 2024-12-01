@@ -99,8 +99,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\clsDetallesVenta.cs" />
-    <Compile Include="Clases\ClsReportePorEmpleado.cs" />
     <Compile Include="Clases\clsVentas.cs" />
+    <Compile Include="Clases\ClsVentasEmpleado.cs" />
     <Compile Include="Clases\ClsVentasPorMes.cs" />
     <Compile Include="Clases\ClsVentasPorTrimestre.cs" />
     <Compile Include="Daos\DaoReportes.cs" />
@@ -322,6 +322,15 @@
     </Compile>
     <EmbeddedResource Include="Vistas\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ReporteEmpleado.resx">
+      <DependentUpon>ReporteEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ReporteMes.resx">
+      <DependentUpon>ReporteMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ReporteTrimestre.resx">
+      <DependentUpon>ReporteTrimestre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>

@@ -37,5 +37,17 @@ namespace Databasesproyect.Vistas
             reportes.Show();
             this.Hide();
         }
+
+        private void Menu_de_reportes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

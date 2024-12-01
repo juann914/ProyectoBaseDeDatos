@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Databasesproyect.Clases
 {
-    internal class ClsReportePorEmpleado
+    internal class ClsVentasEmpleado
     {
+        public string Empleado { get; set; }
+        public decimal Total { get; set; }
+        public int CantVentas { get; set; }
     }
 }
