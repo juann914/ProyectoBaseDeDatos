@@ -160,9 +160,9 @@ namespace Databasesproyect
 
                     comando.CommandText = strInsert;
 
-
-                    comando.ExecuteNonQuery();
                     transaccion.Commit();
+                    comando.ExecuteNonQuery();
+                   
 
                     conexion.Close();
                 }
@@ -329,9 +329,9 @@ namespace Databasesproyect
 
                     comando.CommandText = strInsert;
 
-
-                    comando.ExecuteNonQuery();
                     transaccion.Commit();
+                    comando.ExecuteNonQuery();
+                    
                     conexion.Close();
                 }
                 catch (Exception ex)
