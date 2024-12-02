@@ -138,32 +138,41 @@ namespace Databasesproyect
 
             conexion.Open();
 
-   string strInsert = "insert into detallesDeVentas values (null,@idProducto,@idventa,@cantidad,@precio,@descuento,@Iva,@subtotal,@total)";
+            string strInsert = "insert into detallesDeVentas values (null,@idProducto,@idventa,@cantidad,@precio,@descuento,@Iva,@subtotal,@total)";
 
 
             MySqlCommand comando = conexion.CreateCommand();
+            using (MySqlTransaction transaccion = conexion.BeginTransaction())
+            {
+                try
+                {
+
+                    comando.Parameters.AddWithValue("@idProducto", detalles.idProducto);
+                    comando.Parameters.AddWithValue("@idventa", detalles.idventa);
+                    comando.Parameters.AddWithValue("@cantidad", detalles.cantidad);
+                    comando.Parameters.AddWithValue("@precio", detalles.precio);
+                    comando.Parameters.AddWithValue("@Iva", detalles.iva);
+                    comando.Parameters.AddWithValue("@subtotal", detalles.subtotal);
+                    comando.Parameters.AddWithValue("@total", detalles.total);
+                    comando.Parameters.AddWithValue("@descuento", detalles.descuento);
 
 
-            comando.Parameters.AddWithValue("@idProducto",detalles.idProducto);
-            comando.Parameters.AddWithValue("@idventa", detalles.idventa);
-            comando.Parameters.AddWithValue("@cantidad", detalles.cantidad);
-            comando.Parameters.AddWithValue("@precio", detalles.precio);
-            comando.Parameters.AddWithValue("@Iva", detalles.iva);
-            comando.Parameters.AddWithValue("@subtotal", detalles.subtotal);
-            comando.Parameters.AddWithValue("@total", detalles.total);
-            comando.Parameters.AddWithValue("@descuento", detalles.descuento);
+
+                    comando.CommandText = strInsert;
 
 
+                    comando.ExecuteNonQuery();
+                    transaccion.Commit();
 
-            comando.CommandText = strInsert;
-
-
-            comando.ExecuteNonQuery();
-
-
-            conexion.Close();
-
-
+                    conexion.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Revertir la transacción en caso de error
+                    transaccion.Rollback();
+                    MessageBox.Show($"Error al guardar la venta: {ex.Message}");
+                }
+            }
 
         }
         public void insertarVenta(clsVentas venta, clsDetallesVenta detalles)
@@ -299,30 +308,40 @@ namespace Databasesproyect
 
             MySqlCommand comando = conexion.CreateCommand();
 
-
-            comando.Parameters.AddWithValue("@descuento", ventas.descuento);
-
-
-            comando.Parameters.AddWithValue("@Iva", ventas.iva);
-
-            comando.Parameters.AddWithValue("@subtotal", ventas.subtotal);
-
-            comando.Parameters.AddWithValue("@total", ventas.total);
-
-            comando.Parameters.AddWithValue("@fechaVenta", ventas.fechaVenta);
-
-            comando.Parameters.AddWithValue("@idEmpleado", ventas.idEmpleado);
-
-            comando.Parameters.AddWithValue("@idCliente", ventas.idCliente);
-
-            comando.CommandText = strInsert;
+            using (MySqlTransaction transaccion = conexion.BeginTransaction())
+            {
+                try
+                {
+                    comando.Parameters.AddWithValue("@descuento", ventas.descuento);
 
 
-            comando.ExecuteNonQuery();
+                    comando.Parameters.AddWithValue("@Iva", ventas.iva);
+
+                    comando.Parameters.AddWithValue("@subtotal", ventas.subtotal);
+
+                    comando.Parameters.AddWithValue("@total", ventas.total);
+
+                    comando.Parameters.AddWithValue("@fechaVenta", ventas.fechaVenta);
+
+                    comando.Parameters.AddWithValue("@idEmpleado", ventas.idEmpleado);
+
+                    comando.Parameters.AddWithValue("@idCliente", ventas.idCliente);
+
+                    comando.CommandText = strInsert;
 
 
-            conexion.Close();
+                    comando.ExecuteNonQuery();
+                    transaccion.Commit();
+                    conexion.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Revertir la transacción en caso de error
+                    transaccion.Rollback();
+                    MessageBox.Show($"Error al guardar la venta: {ex.Message}");
+                }
 
+            }
         }
 
         public int obterUltimoIdVenta()
