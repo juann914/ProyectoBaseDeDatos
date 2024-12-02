@@ -41,7 +41,6 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.textCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.butBorrar = new System.Windows.Forms.Button();
             this.butAgregar = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -174,16 +173,6 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Codigo Producto";
             // 
-            // butBorrar
-            // 
-            this.butBorrar.Location = new System.Drawing.Point(371, 440);
-            this.butBorrar.Margin = new System.Windows.Forms.Padding(4);
-            this.butBorrar.Name = "butBorrar";
-            this.butBorrar.Size = new System.Drawing.Size(100, 28);
-            this.butBorrar.TabIndex = 24;
-            this.butBorrar.Text = "Borrar";
-            this.butBorrar.UseVisualStyleBackColor = true;
-            // 
             // butAgregar
             // 
             this.butAgregar.Location = new System.Drawing.Point(44, 446);
@@ -197,7 +186,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(507, 443);
+            this.button4.Location = new System.Drawing.Point(511, 442);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
@@ -326,7 +315,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(443, 385);
+            this.button5.Location = new System.Drawing.Point(389, 440);
             this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 28);
@@ -355,7 +344,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.butBorrar);
             this.Controls.Add(this.butAgregar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textCodigo);
@@ -389,7 +377,6 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox textCodigo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button butBorrar;
         private System.Windows.Forms.Button butAgregar;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;

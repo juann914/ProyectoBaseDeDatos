@@ -294,7 +294,7 @@ namespace Databasesproyect
 
             conexion.Open();
 
-            string strInsert = "insert into ventas values (null,@descuento,@Iva,@subtotal,@total,@fechaVenta,@idEmpleado,@idCliente)";
+            string strInsert = "insert into ventas values (null,@descuento,@Iva,@subtotal,@total,@idEmpleado,@idCliente,@fechaVenta)";
 
 
             MySqlCommand comando = conexion.CreateCommand();

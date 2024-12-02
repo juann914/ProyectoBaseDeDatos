@@ -132,7 +132,7 @@ namespace Databasesproyect.Vistas
             ventas.subtotal = decimal.Parse(laSubtotal.Text);
             ventas.idCliente = idcliente;
             ventas.idEmpleado = idempleado;
-
+            
             Random random = new Random();
             ventas.fechaVenta = "2024" + "-" + random.Next(1, 12) + "-" + random.Next(1, 31);
 
@@ -168,10 +168,19 @@ namespace Databasesproyect.Vistas
                     daoventa.insertarDetallesVentas(detallesVenta);
 
 
-                    MessageBox.Show("Se guardo la venta");
+                    
+                    
+                    
 
                 }
+
+                
             }
+            MessageBox.Show("Se guardo la venta");
+
+            this.Close();
+            Menu menu = new Menu(idempleado);
+            menu.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

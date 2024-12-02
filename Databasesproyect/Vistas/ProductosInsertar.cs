@@ -39,7 +39,7 @@ namespace Databasesproyect
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text.Equals("") || txtMarca.Text.Equals("") || txtNombre.Text.Equals("") ||
+            if (txtCodigo.Text.Equals("") || txtMarca.Text.Equals("")  ||
                 txtPrecio.Text.Equals("") || txtCantidad.Text.Equals(""))
             {
                 MessageBox.Show("Faltan campos por rellenar");

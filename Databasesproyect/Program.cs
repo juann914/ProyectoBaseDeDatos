@@ -17,7 +17,7 @@ namespace Databasesproyect
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReporteEmpleado());
+            Application.Run(new Login());
         }
     }
 }
