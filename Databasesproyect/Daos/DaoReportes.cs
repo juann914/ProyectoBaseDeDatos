@@ -107,6 +107,7 @@ namespace Databasesproyect.Daos
                                 CantVentas = reader.GetInt32("CANT_VENTAS")
                             };
                             reporteEmpleados.Add(reporte);
+                            
                         }
                     }
                 }

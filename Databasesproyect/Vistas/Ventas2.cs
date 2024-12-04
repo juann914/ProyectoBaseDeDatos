@@ -136,14 +136,14 @@ namespace Databasesproyect.Vistas
             Random random = new Random();
             ventas.fechaVenta = "2024" + "-" + random.Next(1, 12) + "-" + random.Next(1, 31);
 
-
+            List<clsDetallesVenta> listDetallesVentas =new List<clsDetallesVenta>();
 
             ventas1 = ventas;
 
             DaoVenta daoventa = new DaoVenta();
-            daoventa.insertarUnaVenta(ventas);
+            
 
-            ventas.idventa = daoventa.obterUltimoIdVenta();
+            ventas.idventa = daoventa.obterUltimoIdVenta()+1;
 
             foreach (DataGridViewRow row in dataGridProductos.Rows)
             {
@@ -165,17 +165,19 @@ namespace Databasesproyect.Vistas
                     
                     detallesVenta.total = (detallesVenta.subtotal + detallesVenta.iva); 
                
-                    daoventa.insertarDetallesVentas(detallesVenta);
+                   
+                    listDetallesVentas.Add(detallesVenta);
+                    
 
 
-                    
-                    
-                    
+
 
                 }
 
                 
             }
+            daoventa.insertarVenta(ventas, listDetallesVentas);
+
             MessageBox.Show("Se guardo la venta");
 
             this.Close();

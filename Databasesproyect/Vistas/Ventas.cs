@@ -189,7 +189,7 @@ namespace Databasesproyect
             
             try
             {
-                daoVenta.insertarVenta(venta, clsDetalles);
+                
                 MessageBox.Show("Venta registrada con éxito.");
             }
             catch (Exception ex)

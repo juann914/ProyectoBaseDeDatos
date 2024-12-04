@@ -175,11 +175,11 @@ namespace Databasesproyect
             }
 
         }
-        public void insertarVenta(clsVentas venta, clsDetallesVenta detalles)
+        public void insertarVenta(clsVentas venta, List<clsDetallesVenta> detalles)
         {
 
             string strConexion = "server=localhost; User ID=root; password=root; Database=ventas2; port=3306;";
-
+            
             using (MySqlConnection conexion = new MySqlConnection(strConexion))
             {
                 conexion.Open();
@@ -189,7 +189,7 @@ namespace Databasesproyect
                     try
                     {
                         // Insertar la venta sin especificar el idventa (autoincremental)
-                        string strInsertVenta = "INSERT INTO ventas VALUES (null,@descuento,@Iva,@subtotal,@total,@idEmpleado,@idCliente);";
+                        string strInsertVenta = "INSERT INTO ventas VALUES (null,@descuento,@Iva,@subtotal,@total,@idEmpleado,@idCliente,@fechaVenta);";
                         MySqlCommand comandoVenta = new MySqlCommand(strInsertVenta, conexion, transaccion);
 
                         comandoVenta.Parameters.AddWithValue("@descuento", venta.descuento);
@@ -198,31 +198,38 @@ namespace Databasesproyect
                         comandoVenta.Parameters.AddWithValue("@total", venta.total);
                         comandoVenta.Parameters.AddWithValue("@idEmpleado", venta.idEmpleado);
                         comandoVenta.Parameters.AddWithValue("@idCliente", venta.idCliente);
+                        comandoVenta.Parameters.AddWithValue("@fechaVenta", venta.fechaVenta);
 
                         comandoVenta.ExecuteNonQuery();
 
-                        // Obtener el ID de la venta generada automáticamente
-                        long idVentaGenerado = comandoVenta.LastInsertedId;
 
-                        // Insertar los detalles de la venta
-                        string strInsertDetalle = "INSERT INTO detallesDeVentas VALUES (null,@idProducto,@idventa, @cantidad, @precio, @descuento, @Iva, @subtotal, @total);";
-
-                       
-                            MySqlCommand comandoDetalle = new MySqlCommand(strInsertDetalle, conexion, transaccion);
-
-                            
-                            comandoDetalle.Parameters.AddWithValue("@idProducto", detalles.idProducto);
-                            comandoDetalle.Parameters.AddWithValue("@idventa", idVentaGenerado);
-                            comandoDetalle.Parameters.AddWithValue("@cantidad", detalles.cantidad);
-                            comandoDetalle.Parameters.AddWithValue("@precio", detalles.precio);
-                            comandoDetalle.Parameters.AddWithValue("@descuento", detalles.descuento);
-                            comandoDetalle.Parameters.AddWithValue("@Iva", detalles.iva);
-                            comandoDetalle.Parameters.AddWithValue("@subtotal", detalles.subtotal);
-                            comandoDetalle.Parameters.AddWithValue("@total", detalles.total);
-
-                            comandoDetalle.ExecuteNonQuery();
                         
 
+                        // Insertar los detalles de la venta
+                        
+
+                       
+                            
+
+
+
+                        for (int i = 0; i < detalles.Count; i++)
+                        {
+                            string strInsertDetalle = "INSERT INTO detallesDeVentas VALUES (null,@idProducto,@idventa, @cantidad, @precio, @descuento, @Iva, @subtotal, @total);";
+                            MySqlCommand comandoDetalle = new MySqlCommand(strInsertDetalle, conexion, transaccion);
+
+                            comandoDetalle.Parameters.AddWithValue("@idProducto", detalles[i].idProducto);
+                            comandoDetalle.Parameters.AddWithValue("@idventa", venta.idventa);
+                            comandoDetalle.Parameters.AddWithValue("@cantidad", detalles[i].cantidad);
+                            comandoDetalle.Parameters.AddWithValue("@precio", detalles[i].precio);
+                            comandoDetalle.Parameters.AddWithValue("@descuento", detalles[i].descuento);
+                            comandoDetalle.Parameters.AddWithValue("@Iva", detalles[i].iva);
+                            comandoDetalle.Parameters.AddWithValue("@subtotal", detalles[i] .subtotal);
+                            comandoDetalle.Parameters.AddWithValue("@total", detalles[i].total);
+                            
+                            comandoDetalle.ExecuteNonQuery();
+                        }
+                        
                         // Confirmar la transacción
                         transaccion.Commit();
                         MessageBox.Show("Venta realizada exitosamente.");
